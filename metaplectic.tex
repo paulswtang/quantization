@@ -1,0 +1,125 @@
+After the choice of a polarization, we still do not yet have the structure of a Hilbert space on the space of states; this issue is resolved by placing a \emph{metaplectic structure} on the symplectic manifold, in a process known as \emph{metaplectic correction} (for historical reasons), so that sections are square-integrable. In this chapter, we present a discussion of the insufficiency of polarization to motivate the definition and purpose of metaplectic structures, before building on top of the metaplectic structure to conclude the traditional geometric quantization programme on a given symplectic manifold.
+
+%why does our state space fail to be Hilbert?
+\section{Integrability of States}
+Consider a prequantizable symplectic manifold $(M,\omega)$ equipped with $P$ a choice of polarization. In general, the space $\Gamma_P(L) = \Gamma_P(L \to M)$ of polarized sections does not form a Hilbert space\footnote{A notable exception is, of course, the case of a K\"{a}hler manifold.}, for the following reasons:
+\begin{itemize}
+\item there may be sections $\phi \in \Gamma_P(L)$ that are not square-integrable; and even if this were the case,
+
+\item the inner product may not be defined for all pairs $\phi,\psi \in \Gamma_P(L)$.
+
+\end{itemize}
+
+The reason for the former is %%%%%%%%%
+
+
+The reason for the latter is %%%%%%%%%
+
+
+In the following sections we will sketch out the following amelioration\footnote{Or \emph{correction}, if you will.} to the above problem: %%%%%%%%%
+
+
+%definition of a metaplectic structure.
+\section{Metaplectic Structures}
+\subsection{Definition}
+A metaplectic structure on a symplectic manifold may be thought of as analogous to a spin structure placed on a Riemannian manifold\footnote{Or rather, an \emph{oriented} Riemannian manifold}, in that the definitions of each share the same pattern of being defined as \emph{equivariant lifts} of a certain frame bundle, with respect to a certain double-cover of structure groups. For the sake of illustration and comparison, we present both definitions.
+
+First, the Riemannian case:
+%spin structure on an oriented riemannian manifold
+\begin{defn}
+Let $(M,g)$ be an orientable Riemannian manifold. Then there is a double-covering of Lie groups
+$$
+\rho : \mathrm{Spin}(n) \to SO(n)
+$$
+from the spin group to the special orthogonal group. Consider the oriented orthonormal frame bundle %%%%FINISH DEFINITION
+\end{defn}
+%%%%%%%%INSERT COMMUTATIVE DIAGRAM #4: (a) FOR METAPLECTIC, (b) FOR SPIN
+And now the symplectic case:
+%metaplectic structure on a symplectic manifold
+\begin{defn}
+%%%%%FINISH DEFINITION
+%define the notion of "equivalence" of two metaplectic structures on a symplectic manifold M
+\end{defn}
+
+%Remarks on the definition, cite references for metaplectic/spin groups   %BOX THIS IN? CHANGE HOW REMARKS ARE DONE?
+\textbf{Remark.} For a discussion of spin and metaplectic groups, see the appendix. We will remark here that the spin group $\mathrm{Spin}(n)$ is the unique double cover of $SO(n)$ such that the sequence
+$$
+1 \to \mathbb{Z}/2\mathbb{Z} \to \mathrm{Spin}(n) \to SO(n) \to 1
+$$
+is exact, where $1$ here refers to the trivial group; and the metaplectic group $Mp(2n)$ is the unique double cover of $Sp(2n)$ the order $n$ symplectic group.
+
+\subsection{Properties}
+Metaplectic structures, much like spin structures, may be classified cohomologically:
+\begin{thrm}
+Let $(M,\omega)$ be a symplectic manifold. Then $(M,\omega)$ admits a metaplectic structure if and only if the second Stiefel-Whitney class vanishes; equivalently, if and only if the first Chern class is even.
+
+%%%%%%%%%%DEFINE THE CLASSES HERE
+
+When this is the case, the class of admissible metaplectic structures is classified by %%%%%%%%%%COHOMOLOGY?
+\end{thrm}
+
+
+
+
+
+
+
+
+
+\section{Induced Hilbert Space from Metaplectic Structure}
+Recalling the obstruction from the first section of this chapter, we now give a presentation of the way in which the existence of a metaplectic structure enables the construction of the ``proper'' Hilbert space of states.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+\section{Examples}
+We present some examples of metaplectic structures.
+
+\subsection{Phase Spaces}
+Let $Q$ be some $n$-dimensional orientable manifold. Then the cotangent bundle $T^*Q$ is a symplectic manifold; further, it has a natural metaplectic structure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+To introduce the topic, note that we have the following short exact sequence:
+$$
+0 \to \mathbf{Z} \to \mathbf{C} \times 
+$$
+which in turn gives us the exact sequence
+$$
+%derived sequence
+$$
+this latter group is the metaplectic group and is a \textit{double cover} of the symplectic group.
+%introduce double cover of GL(n,C) by ML(n,C) the metalinear group
+
+http://en.wikipedia.org/wiki/Metaplectic_structure
+
+http://ncatlab.org/nlab/show/metaplectic+group
+
+http://en.wikipedia.org/wiki/Spin_structure
+
+http://ncatlab.org/nlab/show/metaplectic+structure
+
+http://ncatlab.org/nlab/show/metaplectic+correction+%28in+geometric+quantization%29

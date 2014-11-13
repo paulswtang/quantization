@@ -1,0 +1,1023 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.6.16)  30 SEP 2014 15:09
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**gqbook.tex
+(./gqbook.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsbook.cls
+Document Class: amsbook 2009/07/02 v2.20.1
+\linespacing=\dimen102
+\normalparindent=\dimen103
+\normaltopskip=\skip41
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip42
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen104
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count79
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count80
+\leftroot@=\count81
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count82
+\DOTSCASE@=\count83
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count84
+\c@MaxMatrixCols=\count85
+\dotsspace@=\muskip10
+\c@parentequation=\count86
+\dspbrk@lvl=\count87
+\tag@help=\toks15
+\row@=\count88
+\column@=\count89
+\maxfields@=\count90
+\andhelp@=\toks16
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks17
+\multlinegap=\skip43
+\multlinetaggap=\skip44
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 367.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+\copyins=\insert233
+\abstractbox=\box28
+\listisep=\skip45
+\c@part=\count91
+\c@chapter=\count92
+\c@section=\count93
+\c@subsection=\count94
+\c@subsubsection=\count95
+\c@paragraph=\count96
+\c@subparagraph=\count97
+\c@figure=\count98
+\c@table=\count99
+\abovecaptionskip=\skip46
+\belowcaptionskip=\skip47
+\captionindent=\dimen113
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip48
+\thm@postskip=\skip49
+\thm@headsep=\skip50
+\dth@everypar=\toks24
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(/usr/share/texmf/tex/latex/tikz-cd/tikz-cd.sty
+Package: tikz-cd 2014/03/08 v0.9b Commutative diagrams with tikz
+
+(/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks25
+)
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box29
+
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+))
+Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks26
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count100
+))
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
+)
+(/usr/share/texmf/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
+
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks29
+))
+\pgf@x=\dimen116
+\pgf@y=\dimen117
+\pgf@xa=\dimen118
+\pgf@ya=\dimen119
+\pgf@xb=\dimen120
+\pgf@yb=\dimen121
+\pgf@xc=\dimen122
+\pgf@yc=\dimen123
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count101
+\c@pgf@countb=\count102
+\c@pgf@countc=\count103
+\c@pgf@countd=\count104
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
+)))
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
+\pgfsyssoftpath@smallbuffer@items=\count105
+\pgfsyssoftpath@bigbuffer@items=\count106
+)
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+
+(/usr/share/texmf/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen124
+\pgfmath@count=\count107
+\pgfmath@box=\box30
+\pgfmath@toks=\toks30
+\pgfmath@stack@operand=\toks31
+\pgfmath@stack@operation=\toks32
+)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count108
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
+\pgf@picminx=\dimen125
+\pgf@picmaxx=\dimen126
+\pgf@picminy=\dimen127
+\pgf@picmaxy=\dimen128
+\pgf@pathminx=\dimen129
+\pgf@pathmaxx=\dimen130
+\pgf@pathminy=\dimen131
+\pgf@pathmaxy=\dimen132
+\pgf@xx=\dimen133
+\pgf@xy=\dimen134
+\pgf@yx=\dimen135
+\pgf@yy=\dimen136
+\pgf@zx=\dimen137
+\pgf@zy=\dimen138
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
+\pgf@path@lastx=\dimen139
+\pgf@path@lasty=\dimen140
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
+\pgf@shorten@end@additional=\dimen141
+\pgf@shorten@start@additional=\dimen142
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
+\pgfpic=\box31
+\pgf@hbox=\box32
+\pgf@layerbox@main=\box33
+\pgf@picture@serial@count=\count109
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
+\pgflinewidth=\dimen143
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
+\pgf@pt@x=\dimen144
+\pgf@pt@y=\dimen145
+\pgf@pt@temp=\dimen146
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
+\pgf@max=\dimen147
+\pgf@sys@shading@range@num=\count110
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
+\pgfexternal@startupbox=\box34
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+)))
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+\pgfnodeparttextbox=\box35
+)
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen148
+\pgf@nodesepend=\dimen149
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
+))
+(/usr/share/texmf/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
+\pgffor@iter=\dimen150
+\pgffor@skip=\dimen151
+\pgffor@stack=\toks33
+\pgffor@toks=\toks34
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
+\pgf@plot@mark@count=\count111
+\pgfplotmarksize=\dimen152
+)
+\tikz@lastx=\dimen153
+\tikz@lasty=\dimen154
+\tikz@lastxsaved=\dimen155
+\tikz@lastysaved=\dimen156
+\tikzleveldistance=\dimen157
+\tikzsiblingdistance=\dimen158
+\tikz@figbox=\box36
+\tikz@tempbox=\box37
+\tikztreelevel=\count112
+\tikznumberofchildren=\count113
+\tikznumberofcurrentchild=\count114
+\tikz@fig@count=\count115
+
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
+\pgfmatrixcurrentrow=\count116
+\pgfmatrixcurrentcolumn=\count117
+\pgf@matrix@numberofcolumns=\count118
+)
+\tikz@expandcount=\count119
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
+hs.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
+)))
+
+LaTeX Warning: You have requested, on input line 17, version
+               `2013/12/13' of package tikz,
+               but only version
+               `2010/10/13 v2.10 (rcs-revision 1.76)'
+               is available.
+
+(/usr/share/texmf/tex/latex/tikz-cd/tikzlibrarycd.code.tex
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatri
+x.code.tex
+File: tikzlibrarymatrix.code.tex 2008/06/18 v2.10 (rcs-revision 1.2)
+)
+! I can't find file `tikzlibraryquotes.code.tex'.
+<argument> ...nput tikzlibrary\pgf@temp .code.tex 
+                                                  \catcode `\@ =\csname tikz...
+l.18 \usetikzlibrary{matrix,quotes,arrows.meta}
+                                               
+(Press Enter to retry, or Control-D to exit)
+Please type another input file name: 
+! I can't find file `tikzlibraryquotes.code.tex'.
+<argument> ...nput tikzlibrary\pgf@temp .code.tex 
+                                                  \catcode `\@ =\csname tikz...
+l.18 \usetikzlibrary{matrix,quotes,arrows.meta}
+                                               
+(Press Enter to retry, or Control-D to exit)
+Please type another input file name: gqbook.tex
+(./gqbook.tex
+
+! LaTeX Error: Two \documentclass or \documentstyle commands.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \documentclass{
+                   amsbook}
+? 
+\c@defn=\count120
+\c@thrm=\count121
+(./gqbook.aux)
+\openout1 = `gqbook.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Try loading font information for U+msa on input line 12.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 12.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+ABD: EveryShipout initializing macros
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count122
+\scratchdimen=\dimen159
+\scratchbox=\box38
+\nofMPsegments=\count123
+\nofMParguments=\count124
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count125
+\MPscratchDim=\dimen160
+\MPnumerator=\count126
+\makeMPintoPDFobject=\count127
+\everyMPtoPDFconversion=\toks36
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+[1
+
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Contents
+(./gqbook.toc [3
+
+
+])
+\tf@toc=\write4
+\openout4 = `gqbook.toc'.
+
+ [4]
+Chapter 1
+(./introductorycomments.tex
+Overfull \vbox (3.62108pt too high) has occurred while \output is active []
+
+
+[5
+
+
+]) (./diracaxioms.tex
+! Undefined control sequence.
+<argument> \D 
+              f
+l.7 \frac{\D f}{\D t}
+                      = \{f,H\}
+? 
+! Undefined control sequence.
+<argument> \D 
+              t
+l.7 \frac{\D f}{\D t}
+                      = \{f,H\}
+? 
+
+LaTeX Warning: Citation `arnold' on page vi undefined on input line 10.
+
+! Undefined control sequence.
+<argument> \D 
+              \psi 
+l.14 i\hbar \frac{\D\psi}{\D t}
+                                = H\psi
+? 
+! Undefined control sequence.
+<argument> \D 
+              t
+l.14 i\hbar \frac{\D\psi}{\D t}
+                                = H\psi
+? 
+! Undefined control sequence.
+<argument> \D 
+              O
+l.18 \frac{\D O}{\D t}
+                       = \frac{i}{\hbar}[H,O]
+? 
+! Undefined control sequence.
+<argument> \D 
+              t
+l.18 \frac{\D O}{\D t}
+                       = \frac{i}{\hbar}[H,O]
+? 
+
+LaTeX Warning: Citation `vonNeumann' on page vi undefined on input line 21.
+
+[6]
+
+LaTeX Warning: Citation `diracthesis' on page vii undefined on input line 24.
+
+
+LaTeX Warning: Citation `diracprinciples' on page vii undefined on input line 2
+4.
+
+
+Overfull \hbox (33.45435pt too wide) in paragraph at lines 29--30
+[]\OT1/cmr/m/it/10 Poisson brack-ets cor-re-spond to com-mu-ta-tors, i.e. $\OMS
+/cmsy/m/n/10 Q\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 f; g\OMS/cmsy
+/m/n/10 g\OT1/cmr/m/n/10 ) =
+ []
+
+! Undefined control sequence.
+l.38 ...sto x^i\psi$ and $\psi \mapsto -i\hbar\del
+                                                  _j\psi$, respectively; we ...
+
+? 
+
+LaTeX Warning: Citation `gotay' on page vii undefined on input line 41.
+
+[7]
+
+LaTeX Warning: Citation `sakurai' on page viii undefined on input line 46.
+
+
+LaTeX Warning: Citation `reedsimon' on page viii undefined on input line 46.
+
+
+LaTeX Warning: Citation `folland' on page viii undefined on input line 46.
+
+
+LaTeX Warning: Citation `weinstein' on page viii undefined on input line 46.
+
+
+LaTeX Warning: Citation `hawkins' on page viii undefined on input line 46.
+
+) [8] [9
+
+
+] [10
+
+
+]
+Chapter 2
+(./introgeomquant.tex
+! Undefined control sequence.
+l.24 .... $\Omega(v,w) = 0 \forall w \in V \imples
+                                                   v = 0$.
+? 
+[11]
+Overfull \hbox (44.20662pt too wide) has occurred while \output is active
+[] \OT1/cmr/m/n/7 2. INTRODUCTION: GEOMETRIC QUANTIZATION, SYMPLECTIC MANIFOLDS
+, AND HILBERT SPACES 
+ []
+
+[12] [13]
+
+! LaTeX Error: Environment theorem undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.171 \begin{theorem}
+                     
+? 
+
+! LaTeX Error: \begin{document} ended by \end{theorem}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.173 \end{theorem}
+                   
+? 
+
+! LaTeX Error: Environment theorem undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.176 \begin{theorem}
+                     
+? 
+
+! LaTeX Error: \begin{document} ended by \end{theorem}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.178 \end{theorem}
+                   
+? 
+
+Overfull \hbox (44.20662pt too wide) has occurred while \output is active
+[] \OT1/cmr/m/n/7 2. INTRODUCTION: GEOMETRIC QUANTIZATION, SYMPLECTIC MANIFOLDS
+, AND HILBERT SPACES 
+ []
+
+[14] [15])
+Overfull \hbox (44.20662pt too wide) has occurred while \output is active
+[] \OT1/cmr/m/n/7 2. INTRODUCTION: GEOMETRIC QUANTIZATION, SYMPLECTIC MANIFOLDS
+, AND HILBERT SPACES 
+ []
+
+[16]
+Chapter 3
+(./prequantization.tex
+
+LaTeX Warning: Citation `kobayashinomizu' on page xvii undefined on input line 
+28.
+
+! Undefined control sequence.
+<recently read> \del 
+                     
+l.42 for each closed $2$-cochain $S$ (i.e. $\del
+                                                 S = 0$) with integer coeffi...
+
+? 
+
+LaTeX Warning: Citation `weil' on page xvii undefined on input line 45.
+
+[17
+
+
+]
+! Extra }, or forgotten $.
+l.47 ...ing to each $f \in C^\infty(M,\mathbf{R})}
+                                                  $:
+? 
+
+LaTeX Warning: Citation `kobayashinomizu' on page xviii undefined on input line
+ 108.
+
+[18]
+
+! LaTeX Error: \mathbb allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.117 ...he hermitian line bundle given by \mathbb
+                                                  {R}^6 \times \mathbb{C}; w...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.117 ...ermitian line bundle given by \mathbb{R}^
+                                                  6 \times \mathbb{C}; we no...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.117 ...e), and the associated connection $\nabla
+                                                  $ is given by %%%%
+? 
+
+Overfull \hbox (466.12865pt too wide) in paragraph at lines 117--118
+\OT1/cmr/m/n/10 mit-ian line bun-dle given by R$[] \OMS/cmsy/m/n/10 ^^B \U/msb/
+m/n/10 C\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 wenotethatthisisuniqueasEuclideanspa
+ceissimplyconnected\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i:e:allloopsinthefundament
+algrouparecontractible\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; andtheassociatedconne
+ction$$\OMS/cmsy/m/n/10 r$
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.131 ...{C}$ and the associated connection \nabla
+                                                   given by
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.135 where $\omega
+                   $ is the pullback given by %%%%%%
+? 
+[19]) [20]
+Chapter 4
+(./polarizations.tex
+! Undefined control sequence.
+l.31 \nabla_X \psi = 0 \forall X \in \Chi
+                                         (P),
+? 
+[21
+
+
+]
+
+LaTeX Warning: Citation `lee' on page xxii undefined on input line 54.
+
+[22]
+Overfull \hbox (1.56224pt too wide) in paragraph at lines 111--113
+ \OT1/cmr/bx/n/10 3.1.Canonical Po-lar-iza-tions.[] \OT1/cmr/m/n/10 A nat-u-ral
+ ques-tion to ask is whether
+ []
+
+) [23] [24
+
+
+]
+Chapter 5
+(./metaplectic.tex [25]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.117 http://en.wikipedia.org/wiki/Metaplectic_
+                                               structure
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.118 
+      
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.118 
+      
+? 
+! Extra }, or forgotten \endgroup.
+\@par ... \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.118 
+      
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.121 http://en.wikipedia.org/wiki/Spin_
+                                        structure
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.122 
+      
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 
+      
+? 
+! Extra }, or forgotten \endgroup.
+\@par ... \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.122 
+      
+? 
+) [26]
+Chapter 6
+(./workedexamples.tex
+
+! LaTeX Error: \mathbb allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.44 \section{\mathbb{S}^2}
+                           
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.44 \section{\mathbb{S}^2}
+                           
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.44 \section{\mathbb{S}^2}
+                           
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.44 \section{\mathbb{S}^2}
+                           
+? 
+! Extra }, or forgotten \endgroup.
+\@sect ...\@svsec }{\interlinepenalty \@M #8\par }
+                                                  \endgroup \csname #1mark\e...
+l.44 \section{\mathbb{S}^2}
+                           
+? 
+) [27
+
+
+] [28
+
+
+] [29] [30
+
+
+]
+Chapter 7
+(./structuregeomquant.tex) [31] [32
+
+
+]
+Chapter 8
+(./nogothms.tex) [33] [34
+
+
+]
+Chapter 9
+(./sympgroupoids.tex
+
+LaTeX Warning: Citation `weinstein87' on page xxxv undefined on input line 3.
+
+
+LaTeX Warning: Citation `SOMETHING HERE' on page xxxv undefined on input line 3
+.
+
+
+Overfull \hbox (7.3711pt too wide) in paragraph at lines 27--28
+[]\OT1/cmr/m/it/10 Fundamental Groupoids. \OT1/cmr/m/n/10 Re-call that path-con
+nected topo-log-i-cal spaces
+ []
+
+[35]
+
+LaTeX Warning: Citation `mackenzie' on page xxxvi undefined on input line 81.
+
+[36]
+
+LaTeX Warning: Citation `SOMETHING HERE' on page xxxvii undefined on input line
+ 106.
+
+
+LaTeX Warning: Citation `weinstein87' on page xxxvii undefined on input line 10
+8.
+
+
+LaTeX Warning: Citation `SOMETHING HERE' on page xxxvii undefined on input line
+ 108.
+
+) [37] [38
+
+
+]
+Chapter 10
+(./dualpairs.tex) [39] [40
+
+
+]
+Chapter 11
+
+! LaTeX Error: File `gsbconejcture.tex' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+[41] [42
+
+
+]
+Chapter 12
+(./quantfunctor.tex) [43] [44
+
+
+] [45] [46
+
+
+] [47]
+
+! LaTeX Error: \begin{itemize} on input line 51 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68 \end{document}
+                   
+? 
+(./gqbook.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) ) ) )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 51 (\begingroup)
+### bottom level
+(\end occurred when \ifx on line 18 was incomplete)
+(\end occurred when \ifx on line 18 was incomplete)
+(\end occurred when \ifx on line 18 was incomplete)
+(\end occurred when \ifx on line 18 was incomplete)
+(\end occurred when \ifx on line 18 was incomplete)
+(\end occurred when \ifx on line 18 was incomplete)
+(\end occurred when \ifx on line 18 was incomplete)
+(\end occurred when \ifx on line 18 was incomplete)
+(\end occurred when \ifx on line 18 was incomplete) 
+Here is how much of TeX's memory you used:
+ 11210 strings out of 495028
+ 202441 string characters out of 6181497
+ 247967 words of memory out of 5000000
+ 13981 multiletter control sequences out of 15000+600000
+ 12564 words of font info for 47 fonts, out of 8000000 for 9000
+ 175 hyphenation exceptions out of 8191
+ 62i,8n,57p,1458b,326s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on gqbook.pdf (47 pages, 369557 bytes).
+PDF statistics:
+ 264 PDF objects out of 1000 (max. 8388607)
+ 187 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+

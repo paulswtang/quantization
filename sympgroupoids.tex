@@ -1,0 +1,122 @@
+In this chapter we will present the basic details of \emph{symplectic groupoids}, a mutual category-theoretic generalization of symplectic and Poisson manifolds into the groupoid setting; if groups naturally arise out of symmetry, groupoids naturally arise out of ``internal'' symmetries with respect to a bundle-type structure, i.e. geometric objects with algebro-geometric objects attached at each point. We proceed in a gradual build-up, first defining groupoids and then making our way through Lie groupoids/algebroids and then encountering symplectic groupoids.
+
+The first definition of a symplectic groupoid comes frome Weinstein, ``Symplectic Groupoids and Poisson Manifolds'' \cite{weinstein87} as well as Karasev \cite{} and Zakrzewski \cite{}; all were motivated by the problem of understanding quantization. The notion of groupoids as categories generalizing groups came earlier \cite{SOMETHING HERE}. A good reference for this topic is \cite{}. %see http://ncatlab.org/nlab/show/symplectic+groupoid#references
+
+\section{Groupoids}
+There are two equivalent definitions of the notion of a groupoid --- one is a traditional set-theoretic definition and the other defines them as a certain type of category. First, the traditional definition:
+
+\begin{defn}
+Let $\Gamma$ be a set with subset $\Gamma_0$ of \emph{identity elements} along with projections $\alpha, \beta: \Gamma \to \Gamma_0$. Let there be a multiplication operation $(x,y) \mapsto x \cdot y$ on the set
+$$
+\{(x,y) \in \Gamma \times \Gamma : \beta(x) = \alpha(y)\},
+$$
+and let there be an inverse operation $(\cdot)^{-1}: \Gamma \to \Gamma$ such that the product and the inverse satisfy the usual group axioms on their domain.
+\end{defn}
+Essentially, a groupoid is defined as a set with a partially defined product operation --- we can only multiply two elements if they map to the same identity. (Note also that we can enforce commutativity when we specify $\alpha = \beta$.)
+
+The category-theoretic definition is much easier to state:
+\begin{defn}
+A \emph{groupoid} is a category in which all morphisms are invertible.
+\end{defn}
+The proof of equivalence (with the caveat that the category is \emph{small}) is not difficult, but is tiresome and mainly syntactic manipulation. One may consult any exposition of groupoids for the proof (in fact, even Wikipedia suffices).
+
+We have the following examples of groupoids occurring in mathematics:
+\begin{itemize}
+\item Every group may be thought of as a single-object category with invertible morphisms; hence the notion of groupoid is a proper generalization of the notion of a group.
+
+\item \emph{Fundamental Groupoids.} Recall that path-connected topological spaces have fundamental groups that are invariant with respect to choices of base points; the fundamental groupoid $\pi_1(X)$ for a general topological space $X$, then, is defined as the category with points of $X$ as objects and paths (up to homotopy equivalence) as arrows. Concatenation of paths is used as composition of arrows. The standard fundamental group $\pi_1(X,x)$ at a point $x \in X$ can then be seen as the vertex group (at $x$) of the fundamental groupoid.
+
+\item \emph{Action Groupoids.} Suppose we have a group $G$ acting on a set $S$; then the associated action groupoid $S//G$ is given by the category with elements of $S$ as objects and group elements $g \cdot s_1 = s_2$ as arrows from $s_1$ to $s_2$. Compositions are done in the natural way, i.e. by applying one group element after another using the action. We note that any two objects $s_1,s_2$ in the same orbit are isomorphic (in the category-theoretic sense).
+\end{itemize}
+
+\section{Lie Groupoids and Lie Algebroids}
+Lie groupoids may be thought of as groupoids in the setting of smooth manifolds, or as ``many-object'' versions of Lie groups (in the same way that groupoids are ``many-object'' versions of groups). More specifically,
+
+\begin{defn}
+A \emph{Lie groupoid} is a groupoid in which the inclusion maps $\alpha, \beta : \Gamma \to \Gamma_0$ are submersions, the multiplication and inversion operations are smooth, and $\Gamma, \Gamma_0$ are both smooth manifolds.
+
+Equivalently, a Lie groupoid is a groupoid internal to the category of smooth manifolds; in other words, a Lie groupoid $\Gamma$ over a base manifold $\Gamma_0$ has objects as elements of $\Gamma_0$, hom-sets $hom_\Gamma(p,q)$ a manifold for $p,q \in \Gamma_0$, with all arrows invertible and source/target maps $\alpha,\beta$ both submersive.
+
+We have the following commutative diagram:
+
+%INSERT COMM DIAGRAM #1.
+\end{defn}
+
+We also have the notion of Lie algebroid:
+\begin{defn}
+A \emph{Lie algebroid} is a vector bundle $\pi: E \to M$ along with a Lie bracket $[\cdot,\cdot]$ on the space of sections of $E$ and an \emph{anchor}, i.e. a vector bundle morphism $E \to TM$ from the bundle to the tangent bundle of the base manifold. %MAKE MORE INTUITIVE
+\end{defn}
+
+The functorial association of a Lie algebra to Lie groups extends to a functorial association of a Lie algebroid to a Lie groupoid:
+
+\begin{thrm} %lie algebroid associated to a lie groupoid:
+Let $G \rightrightarrows M$ be a Lie groupoid (with overall manifold $G$, base manifold $M$, and source/target maps $s,t: G \to M$). Then there exists a unique Lie algebroid $A \to M$ given by the following:
+\begin{itemize}
+\item The bundle $A$ is given by the pullback of $T_s : T_sG \to TM$ across the embedding $\iota: M \to G$; %%%%%CLARIFY
+hence we have the commutative diagram
+%INSERT COMM DIAGRAM #5
+
+\item The bracket $[\cdot,\cdot]$ is given by %%%%%%%%%%SEE MACKENZIE, LIE GROUPOIDS AND LIE ALGEBROIDS, PAGE 122
+
+\item The anchor map is given by the differential $ds$ of the source map $s$.
+
+\end{itemize}
+
+The association is functorial and the following diagram is commutative:
+
+%INSERT COMM DIAGRAM #2.
+\end{thrm}
+
+The three theorems of Lie (see appendix) generalize to the theory of Lie groupoids and algebroids with rather moderate success; we present them side by side here:
+\begin{thrm}
+%extensions of lie's 3 thrms to the *-oid setting
+Recall that we have a functor from the category of Lie groups to Lie algebras
+$$
+\mathrm{Lie}: \mathrm{LieGrp} \to \mathrm{LieAlg}
+$$
+given by %%%%%%%%%
+
+Further, we have a \emph{differentiation} functor
+$$
+\mathrm{diff}: \mathrm{LieGroupoid} \to \mathrm{LieAlgebroid}
+$$
+given by %%%%%%%%%
+\begin{itemize}
+\item The first Lie theorem is a local one; it states that %%%%%%%%%%%%%%%%
+
+\item The second Lie theorem states that for $G,H$ Lie groups with $\mathfrak{g} = Lie(G), \mathfrak{h} = Lie(H)$ and $\pi_1(G) = 0$, we have that a Lie algebra morphism $f: \mathfrak{g} \to \mathfrak{h}$ has a lift $F: G \to H$ such that $Lie(F) = f$. This generalizes in a straightforward manner to groupoids and algebroids; we call a Lie groupoid \emph{(source-)simply connected} if the fibers of the source map are simply connected for all $x \in \Gamma_0$ the base manifold. Then the corresponding statement is true when we use this definition of simple-connectedness on Lie groupoids.
+
+\item The third Lie theorem\footnote{Also known as the \emph{Cartan-Lie} theorem, for Elie Cartan.}, which states that the $Lie$ functor is all finite-dimensional real Lie algebras $\mathfrak{g}$ are the Lie algebra of some real Lie group $G$ (i.e. $\exists G$ such that $\mathfrak{g} \cong Lie(G)$), fails to generalize to the *-oid setting in a spectacular way --- integrating a Lie algebroid often fails to give a manifold as it may introduce singularities %%%%%%EXPLAIN.
+
+\end{itemize}
+\end{thrm}
+The spectacular failure of Lie's third theorem in the algebroid setting hints at the fact that the structure theory of Lie groupoids/algebroids need some fine tuning; one idea is to ``stackify'' the structures by considering ``stacky'' groupoids, as proposed by Tseng-Zhu in ``Integrating Lie Algebroids via Stacks'' \cite{tsengzhu}.
+
+We will not proceed further with the discussion of the theory of Lie groupoids. A detailed introduction to Lie groupoids and algebroids may be found in Mackenzie, ``General Theory of Lie Groupoids and Lie Algebroids'' \cite{mackenzie}.
+\section{Symplectic Groupoids}
+Symplectic groupoids are Lie groupoids with a symplectic structure on the manifold of morphisms such that the internal base manifold is Poisson and the groupoid product respects the symplectic form (in a suitable sense).
+
+More formally, we have the following definition:
+\begin{defn}
+A \emph{symplectic groupoid} is a Lie groupoid $\Gamma \rightrightarrows M$ with $\Gamma, M$ both smooth manifolds and source/target maps $s,t: \Gamma \to M$ submersive; further, there is a symplectic structure on $\Gamma$ given by a form $\omega$ such that the submanifold
+$$
+L = \{(x,y,z) | xy = z \} \subset (\Gamma,-\omega) \times (\Gamma,-\omega) \times (\Gamma,\omega)
+$$
+is Lagrangian.
+
+In other words, a Lie groupoid is \emph{symplectic} if %ALTERNATE DEFINITION OF SYMPLECTIC GROUPOID
+\end{defn}
+
+%results about symplectic groupoids:
+The notion of a symplectic groupoid is remarkable for a few reasons. Recalling that symplectic manifolds may be viewed as Poisson manifolds (by noting that the bracket given by the symplectic form\footnote{} defines a natural Poisson structure), we note that %%%%%
+\begin{thrm}
+Let $\Gamma \rightrightarrow M$ be a symplectic manifold. Then %MANIFOLD OF IDENTITY ELEMENTS IS A POISSON MANIFOLD; WEINSTEIN87
+\end{thrm}
+
+Further, we have a functorial correspondence between symplectic groupoids and Poisson manifolds, in the style of the Lie group-Lie algebra correspondence:
+\begin{thrm}
+Consider the categories $\mathrm{SympGrpd}$ and $\mathrm{PoisMfd}$ of symplectic groupoids and Poisson manifolds, respectively. Then there is a functor %FUNCTORIAL CORRESP. BTWN SYMP. GRPDS. & POISSON MFDS., EXTENDS LIE GRPS. & LIE ALGS. FUNCTOR; INSERT DIAGRAM 3
+\end{thrm}
+The proof of this statement is outside the scope of this writeup; a presentation may be found in \cite{SOMETHING HERE}. %WEINSTEIN87
+
+Symplectic groupoids were introduced in \cite{weinstein87}; further references and introductions may be found in \cite{SOMETHING HERE}.

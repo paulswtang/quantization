@@ -1,0 +1,60 @@
+\contentsline {chapter}{\tocchapter {Chapter}{1}{Preface}}{v}
+\contentsline {section}{\tocsection {}{1}{Comments}}{v}
+\contentsline {section}{\tocsection {}{2}{The Dirac Axioms for Quantization}}{vi}
+\contentsline {part}{Part\ 1. \enspace \noindent Geometric Quantization}{ix}
+\contentsline {chapter}{\tocchapter {Chapter}{2}{Introduction: Geometric Quantization, Symplectic Manifolds, and Hilbert Spaces}}{xi}
+\contentsline {section}{\tocsection {}{1}{Symplectic Manifolds and Classical Mechanics}}{xi}
+\contentsline {subsection}{\tocsubsection {}{1.1}{Symplectic Vector Spaces}}{xi}
+\contentsline {subsection}{\tocsubsection {}{1.2}{Symplectic Manifolds}}{xii}
+\contentsline {section}{\tocsection {}{2}{Hilbert Spaces and Quantum Mechanics}}{xiv}
+\contentsline {subsection}{\tocsubsection {}{2.1}{Hilbert Spaces}}{xiv}
+\contentsline {subsection}{\tocsubsection {}{2.2}{Symmetries on a Hilbert Space}}{xiv}
+\contentsline {section}{\tocsection {}{3}{Overview of the Geometric Quantization Process}}{xv}
+\contentsline {chapter}{\tocchapter {Chapter}{3}{Pre-quantization}}{xvii}
+\contentsline {section}{\tocsection {}{1}{Definition and Basic Results}}{xvii}
+\contentsline {section}{\tocsection {}{2}{Examples}}{xviii}
+\contentsline {section}{\tocsection {}{3}{Structural Properties}}{xix}
+\contentsline {chapter}{\tocchapter {Chapter}{4}{Polarizations}}{xxi}
+\contentsline {section}{\tocsection {}{1}{Definition and Basic Results}}{xxi}
+\contentsline {subsection}{\tocsubsection {}{1.1}{Justification and Intuition.}}{xxii}
+\contentsline {section}{\tocsection {}{2}{Examples: Real and K\"{a}hler Polarizations.}}{xxii}
+\contentsline {subsection}{\tocsubsection {}{2.1}{Schr\"{o}dinger and Momentum Representations.}}{xxii}
+\contentsline {subsection}{\tocsubsection {}{2.2}{Bargmann-Fock Representation.}}{xxiii}
+\contentsline {subsection}{\tocsubsection {}{2.3}{Bargmann Representation of the Harmonic Oscillator.}}{xxiii}
+\contentsline {section}{\tocsection {}{3}{Remarks on Polarizations and the Polarized Hilbert Space.}}{xxiii}
+\contentsline {subsection}{\tocsubsection {}{3.1}{Canonical Polarizations}}{xxiii}
+\contentsline {subsection}{\tocsubsection {}{3.2}{BKS Kernels}}{xxiii}
+\contentsline {chapter}{\tocchapter {Chapter}{5}{Metaplectic Correction}}{xxv}
+\contentsline {section}{\tocsection {}{1}{Integrability of States}}{xxv}
+\contentsline {section}{\tocsection {}{2}{Metaplectic Structures}}{xxv}
+\contentsline {subsection}{\tocsubsection {}{2.1}{Definition}}{xxv}
+\contentsline {subsection}{\tocsubsection {}{2.2}{Properties}}{xxvi}
+\contentsline {section}{\tocsection {}{3}{Induced Hilbert Space from Metaplectic Structure}}{xxvi}
+\contentsline {section}{\tocsection {}{4}{Examples}}{xxvi}
+\contentsline {subsection}{\tocsubsection {}{4.1}{Phase Spaces}}{xxvi}
+\contentsline {chapter}{\tocchapter {Chapter}{6}{Worked Examples of Geometric Quantization}}{xxvii}
+\contentsline {section}{\tocsection {}{1}{Harmonic Oscillator}}{xxvii}
+\contentsline {subsection}{\tocsubsection {}{1.1}{Prequantization}}{xxvii}
+\contentsline {subsection}{\tocsubsection {}{1.2}{Polarizations}}{xxvii}
+\contentsline {subsection}{\tocsubsection {}{1.3}{Correction}}{xxvii}
+\contentsline {section}{\tocsection {}{2}{Cotangent Bundles}}{xxvii}
+\contentsline {subsection}{\tocsubsection {}{2.1}{Prequantization}}{xxvii}
+\contentsline {subsection}{\tocsubsection {}{2.2}{Polarizations}}{xxvii}
+\contentsline {subsection}{\tocsubsection {}{2.3}{Correction}}{xxvii}
+\contentsline {section}{\tocsection {}{3}{\mathbb {S}^2}}{xxvii}
+\contentsline {subsection}{\tocsubsection {}{3.1}{Prequantization}}{xxvii}
+\contentsline {subsection}{\tocsubsection {}{3.2}{Polarizations}}{xxvii}
+\contentsline {subsection}{\tocsubsection {}{3.3}{Correction}}{xxvii}
+\contentsline {part}{Part\ 2. \enspace \noindent Selected Results in the Theory of Quantization}{xxix}
+\contentsline {chapter}{\tocchapter {Chapter}{7}{Structural Properties and Further Results}}{xxxi}
+\contentsline {section}{\tocsection {}{1}{Obstructions to Geometric Quantization}}{xxxi}
+\contentsline {chapter}{\tocchapter {Chapter}{8}{No-Go Theorems}}{xxxiii}
+\contentsline {chapter}{\tocchapter {Chapter}{9}{Symplectic Groupoids}}{xxxv}
+\contentsline {section}{\tocsection {}{1}{Groupoids}}{xxxv}
+\contentsline {section}{\tocsection {}{2}{Lie Groupoids and Lie Algebroids}}{xxxvi}
+\contentsline {section}{\tocsection {}{3}{Symplectic Groupoids}}{xxxvii}
+\contentsline {chapter}{\tocchapter {Chapter}{10}{Weinstein Dual Pairs}}{xxxix}
+\contentsline {chapter}{\tocchapter {Chapter}{11}{The Guillemin-Sternberg-Bott Conjecture}}{xli}
+\contentsline {chapter}{\tocchapter {Chapter}{12}{Towards a Quantization Functor}}{xliii}
+\contentsline {part}{Part\ 3. \enspace \noindent Deformation Quantization}{xlv}
+\contentsline {part}{Part\ 4. \enspace \noindent Appendix}{xlvii}
