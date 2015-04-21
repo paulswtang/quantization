@@ -1,6 +1,74 @@
-Suppose we have a symplectic manifold $(M,\omega)$ along with a group of symplectomorphisms $G$ acting on $M$. Intuitively, we may think of this group of symplectomorphisms as a group of \emph{symmetries} on the phase space; we can, then, perform a \emph{symplectic reduction} on the phase space with respect to $G$ the group of symmetries, in order to obtain a reduced phase space $M // G$.
+Suppose we have a symplectic manifold $(M,\omega)$ along with a group of symplectomorphisms $G$ acting on $M$. Intuitively, we may think of this group of symplectomorphisms as a group of symmetries on the phase space; we can, then, consider the reduced phase space $\mathcal{R}_G(M) = M // G$ (following the reduction process of Marsden-Weinstein or otherwise).
 
-The \emph{Guillemin-Sternberg-Bott} conjecture asks whether this process of taking a symplectic reduction commutes with the geometric quantization programme in the following manner:
+On the other hand --- assuming $(M,\omega)$ satisfies a prequantizability condition --- we may also consider the application of a quantization procedure $\mathcal{Q}$ on $M$, giving us a quantized Hilbert space $H^M$.
 
-%%%%%RIGOROUS DEFINITION OF GSB CONJECTURE HERE
+The \emph{Guillemin-Sternberg-Bott} conjecture asks whether this process of taking a symplectic reduction commutes with the geometric quantization programme --- colloquially stated, whether or not we have that
+$$
+[\mathcal{Q}, \mathcal{R}] = 0.
+$$
+
+Note that the above statement is informal; to put the Guillemin-Sternberg conjecture on solid footing, the following ambiguities must be resolved:
+
+\begin{itemize}
+\item \emph{Domain}: what is the class of manifolds that we consider in the conjecture? The smallest class of symplectic manifolds for which the statement of the conjecture makes sense is the class of K\"{a}hler manifolds; one may enlarge this to the class of symplectic manifolds satisfying the prequantization condition. It may also be possible to extend the conjecture to symplectic dual pairs. Another aspect involves the class of Lie groups; certainly if we assume compactness and other topological restrictions on $G$, the reduction process has nice properties. Is it possible to generalize the conjecture to allow for actions of non-compact Lie groups or generalized group(-oid) actions?
+
+\item \emph{Procedures}: the ``standard'' geometric quantization procedure applies to the subclass of symplectic manifolds that satisfy a certain cohomological condition (prequantizability); however even in relatively well-behaved cases, ambiguities creep into the quantization process itself --- e.g. in polarization choice. The notion of quantization must be fixed (and possibly generalized) before the Guillemin-Sternberg conjecture can be placed on solid footing.
+
+\item \emph{Hilbert Space Reduction}: if we wish to determine whether or not the order in which we apply the reduction and quantization procedures affects the result, we must also establish a reduction procedure on the quantized objects, i.e. fix a suitable notion of Hilbert space reduction. For which notions of Hilbert space reduction does the conjecture hold, i.e. what is the ``correct'' notion of a reduced Hilbert space corresponding to a reduced symplectic manifold?
+
+\end{itemize}
+
+In the rest of these notes, we discuss various interpretations and proposed resolutions for the above questions, as well as provide a brief survey of partial results and generalizations of the conjecture.
+
+
+
+
+
+
+
+
+
+
+\section{General Statement}
+\subsection{Weak Conjecture}
+%%%
+\subsection{Stronger Variants of the Conjecture}
+%%%
+
+
+
+
+
+
+
+
+
+
+\section{Partial Results}
+Though variants of the GSB conjecture remain open, partial results exist for in some cases. Most notably, %%% list results in general manner
+
+A broad survey of existing results follows.
+
+\subsection{Compact Groups}
+%%landsman
+
+\subsection{Non-Compact Groups}
+%%landsman
+
+
+
+
+
+
+
+
+
+
+\section{Historical Notes and References}:
 % does GQ commute with symplectic reduction?	http://ncatlab.org/nlab/show/Guillemin-Sternberg+geometric+quantization+conjecture
+% Landsman's survey 
+
+% Proofs:
+% E. Meinrenken, On Riemann–Roch formulas for multiplicities, Journal of the A.M.S. 9 (1996), 373–389.
+% E. Meinrenken, Symplectic surgery and the Spinc–Dirac operator, Adv. Math. 134 (1998), no. 2, 240–277.
+% Y. Tian and W. Zhang, An analytic proof of the geometric quantization conjecture of Guillemin–Sternberg, Invent. Math. 132, 229–259 (1998)

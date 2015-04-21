@@ -1,16 +1,55 @@
-As we have seen in the previous chapters, there are various issues that prevent the geometric quantization programme from having sufficiently nice algebraic properties; among them, the Bohr-Sommerfeld condition prevents all symplectic manifolds from being quantizable, and the choice of polarization may be arbitrary and fail to be canonical in any sense.
+As noted in previous chapters, there are various issues preventing the geometric quantization programme from having sufficiently nice algebraic properties; among them, the Bohr-Sommerfeld condition prevents all symplectic manifolds from being quantizable, and the choice of polarization may be arbitrary and fail to be canonical in any sense.
 
-To rectify this situation, Weinstein (in \cite{weinsteindualpairs}) proposed that a category of \emph{dual pairs} be used as the classical setting for quantization. In this chapter, we will present the basic definitions and constructions of the category.
+To rectify this situation, Weinstein (in \cite{weinsteindualpairs}) proposed that a category of \emph{dual pairs} be used as the classical setting for quantization. In this chapter, we will present the basic definitions and constructions of symplectic dual pairs, their properties and morphisms, and their context in the theory of quantization.
 
-\section{Objects}
+\section{Symplectic and Poisson Manifolds}
 
-\section{Morphisms}
+%interplay btwn symplectic structures and poisson structures
 
-\section{Categorical Properties}
+\section{Dual Pairs}
+
+\subsection{Definition}
+A \emph{dual pair} (or \emph{symplectic} dual pair, sometimes also known as a \emph{Weinstein} dual pair) is a bimodule over a pair of Poisson manifolds; more accurately, it is a pair of Poisson manifolds mediated by a symplectic manifold through (anti-)Poisson maps:
+
+\begin{defn}
+Let $P,Q$ be a pair of Poisson manifolds. A \emph{dual pair} over $P,Q$ is a symplectic manifold $M$ along with maps
+$$
+Q \leftarrow^q M \to^p P
+$$
+such that $q: M \to Q$ is a Poisson map and $p: M \to P$ is anti-Poisson.
+
+Two $Q,P$ dual pairs $Q \leftarrow^{q_i} M_i \to^{p_i} P$ ($i = 1,2$) are said to be \emph{isomorphic} if there exists a symplectomorphism
+$$
+\phi: M_1 \to M_2
+$$
+such that
+$$
+q_2\phi = q_1 \mbox{ and } p_2\phi = p_1,
+$$
+i.e. if the following diagram commutes:
+$$
+%INSERT DIAGRAM HERE!!!!!!!!!!!!!!!
+$$
+\end{defn}
+
+\subsection{Examples}
+\begin{enumerate}
+\item \emph{Lagrangian Correspondences.} Let $P,Q$ be symplectic manifolds (and hence also Poisson manifolds with the Poisson bracket given by the symplectic form). %FINISH
+\item \emph{Something....}
+\end{enumerate}
+
+\section{Properties}
+% references:
+% http://ncatlab.org/nlab/show/symplectic+dual+pair
+% page 53 and onwards of "geometric models for noncommutative algebras"
+
+% talk about morita equivalence, representation equivalence, etc
 
 \section{Context in Quantization}
 
-
-
-
 %remark on weinstein's claim that canonical relations should be more important than symplectomorphisms: http://arxiv.org/abs/0911.4133 and also http://ncatlab.org/nlab/show/Weinstein+symplectic+category
+
+%landsman's programme for KK-quantization
+
+\section{Historical Notes}
+Symplectic dual pairs were introduced independently by Weinstein in \cite{weinsteindualpairs} and by Karasev \cite{karasev89}; their usage in further developing the K-theoretic quantization procedure proposed by Bott (see \cite{bottquant}) was introduced by Landsman in \cite{landsmankk}. %CHECK
