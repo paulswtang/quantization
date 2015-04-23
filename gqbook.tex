@@ -1,4 +1,4 @@
-\documentclass{amsbook}
+\documentclass{amsbook} %consider tufte-handout or tufte-book
 \title{Quantization: Examples and Structures}
 \author{Paul Tang}
 \usepackage{amsthm}
@@ -6,6 +6,13 @@
 \usepackage{tikz-cd}
 \newtheorem{defn}{Definition}
 \newtheorem{thrm}{Theorem}
+%define "example" environment:
+\theoremstyle{definition}
+\newtheorem{exmp}{Example}[section]
+%define "intuition" environment:
+\theoremstyle{definition}
+\newtheorem{sketch}{Proof Sketch}[section]
+%define shorthand for exterior derivative:
 \def\d{\mathrm{d}}
 
 
@@ -38,23 +45,24 @@
 \input{workedexamples}
 
 \part{Selected Results in the Theory of Quantization}
+
 \chapter{Structural Properties and Further Results}
-\input{structuregeomquant}	%%%%%%%%%FINISH
+\input{structuregeomquant}
 
 \chapter{No-Go Theorems}
-\input{nogothms}	%%%%%%%%%FINISH
+\input{nogothms}
 
 \chapter{Symplectic Groupoids}
 \input{sympgroupoids}
 
-\chapter{Weinstein Dual Pairs}
-\input{dualpairs}	%%%%%%%%%FINISH
+\chapter{Symplectic Dual Pairs}
+\input{dualpairs}
 
 \chapter{The Guillemin-Sternberg-Bott Conjecture}
-\input{gsbconjecture}	%%%%%%%%%FINISH
+\input{gsbconjecture}
 
 \chapter{Towards a Quantization Functor}
-\input{quantfunctor}	%%%%%%%%%FINISH
+\input{quantfunctor}
 
 
 
