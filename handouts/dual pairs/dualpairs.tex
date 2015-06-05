@@ -1,40 +1,80 @@
-As noted in previous chapters, there are various issues preventing the geometric quantization programme from having sufficiently nice algebraic properties; among them, the Bohr-Sommerfeld condition prevents all symplectic manifolds from being quantizable, and the choice of polarization may be arbitrary and fail to be canonical in any sense.
+%-----PREAMBLE-----
+\documentclass{tufte-handout}
+
+%use tikz-cd for comm diagrams:
+\usepackage{tikz-cd}
+%use amsthm for thm-like environments:
+\usepackage{amsthm}
+%use thmtools to style new thm envns:
+\usepackage{thmtools}
+
+%define example environment
+\newtheorem{example}{Example}
+
+%define proof-sketch environment
+\renewcommand{\qedsymbol}{$\triangle$} %use triangle instead of qed square
+
+%define definition environment
+\newtheorem{defn}{Definition}
+
+%define shorthand for exterior derivative:
+\def\d{\mathrm{d}}
+
+\title{Symplectic Dual Pairs}
+
+
+%-----DOCUMENT BODY-----
+\begin{document}
+
+\newthought{As noted in previous chapters}, there are various issues preventing the geometric quantization programme from having sufficiently nice algebraic properties; among them, the Bohr-Sommerfeld condition prevents all symplectic manifolds from being quantizable, and the choice of polarization may be arbitrary and fail to be canonical in any sense.
 
 To rectify this situation, Weinstein (in \cite{weinsteindualpairs}) proposed that a category of \emph{dual pairs} be used as the classical setting for quantization. In this chapter, we will present the basic definitions and constructions of symplectic dual pairs, their properties and morphisms, and their context in the theory of quantization.
 
 
 
 \section{Symplectic and Poisson Manifolds}
+
 \subsection{Definitions and Examples}
 To start, we review the definitions of symplectic and Poisson manifolds.
 
 \begin{defn}[Symplectic Manifold]
-Let $M$ be a smooth manifold of dimension $n$. A differential 2-form $\omega \in \Omega^2(M)$ defines a \emph{symplectic structure} on $M$ when all of the following hold:
-%%%
-
-A manifold and 2-form pairing $(M,\omega)$ is called a \emph{symplectic manifold} if $\omega$ defines a symplectic structure on $M$.
+A smooth manifold and 2-form pairing $(M,\omega)$ is called a \emph{symplectic manifold} if $\omega$ is closed and non-degenerate, i.e. $\d\omega = 0$ and
+$$
+\forall p \in M, \exists X \in T_pM \mbox{ s.t. } \omega(X,Y) = 0 \forall Y \in T_pM \implies X = 0.
+$$
 \end{defn}
 Symplectic manifolds are the ``natural'' setting for classical mechanics, in the sense that %%%
 
 Some examples:
-\begin{expl}
+\begin{example}
 
-\end{expl}
+\end{example}
 
 On the other hand, we also have Poisson manifolds, which are smooth manifolds carrying an algebraic structure on its space of (smooth) functions:
 \begin{defn}[Poisson Manifold]
 A smooth manifold $P$ is said to be a \emph{Poisson manifold} if %%%
 \end{defn}
-Poisson manifolds are %%%
+Poisson manifolds are inspired by%%%
 
-Again, a few examples provides a bit of illustration:
-\begin{expl}
+Again, a few examples provide a bit of illustration:
+\begin{example}
 
-\end{expl}
+\end{example}
 
-\subsection{}
+\subsection{Relationships Between Symplectic and Poisson Structures}
+There are a few obvious facts connecting symplectic and Poisson structures; for instance:
+\begin{itemize}
+\item Every symplectic manifold is a Poisson manifold\footnote{Via the bracket $[f,g] = \omega(X_f,X_g)$}.
+
+\item 
+
+\end{itemize}
+
+However some non-obvious results will be needed in the upcoming development of dual pairs:
 %interplay btwn symplectic structures and poisson structures
-%%%
+% > symplectic leaves of pois mfds: http://en.wikipedia.org/wiki/Poisson_manifold#Symplectic_Leaves
+% > lagrangian correspondences of sympl. mfds (viewed as pois mfds):
+%   http://en.wikipedia.org/wiki/Symplectic_manifold#Lagrangian_mapping
 
 
 
@@ -61,9 +101,11 @@ $$
 q_2\phi = q_1 \mbox{ and } p_2\phi = p_1,
 $$
 i.e. if the following diagram commutes:
-$$
-%INSERT DIAGRAM HERE!!!!!!!!!!!!!!!
-$$
+\begin{tikzcd}
+  	& M_1 \arrow{dl}{q_1} \arrow{dd}{\phi} \arrow{dr}{p_1} & \\
+Q 	&									   & P \\
+    & M_2 \arrow{ul}{q_2} \arrow{ur}{p_2}
+\end{tikzcd}
 \end{defn}
 
 \subsection{Examples}
@@ -91,3 +133,5 @@ $$
 
 \section{Historical Notes}
 Symplectic dual pairs were introduced independently by Weinstein in \cite{weinsteindualpairs} and by Karasev \cite{karasev89}; their usage in further developing the K-theoretic quantization procedure proposed by Bott (see \cite{bottquant}) was introduced by Landsman in \cite{landsmankk}. %CHECK
+
+\end{document}

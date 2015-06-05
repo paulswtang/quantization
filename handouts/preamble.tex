@@ -1,0 +1,21 @@
+%-----PREAMBLE-----
+\documentclass{tufte-handout}
+
+%use tikz-cd for comm diagrams:
+\usepackage{tikz-cd}
+%use amsthm for thm-like environments:
+\usepackage{amsthm}
+%use thmtools to style new thm envns:
+\usepackage{thmtools}
+
+%define example environment
+\newtheorem{example}{Example}
+
+%define proof-sketch environment
+\renewcommand{\qedsymbol}{$\triangle$} %use triangle instead of qed square
+
+%define definition environment
+\newtheorem{defn}{Definition}
+
+%define shorthand for exterior derivative:
+\def\d{\mathrm{d}}

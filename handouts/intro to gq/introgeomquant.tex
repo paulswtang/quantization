@@ -1,0 +1,279 @@
+In this chapter, we will review some basic and relevant results on the mathematical background behind the geometric quantization process --- mainly, the categories $\mathbf{Symp}$ of symplectic manifolds and symplectomorphisms/canonical relations, and $\mathbf{Hilb}$ of Hilbert spaces and unitary maps --- and outline the three main steps of the process:
+\begin{itemize}
+\item \emph{Pre-quantization}, where we construct an associated \emph{pre-quantized Hilbert space} out of a given symplectic manifold by considering the space of sections of the associated complex line bundle; this process is a natural one, but unfortunately the resulting Hilbert space still contains some rather un-physical properties. This leads to the next step of the process, polarization.
+\item \emph{Polarization}, where we ``cut down'' the pre-quantum Hilbert space by half (using a Lagrangian distribution on the symplectic manifold) in order to enforce a physicality condition on the states of the quantum system, i.e. make sure that states rely only on half of the dimensions of the manifold.
+\item Finally, we present a \emph{metaplectic correction}, where we modify the space of states by tensoring it with half-forms to ensure square-integrability on the states and to make sure that the quantized operators have spectra matching physical intuition.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+\section{Symplectic Manifolds and Classical Mechanics}
+In this section we define symplectic manifolds and maps between them (symplectomorphisms), along with providing some structural information on \textbf{Symp} the category of symplectic manifolds and some motivation for their ubiquity in classical mechanics (via Hamiltonian mechanics).
+
+\subsection{Symplectic Vector Spaces}
+%symplectic vector space (V,\Omega) definition
+We first consider the flat case, i.e. a symplectic vector space\footnote{A symplectic vector space is analogous to an inner product space, albeit with an important caveat --- instead of a symmetric bilinear form, we have an \emph{alternating} form, and the intuition is not that the symplectic form measures volume in some sense but rather that it measures ``symplectic'' volume. To fully explain this is outside the scope of the current conversation, though an important theorem to keep in mind for the general manifold case is the celebrated \emph{non-squeezing theorem} of Gromov; essentially, there is no symplectomorphism from a sphere to a cylinder with radius smaller than that of the sphere.}, in which we have the following definition:
+\begin{defn}
+A vector space $V$ over a field $F$ along with a bilinear map $\Omega: V \times V \to F$ is said to be \emph{symplectic} if the map $\Omega$ is \emph{alternating}, i.e. $\forall v \in V, \Omega(v,v) = 0$ as well as \emph{non-degenerate}, i.e. $\Omega(v,w) = 0 \forall w \in V \imples v = 0$.
+
+In this scenario, the bilinear map $\Omega$ is called the \emph{symplectic form} on $V$.
+\end{defn}
+
+For the purpose of illustration, we have the following examples of symplectic vector spaces:
+\begin{itemize}
+\item Let 
+$$
+\Omega = \[ \left[ \begin{array}{cc}
+0    & I_n \\
+-I_n & 0   \\ \end{array} \right]\]
+$$
+where $I_n$ is the $n \times n$ identity matrix; then $\Omega$ is called the \emph{standard symplectic form} on $\mathbb{R}^{2n}$.
+
+\item Let $V$ be any finite-dimensional vector space over $\mathbb{R}$, with dual space $V^*$. Then the direct sum $V \oplus V^*$ is a symplectic vector space with the symplectic form given by:
+$$
+\omega(x \oplus \phi, y \oplus \psi) := \psi(x) - \phi(y).
+$$
+In fact, it can be shown that every finite-dimensional symplectic vector space is of this form (up to isomorphism).
+\end{itemize}
+
+We will mainly be concerned with symplectic vector spaces and manifolds over real and complex numbers.
+
+%lagrangian and isotropic subspaces of V; symplectomorphisms
+Now there are some special subspaces of symplectic vector spaces; we are mainly concerned with \emph{Lagrangian}, \emph{(co-)isotropic}, and \emph{symplectic} subspaces of symplectic vector spaces. We have the following definitions:
+\begin{defn}
+Let $(V,\Omega)$ be a symplectic vector space. For a subspace $F \subset V$, the \emph{symplectic complement} $F^\perp$ of $F$ is defined as the space of vectors ``perpendicular'' (in analogy to an inner product space) to every vector in $F$:
+$$
+F^{\perp} := \{x \in V | \forall y \in F, \Omega(x,y) = 0 \},
+$$
+and $F$ is said to be:
+\begin{itemize}
+\item \emph{Lagrangian} if $F = F^\perp$;
+
+\item \emph{isotropic} (resp., \emph{co-isotropic}) if $F \subset F^\perp$ (resp., $F^\perp \subset F$); and
+
+\item \emph{symplectic} if $F \cap F^\perp = \{0\}$.
+\end{itemize}
+\end{defn}
+Note that the Lagrangian subspaces necessarily have half the dimension of the overall space; in fact, an intuitive picture of Lagrangian subspaces are embeddings of the physical configuration space into the phase space\footnote{Indeed, it is a theorem that for $V$ symplectic there exists Lagrangian $E$ such that $V = E \oplus E^*$.}. This will gain further relevance in the context of polarizations, in which a Lagrangian distribution is chosen to ``filter out'' certain sections of the prequantum line bundle.
+
+%symplectic spaces are even-dimensional
+Before moving on, we make the quick remark that if there exists a symplectic form on a (finite-dimensional) vector space, the dimension of the vector space is necessarily even --- for if not, then we would have an odd-dimensional matrix representation of the symplectic form, which is necessarily singular due to the antisymmetry.
+
+\subsection{Symplectic Manifolds}
+%symplectic manifolds and symplectomorphisms (of symp. manifolds)
+We now introduce the geometric analogue of symplectic vector spaces, i.e. symplectic manifolds. We call a smooth manifold and 2-form pair $(M,\omega)$ a \emph{symplectic manifold} if it has a symplectic structure:
+
+\begin{defn}
+A differential 2-form $\omega$ on a manifold $M^{2n}$ gives a \emph{symplectic structure} if it is both \emph{closed}, i.e. $\d\omega = 0$ where $\d$ is the exterior derivative, and \emph{non-degenerate}, i.e. $\omega \wedge \ldots \wedge \omega \mbox{($n$ times)} \neq 0$.
+\end{defn}
+
+We have the following examples:
+\begin{itemize}
+\item \emph{(K\"{a}hler Sphere.)} Consider $\mathbb{S}^2 \cong \mathbb{CP}^1$; there are natural \emph{complex}, \emph{symplectic}, and \emph{Riemannian} structures on this manifold, and manifolds that admit these three structures with each being compatible with the others (in some suitable sense) are called \emph{K\"{a}hler}. 
+
+\item \emph{(Cotangent Bundles.)} Let $Q$ be a smooth manifold of dimension $n$ (not necessarily even); then the cotangent bundle $T^*Q$ carries with it a natural symplectic structure, as follows: consider the \emph{tautological one-form} --- also known as the \emph{symplectic potential} --- given by
+$$
+\theta = \sum_i p_i \d q^i,
+$$
+where the $(p_i,q^i)$ are canonical coordinates; then the exterior derivative of this one-form is a two-form (known as the \emph{canonical}, or \emph{Poincare}, two-form):
+$$
+\omega = -\d\theta = \sum_i \d q^i \wedge \d p_i.
+$$
+One may verify that this is closed and non-degenerate.
+\end{itemize}
+
+\subsection{Hamiltonian Mechanics}
+%hamilton's equations; hamiltonian and hamiltonian vector fields
+At this point it becomes relevant to introduce the physical importance of symplectic geometry; while we will not introduce all of Hamiltonian mechanics (see the relevant chapter of the appendix for a quick cursory overview), we will make the following definitions:
+\begin{defn}
+%hamiltonian mechanics intro
+\begin{itemize}
+\item A \emph{configuration space} refers to an $n$-dimensional smooth manifold $Q$ for some $n \in \mathbb{N}$; physically, the manifold forms a space of classical states (e.g., positions in space). The term \emph{phase space} refers to the cotangent bundle $T^*Q$, which corresponds to a space of all possible states of the physical system. Unlike general symplectic manifolds, cotangent bundles possess global \emph{canonical coordinates}.
+
+(As an example of a non-Euclidean configuration space, the configuration space of an asymmetric rigid body in three dimensions could be modelled by $\mathbb{R}^3 \times SO(3)$ --- where the left factor corresponds to location in space and the right factor corresponds to rotation.)
+
+\item By a \emph{Hamiltonian} we refer to a specified function $H: T^*Q \to \mathbb{R}$ corresponding to the energy of the physical system; as a path in phase space (parametrized by $t \in \mathbb{R}^+$) represents a change in state over time, we have the following equations governing the dynamics on a physical system, based on the Hamiltonian\emph{Though it is outside the scope of this writing, the Hamiltonian, usually expressed in the form $H = T + V$ separating out the kinetic energy function from the potential energy function, is obtained in practice from a combination of theoretical prediction based on physical intuition and experimental practice --- the relative amount of each differs based on the physical system.}:
+$$
+\frac{\d p_i}{\d t} = -\frac{\partial H}{\partial q_i}
+$$
+and
+$$
+\frac{\d q_i}{\d t} = \frac{\partial H}{\partial p_i},
+$$
+where the coordinates are canonical coordinates. The pair of equations above are known as \emph{Hamilton's equations} of motion.
+
+\item \emph{Observable} quantities on phase space are modelled by smooth functions in $C^\infty(T^*Q)$; furthermore, there a construction on $C^*\infty(T^*Q)$ known the \emph{Poisson bracket}, defined as:
+$$
+\{f,g\} = \sum_i \frac{\partial f}{\partial q_i}\frac{\partial g}{\partial p_i} - \frac{\partial g}{\partial q_i}\frac{\partial f}{\partial p_i},
+$$
+that when combined with Hamilton's equations above give the evolution
+$$
+\{f,H\} = \frac{\d f}{\d t}.
+$$
+
+\end{itemize}
+\end{defn}
+
+%darboux's theorem
+Additionally, an important theorem of Darboux provides a way of working locally.
+\begin{thrm}
+(Darboux.) Let $(M,\omega)$ be a symplectic manifold; for any point $p \in M$, there is a local chart $U_p$ with coordinates $x_i,y_i$ such that 
+
+$$\omega = \sum_i dx_i \wedge dy_i.$$
+
+In other words, there is a local representation of the symplectic form as a wedge product of exterior derivatives of coordinates around each point; symplectic manifolds are locally isomorphic to $\mathbb{R}^{2n}$ with the standard symplectic form.
+\end{thrm}
+Recall that the symplectic form of a cotangent bundle has a global representation via the canonical coordinates; this is not true for symplectic manifolds in general, but Darboux' theorem tells us that it is at least possible on a local level.
+
+\subsection{Symmetries}
+%symmetries of a symplectic manifold
+We also have the following definition of a \emph{symmetry} of a symplectic manifold:
+\begin{defn}
+Let $(M^{2n},\omega)$ be a symplectic manifold and suppose a Lie group $G$ acts on $(M,\omega)$ symplectically, i.e. each $g \in G$ respects the symplectic form:
+$$
+\forall m \in M, \omega_m(v,w) = \omega_{g\cdot m}(v,w)
+$$
+Then $G$ is said to be a \emph{group of symmetries}, and each $g \in G$ is said to be a symmetry of the system represented by $(M,\omega)$.
+\end{defn}
+
+Every symmetry gives rise to a symplectomorphism $\phi_g : M \to M$, i.e. $\phi^*_g \omega = \omega$. Hence, each group of symmetries has a represention by a subgroup of $Sp(M,\omega)$, the group of symplectomorphisms on $M$.
+
+\subsection{Concluding Remarks}
+%structure of the symplectic category; which universal properties does it have? closed category? cartesian? a topos? etc.
+Finally, we conclude by remarking that there is no general agreement on which maps should be used as the morphisms in a category where the objects are symplectic manifolds. Certainly, symplectomorphisms (i.e. those maps where $f^*(\omega_1) = \omega_2$) are closed under composition, but another proposal (by Weinstein, see \cite{weinsteinCanonicalReln}) argued that \emph{canonical relations} were the maps to consider with a symplectic category, but canonical relations are not necessarily closed under composition.
+
+The question becomes even more hairy in the context of the theory of quantization; one proposal is a category where objects are pairs of Poisson manifolds with a symplectic manifold as intermediary --- see chapter 10. Alternatively, perhaps it makes more sense to categorify ``horizontally'', i.e. what is known as ``oid-ification'' --- see chapter 9 for a discussion of symplectic groupoids.
+
+
+
+
+
+
+
+
+
+\section{Hilbert Spaces and Quantum Mechanics}
+In this section, we will review the rudiments of the standard Hilbert space formalism behind (non-relativistic) quantum mechanics.
+
+\subsection{Hilbert Spaces}
+In general, the following ingredients are necessary for the mathematical structure behind quantum mechanics: for a given physical system, we have $\mathcal{H}$, a (separable) Hilbert space over $\mathbb{C}$ the complex numbers, along with
+\begin{itemize}
+\item \emph{states} being given by either equivalence classes of elements of $\mathcal{H}$ (up to scalar multiples) --- i.e., classes of the form $[\psi] = \{\lambda \cdot \psi : \lambda \in \mathbf{C}, \lambda \neq 0 \}$ --- or equivalently, elements of the projective Hilbert space $\mathbf{P}\mathcal{H}$, which is given by the map $\pi: \mathcal{H} \to \mathbf{P}\mathcal{H}, \phi \mapsto [\phi]$.
+\item \emph{observables} being given by self-adjoint (i.e., Hermitian) linear operators $\mathcal{O}: \mathcal{H} \to \mathcal{H}$; since they are self-adjoint, all eigenvalues are real (by the same proof as for Hermitian matrices). Results of physical measurements on observables are given by the eigenvalues of the observable in question.
+\end{itemize}
+
+As for the dynamics, there are two main interpretations stemming from equivalent physical viewpoints: the \emph{Heisenberg} picture, where one views the observables as the dynamical objects, or the \emph{Schr\"{o}dinger} picture, where one views the states as the dynamic objects.
+
+We have a special observable that defines the dynamics on the system, called the \emph{Hamiltonian}, denoted either $H$ (in Schr\"{o}dinger picture) or $H(t)$ (in Heisenberg picture), and the following equations determining time-evolution:
+\begin{itemize}
+\item for the Heisenberg picture --- assuming states are time-independent and observables are time-varying --- we have $$ i\hbar \frac{d}{dt} \mathcal{O}(t) = [\mathcal{O}(t), H(t)];$$
+
+\item for the Schr\"{o}dinger picture --- assuming states are time-varying and observables are constant --- we have $$ i\hbar \frac{d}{dt}\psi(t) = H\psi(t).$$
+\end{itemize}
+
+We note that dynamics are not often considered in ``vanilla'' geometric quantization; rather, the process focuses on finding a mapping between symplectic manifolds and Hilbert spaces, i.e. between the phase space and the state space of the classical and quantum systems, respectively.
+
+\subsection{Symmetries on a Hilbert Space}
+%symmetries
+We also have the following definition of a \emph{symmetry} on a Hilbert space, due to E. Wigner:
+\begin{defn}
+Let $\mathcal{H}$ be a complex Hilbert space; then a bijective map $U: \mathcal{H} \to \mathcal{H}$ is called a (quantum) \emph{symmetry} iff the ``transition probabilities'' are preserved under $U$, i.e.
+$$
+\forall \psi,\phi \in \mathcal{H}, \frac{|\langle U(\psi),U(\phi)\rangle|^2}{|| U(\phi) ||^2 \cdot || U(\psi) ||^2} = \frac{|\langle \psi,\phi\rangle|^2}{|| \phi ||^2 \cdot || \psi ||^2}.
+$$
+\end{defn}
+Intuitively, symmetries may be thought of as unitary or anti-unitary operators:
+
+%results on symmetry: proposition, all symmetries come from unitaries and anti-unitaries; show how this justifies the definition of the category of hilbert spaces
+\begin{thrm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%proposition: all symmetries come from unitaries and anti-unitaries
+\end{thrm}
+
+Further, we have the following properties regarding the category of Hilbert spaces (as objects) and unitary operators (as arrows):
+\begin{thrm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% category of hilbert spaces and unitaries; maybe not as obvious as one might think??? see following links:
+%http://math.ucr.edu/home/baez/quantum/node4.html
+%http://mathoverflow.net/questions/34058/does-the-category-of-hilbert-spaces-possess-a-product
+\end{thrm}
+
+We will not mention much more about the theory of Hilbert spaces here; for further details, consult the appendix and the references.
+
+
+
+
+
+
+
+
+
+
+\section{Overview of the Geometric Quantization Process}
+We now give an overview of the geometric quantization of symplectic manifolds. The process is done in three steps, each with subtleties in their own right:
+
+\begin{itemize}
+\item The prequantization step does indeed provide us with a Hilbert space, but this space possesses un-physical properties in many cases\footnote{For example, obtaining quantum wavefunctions that depend on more variables than the dimension of the configuration space.}, necessitating the choice of a polarization; further, not all arbitrary symplectic manifolds may be prequantized --- prequantizability is decided by the \emph{Bohr-Sommerfeld condition}, a cohomological constraint.
+
+\item The notion of a polarization ``cuts down'' the dependency on the extraneous variables that the states have, through the choice of a Lagrangian distribution (i.e. an isotropic distribution of dimension half that of the symplectic manifold); however, we end up with states that are not square-integrable or otherwise do not belong in the quantized Hilbert space. This also leads to observables with spectra that do not match their physics.
+
+\item Finally, the metaplectic ``correction'' --- the term ``correction'' stemming from historical reasons --- ameliorates this last issue by tensoring the state space by a space of \emph{half-forms} so as to render the states (square-)integrable and to correct the spectra of the quantized operators, thought it requires the introduction of new structures: the metaplectic group is the Lie group that double-covers the symplectic group, and the covering map induces a lift from a symplectic structure to a metaplectic structure, which is a symplectic analogue of a spin structure in Riemannian geometry. A detailed discussion of the structures involved is discussed in the section on the metaplectic correction.
+\end{itemize}
+
+A motivating desire is to construct a functorial correspondence from $\mathbf{Symp}$ --- the category of symplectic manifolds and symplectomorphisms --- to $\mathbf{Hilb}$ --- the category of Hilbert spaces and unitary maps. As we will see, this is not necessarily natural in the sense that the geometric quantization construction may not be applicable to all symplectic manifolds, and not all observables $f \in C^\infty(M)$ are quantizable. Further, these may not even be the right categories; we examine the theory of quantization in the case of symplectic groupoids in chapter 9, and in chapter 10 we consider a category where the objects consist of triples $P_1 \leftarrow M \to P_2$ --- called (Weinstein) \emph{dual pairs} --- where $P_{1,2}$ are Poisson manifolds and $M$ is a symplectic manifold. Finally, in chapter 12 we consider the state of development of the ``quantization functor'' in a modern context.
+
+We first give an overall summary of the geometric quantization process in this section; we will elaborate with intuition and theorems that justify the definition of each portion of the process in the corresponding section.
+\begin{defn}
+Let $(M^n,\omega)$ be a symplectic manifold with $\omega$ having integral cohomology class, i.e. for all cocycles $S$,
+$$
+\int_S \omega \in \mathbb{Z}.
+$$
+Then:
+\begin{itemize}
+\item (\textbf{Prequantization.}) Let $\pi: L \to M$ be some \emph{complex line bundle} over $M$, and let $\Gamma(M,L)$ be the space of smooth sections $s: M \to L$. Further suppose we have a connection whose curvature 2-form is equivalent to $\omega$ and we have a hermitian metric $h$ on the line bundle. Then we have the \emph{prequantum Hilbert space} given by the completion of the collection of square integrable sections, where $\psi \in \Gamma(M,L)$ is square integrable if
+$$
+\int_M h(\psi,\psi) \omega^n < \infty.
+$$
+
+\item (\textbf{Polarization.}) Let $T^\mathbb{C}M$ be the complexified tangent bundle of $M$, i.e. $T^\mathbb{C}M = TM \otimes_\mathbb{R} \mathbb{C}$. A \emph{polarization} of $(M,\omega)$ is an \emph{involutive, Lagrangian sub-bundle} $\mathcal{P} \hookrightarrow T^\mathbb{C}M$.
+
+\item (\textbf{Metaplectic Correction.}) The metaplectic group is the double cover of the symplectic group; from the double-covering map, we get a lift of structures to obtain a \emph{metaplectic structure} on the symplectic manifold $M$, allowing us to define half-densities; sections are tensored with half-densities to guarantee square-integrability.
+\end{itemize}
+
+From these definitions we may construct the following:
+\begin{itemize}
+\item The \emph{quantized Hilbert space} $\mathcal{H}$ is defined to be the (metric completion of the) complex inner product space generated by elements of the form $s \otimes \sigma$, where
+$$
+s \in \Gamma(M,L), \sigma \in \Gamma(M, N^{1/2}), \nabla_X s = 0, \mathcal{L}_X \sigma = 0 \forall X
+$$
+where $X$ is any locally Hamiltonian vector field in $\mathcal{P} \cup \bar{\mathcal{P}}$ for $\mathcal{P}$ some choice of polarization.
+
+The inner product of this Hilbert space is given by
+$$
+\langle s_1 \otimes \sigma_1, s_2 \otimes \sigma_2 \rangle = \int_\mathcal{D} \langle s_1,s_2 \rangle \cdot \langle \sigma_1,\sigma_2 \rangle.
+$$
+
+The space of states is defined to be $\mathbb{P}\mathcal{H}$, the projectivization of $\mathcal{H}$.
+
+\item We remark that, given a choice of polarization, not all classical observables can be quantized; it is a condition that the observable's associated Hamiltonian vector field must preserve the polarization in question, i.e. for $f \in C^\infty(M)$ with associated Hamiltonian vector field $X_f$, $f$ is quantizable if and only if $[X_f,\mathcal{P}] \subset \mathcal{P}$.
+
+Suppose $f$ is quantizable. Then we define the \emph{quantized observable} associated to $f$, $O^\mathcal{P}_f$, by its action on the generator states:
+$$
+O^\mathcal{P}_f(s \otimes \sigma) = (O^{preq}_f s) \otimes \sigma + i \cdot s \otimes (\mathcal{L}_{X_f}\sigma),
+$$
+where $O^{preq}_f$ is the prequantized operator associated to $f$, given by
+$$
+O^{preq}_f \psi = i\hbar\nabla_{X_f}\psi + f\cdot\psi,
+$$
+the sum of the parallel transport of $\psi$ through $f$'s associated vector field, and the product of $f$ with $\psi$.
+\end{itemize}
+\end{defn}
+
+The historical truth is that the Hilbert space was not defined as such in one attempt; rather, the latter two steps of the process above were successive improvements and corrections to the pre-quantum Hilbert space (what one may think of as a naive first attempt at defining a Hilbert space from which one may canonically recover the geometry of $M$). This series of improvements will be discussed in the following chapters.
+
+%As a final remark, we discuss the question of detecting equivalences between symplectic manifolds and cotangent bundles, i.e. given a symplectic manifold $M$, finding whether or not there exists a $Q$ such that $T^*Q \cong M$.
