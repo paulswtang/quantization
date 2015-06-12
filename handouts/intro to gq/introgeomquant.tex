@@ -1,18 +1,39 @@
-In this chapter, we will review some basic and relevant results on the mathematical background behind the geometric quantization process --- mainly, the categories $\mathbf{Symp}$ of symplectic manifolds and symplectomorphisms/canonical relations, and $\mathbf{Hilb}$ of Hilbert spaces and unitary maps --- and outline the three main steps of the process:
+%-----PREAMBLE-----
+\documentclass{tufte-handout}
+
+%use tikz-cd for comm diagrams:
+\usepackage{tikz-cd}
+%use amsthm for thm-like environments:
+\usepackage{amsthm}
+%use thmtools to style new thm envns:
+\usepackage{thmtools}
+
+%define example environment
+\newtheorem{example}{Example}
+
+%define proof-sketch environment
+\renewcommand{\qedsymbol}{$\triangle$}
+
+%define definition environment
+\newtheorem{defn}{Definition}
+
+%define shorthand for exterior derivative:
+\def{\d}{\mathrm{d}}
+
+\title{An Overview to the Geometric Theory of Quantization}
+
+
+%-----DOCUMENT BODY-----
+\begin{document}
+
+In this chapter, we will review some basic and relevant results on the mathematical background behind the geometric quantization process --- mainly, the theories of the categories $\mathbf{Symp}$ of symplectic manifolds and symplectomorphisms/canonical relations, and $\mathbf{Hilb}$ of Hilbert spaces and unitary maps\footnote{Actually, it's not entirely clear-cut that these are the ``best'' morphisms for these respective categories when it comes to the problem of quantization --- see the chapter on structural properties of the geometric quantization process, as well as \cite{weinstein}.}. We also outline the three main steps of the quantization process:
 \begin{itemize}
-\item \emph{Pre-quantization}, where we construct an associated \emph{pre-quantized Hilbert space} out of a given symplectic manifold by considering the space of sections of the associated complex line bundle; this process is a natural one, but unfortunately the resulting Hilbert space still contains some rather un-physical properties. This leads to the next step of the process, polarization.
-\item \emph{Polarization}, where we ``cut down'' the pre-quantum Hilbert space by half (using a Lagrangian distribution on the symplectic manifold) in order to enforce a physicality condition on the states of the quantum system, i.e. make sure that states rely only on half of the dimensions of the manifold.
+\item \emph{Pre-quantization}, where we construct an associated \emph{prequantum Hilbert space} out of a given symplectic manifold (assuming a few nice (co-)homological conditions) by considering the space of sections of an associated complex line bundle; this process is a natural one, but unfortunately the resulting Hilbert space still contains some rather un-physical properties. This leads to the next step of the process, polarization.
+\item \emph{Polarization}, where we ``cut down'' the number of allowable states by half in order to enforce a physicality condition on the states of the quantum system; this is done by the choice of a \emph{polarization}, a kind of Lagrangian distribution on the tangent bundle of the phase space.
 \item Finally, we present a \emph{metaplectic correction}, where we modify the space of states by tensoring it with half-forms to ensure square-integrability on the states and to make sure that the quantized operators have spectra matching physical intuition.
 \end{itemize}
 
-
-
-
-
-
-
-
-
+%----- ----- ----- ----- -----
 
 \section{Symplectic Manifolds and Classical Mechanics}
 In this section we define symplectic manifolds and maps between them (symplectomorphisms), along with providing some structural information on \textbf{Symp} the category of symplectic manifolds and some motivation for their ubiquity in classical mechanics (via Hamiltonian mechanics).
@@ -151,13 +172,7 @@ Finally, we conclude by remarking that there is no general agreement on which ma
 
 The question becomes even more hairy in the context of the theory of quantization; one proposal is a category where objects are pairs of Poisson manifolds with a symplectic manifold as intermediary --- see chapter 10. Alternatively, perhaps it makes more sense to categorify ``horizontally'', i.e. what is known as ``oid-ification'' --- see chapter 9 for a discussion of symplectic groupoids.
 
-
-
-
-
-
-
-
+%----- ----- ----- ----- -----
 
 \section{Hilbert Spaces and Quantum Mechanics}
 In this section, we will review the rudiments of the standard Hilbert space formalism behind (non-relativistic) quantum mechanics.
@@ -173,9 +188,15 @@ As for the dynamics, there are two main interpretations stemming from equivalent
 
 We have a special observable that defines the dynamics on the system, called the \emph{Hamiltonian}, denoted either $H$ (in Schr\"{o}dinger picture) or $H(t)$ (in Heisenberg picture), and the following equations determining time-evolution:
 \begin{itemize}
-\item for the Heisenberg picture --- assuming states are time-independent and observables are time-varying --- we have $$ i\hbar \frac{d}{dt} \mathcal{O}(t) = [\mathcal{O}(t), H(t)];$$
+\item for the Heisenberg picture --- assuming states are time-independent and observables are time-varying --- we have
+$$
+i\hbar \frac{d}{dt} \mathcal{O}(t) = [\mathcal{O}(t), H(t)];
+$$
 
-\item for the Schr\"{o}dinger picture --- assuming states are time-varying and observables are constant --- we have $$ i\hbar \frac{d}{dt}\psi(t) = H\psi(t).$$
+\item for the Schr\"{o}dinger picture --- assuming states are time-varying and observables are constant --- we have 
+$$
+i\hbar \frac{d}{dt}\psi(t) = H\psi(t).
+$$
 \end{itemize}
 
 We note that dynamics are not often considered in ``vanilla'' geometric quantization; rather, the process focuses on finding a mapping between symplectic manifolds and Hilbert spaces, i.e. between the phase space and the state space of the classical and quantum systems, respectively.
@@ -205,14 +226,7 @@ Further, we have the following properties regarding the category of Hilbert spac
 
 We will not mention much more about the theory of Hilbert spaces here; for further details, consult the appendix and the references.
 
-
-
-
-
-
-
-
-
+%----- ----- ----- ----- -----
 
 \section{Overview of the Geometric Quantization Process}
 We now give an overview of the geometric quantization of symplectic manifolds. The process is done in three steps, each with subtleties in their own right:
@@ -277,3 +291,5 @@ the sum of the parallel transport of $\psi$ through $f$'s associated vector fiel
 The historical truth is that the Hilbert space was not defined as such in one attempt; rather, the latter two steps of the process above were successive improvements and corrections to the pre-quantum Hilbert space (what one may think of as a naive first attempt at defining a Hilbert space from which one may canonically recover the geometry of $M$). This series of improvements will be discussed in the following chapters.
 
 %As a final remark, we discuss the question of detecting equivalences between symplectic manifolds and cotangent bundles, i.e. given a symplectic manifold $M$, finding whether or not there exists a $Q$ such that $T^*Q \cong M$.
+
+\end{document}

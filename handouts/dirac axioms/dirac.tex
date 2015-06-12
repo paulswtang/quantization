@@ -2,7 +2,7 @@
 \documentclass{tufte-handout}
 
 %use tikz-cd for comm diagrams:
-\usepackage{tikz-cd}
+%\usepackage{tikz-cd}
 %use amsthm for thm-like environments:
 \usepackage{amsthm}
 %use thmtools to style new thm envns:
@@ -18,7 +18,7 @@
 \newtheorem{defn}{Definition}
 
 %define shorthand for exterior derivative:
-\def\d{\mathrm{d}}
+\def{\d}{\mathrm{d}}
 
 \title{The Dirac Quantization Axioms}
 
@@ -28,17 +28,16 @@
 
 \section{The Dirac Axioms for Quantization}
 %tiny bit of classmech and qmech history & their mathematical formalisms
-It is well established that classical mechanics has its mathematical formalisms in the context of smooth manifold theory (namely, symplectic and Poisson manifolds, as is discussed in this survey), and quantum mechanics has its mathematical formalisms in the context of Hilbert spaces.
+It is well established that classical mechanics has its mathematical formalisms in the context of symplectic and Poisson geometry via Hamiltonian mechanics, and quantum mechanics has its mathematical formalisms in the context of Hilbert spaces via the Dirac-von Neumann axioms for quantum mechanics, which unifies the wavefunction approach of Schr\"{o}dinger with the operator approach of Heisenberg.
 
-To elaborate, the Hamiltonian view of classical mechanics postulates that, given a physical system, there is a \emph{configuration space} given by a smooth manifold $Q$ that represents the space of possible states of the physical system; we then obtain its \emph{phase space} by considering its cotangent bundle, $T^*Q$, which carries a natural symplectic structure. Observables of this physical system are given by smooth functions $T^*Q \to \mathbf{R}$, which together form a Poisson algebra $C^\infty(T^*Q)$; there is a distinguished observable $H$ (called the \emph{Hamiltonian}) that repr
-esents the energy of the system; Hamilton's equations then state that the dynamics of the system are governed by the equation
+To elaborate, the Hamiltonian view of classical mechanics postulates that, given a physical system, there is a \emph{configuration space} given by a smooth manifold $Q$ that represents the space of possible states of the physical system; we may then obtain its \emph{phase space} by considering its cotangent bundle, $T^*Q$, which carries a natural symplectic structure\footnote{Additionally, we may consider a \emph{reduced} phase space if there is an relevant Lie group acting on the phase space via symplectomorphisms --- i.e. via ``physical symmetries''. This, and the construction of a quantum analogue of the classical reduction process, is considered in a later chapter.}. Observables of this physical system are given by smooth functions $T^*Q \to \mathbf{R}$; the space of smooth functions $C^\infty(T^*Q)$ forms a Poisson algebra. From this function space, there is a distinguished\footnote{(Due primarily to its importance in a physical context rather than any intrinsic mathematical property.)} observable $H$ called the \emph{Hamiltonian} that representing the energy of the system; Hamilton's equations then state that the physical dynamics of the system are governed by the equation
 $$
 \frac{\d f}{\d t} = \{f,H\}
 $$
 for $f \in C^\infty(T^*Q)$ an observable quanity, and $\{\cdot,\cdot\}$ the standard Poisson bracket on $C^\infty(T^*Q)$.
 For further details and a more comprehensive treatment, see the classic text by Arnol'd \cite{arnold}; see also the related appendix.
 
-On the other hand, the mathematical formulation of quantum mechanics calls for a Hilbert space $\mathcal{H}$ to represent the space of states of a physical quantum system \footnote{Actually, the projectivization of this Hilbert space $\mathbf{P}\mathcal{H}$ is the space of states, since we have to account for equivalence modulo scalar multiples, i.e. $\lambda \cdot |\psi\rangle$ represents the same state as $|\psi\rangle$, for any complex nonzero $\lambda$.}, with observables given by self-adjoint operators $O: \mathcal{H} \to \mathcal{H}$. Similar to the classical case, the collection of all such observables forms an algebra, albeit a non-commutative one. Dynamics are determined by Schr\"{o}dinger's equation
+On the other hand, the mathematical formulation of quantum mechanics (following the Dirac-von Neumann axioms) calls for a Hilbert space $\mathcal{H}$ to represent the space of states of a physical quantum system \footnote{Actually, we may also consider the projectivization $\mathbf{P}\mathcal{H}$ of this Hilbert space as the space of states, since we have to account for equivalence modulo scalar multiples --- $\lambda \cdot |\psi\rangle$ represents the same state as $|\psi\rangle$, for any complex nonzero $\lambda$.}, with observables given by self-adjoint operators $O: \mathcal{H} \to \mathcal{H}$. Similar to the classical case, the collection of all such observables forms an algebra, albeit a non-commutative one. Dynamics are determined by Schr\"{o}dinger's equation
 $$
 i\hbar \frac{\D\psi}{\D t} = H\psi
 $$
@@ -67,18 +66,19 @@ These four ideas correspond to intuitive points regarding the structures we migh
 Additionally, physical intuition stipulates that the position and momentum functions $x^i: M \to \mathbf{R}$ and $p_j: M \to \mathbf{R}$ must be quantized to the operators $\psi \mapsto x^i\psi$ and $\psi \mapsto -i\hbar\del_j\psi$, respectively; we shall see, however, that these conditions are rarely a point of difficulty during the quantization process and serve mainly as a guide. The important structural content of a quantization scheme is codified mainly in the above four axioms.
 
 %present groenwald-van Hove no-go theorem
-Unfortunately, it is not possible to quantize the entire Poisson algebra of smooth functions, and there are many obstructions against quantization; see \emph{Obstruction Results in Quantization Theory} \cite{gotay} for a survey. In particular, we have the \emph{Groenewald-van Hove theorem}, which informally states that the algebra of polynomials on the phase space $\mathbb{R}^{2n}$ has no unitary representation $\rho$ such that $\rho$ extends the Schr\"{o}dinger representation of the Heisenberg algebra. Consequently, this provides a counterexample to the claim that it is possible to quantize the entire algebra of observables on a classical phase space. This obstruction, as well as others, are discussed in the last chapter of Part I.
+Unfortunately, it is not possible to quantize the entire Poisson algebra of smooth functions, and there are many obstructions against quantization; see \emph{Obstruction Results in Quantization Theory} \cite{gotay} for a survey. In particular, we have the \emph{Groenewald-van Hove theorem}, which informally states that the algebra of polynomials on the phase space $\mathbb{R}^{2n}$ has no unitary representation $\rho$ such that $\rho$ extends the Schr\"{o}dinger representation of the Heisenberg algebra. Consequently, this provides a counterexample to the claim that it is possible to quantize the entire algebra of observables on a classical phase space. This obstruction, as well as others, are discussed in the chapter dedicated to obstruction results in the theory of quantization.
 
 %discuss canonical and second quantization
 Some of the more common approaches to quantization are \emph{canonical} (first) and \emph{second} quantization. The former refers to a semi-classical quantization of mechanical systems, where the potentials are treated classically and particles are quantized into elements of a Hilbert space of functions (for example, an $L^2$ space); the latter then refers to a functor from the category of Hilbert spaces (i.e., state spaces of single-particle physical systems) to a category of Fock spaces (a direct sum of tensor products of Hilbert spaces, representing state spaces of physical systems that may have multiple particles).
 
-This current survey will not discuss either of those approaches; standard references such as \cite{sakurai}, \cite{reedsimon} or \cite{folland} may be consulted for an overview. Instead, the current survey will present \emph{geometric} quantization and \emph{deformation} quantization, for two main reasons: first, the mathematical sophistication and depth of these techniques often cloud their intuitive structural properties, which form a rich theory that attempts to preserve as much geometric and algebraic insight as possible; and second, much active work is being done on furthering these structural properties --- for example, \cite{weinstein} posits that the ``correct'' category of symplectic manifolds to consider may be one with arrows given by canonical relations rather than symplectomorphisms, and \cite{hawkins} frames quantization in a higher category-theoretic context.
+The current survey will not discuss either of those approaches; standard references such as \cite{sakurai}, \cite{reedsimon} or \cite{folland} may be consulted for their mathematical developments and references. Instead, the current survey will present \emph{geometric} quantization and \emph{deformation} quantization, for two main reasons: first, the mathematical techniques involved in these two theories are less understood, and the scope of their pre-requisites often clouds their intuitive structural properties, which form a rich theory that attempts to preserve as much geometric and algebraic insight as possible; and second, because much active work is being done on furthering these geometric and algebraic approaches --- 
+% FIND BETTER SENTENCE:
+%for example, \cite{weinstein} posits that the ``correct'' category of symplectic manifolds to consider may be one with arrows given by canonical relations rather than symplectomorphisms, and \cite{hawkins} frames quantization in a higher category-theoretic context.
 
 %lead into part 1 and part 2 -- motivate
-To motivate the development of the geometric and deformation theories of quantization, we note that the basic intuition behind these theories is to deal with the inability to satisfy all of Dirac's axioms\footnote{In fact, it is only possible to satisfy two of them at most!} by either compromising on either the correspondence of the Poisson bracket and the commutator, or by limiting the observables that we are ``allowed'' to quantize. Deformation quantization does the former by treating $\hbar$ as a formal parameter that ``adjusts'' the bracket, so that we obtain Poisson brackets in the ``limit'' $\hbar \to 0$. Geometric quantization does the latter by preserving geometric structure through the quantization and choosing a structure (called a \emph{polarization}) on the quantized geometry that limits which operators are able to be meaningfully quantized.
+To motivate the development of the geometric and deformation theories of quantization, we note that the basic intuition behind these theories is to deal with the inability to satisfy all of Dirac's axioms\footnote{In fact, it is provable that it is only possible to satisfy two of them at most!} by either compromising on the correspondence of the Poisson bracket and the commutator, or by limiting the observables that we are ``allowed'' to quantize. Deformation quantization does the former by treating $\hbar$ as a formal parameter that ``adjusts'' the bracket, allowing us to obtain Poisson brackets in the ``limit'' $\hbar \to 0$. Geometric quantization does the latter by preserving geometric structure through the quantization and choosing a structure (called a \emph{polarization}) on the quantized geometry that limits which operators are able to be meaningfully quantized.
 
-%Finally, before we continue on to the description and discussion of the theory of geometric quantization, we end with a relevant quote attributed to Dirac:
+\bibliography{dirac}
+\bibliographystyle{plainnat}
 
-%\begin{quote}
-%The correspondence between the quantum and classical theories lies not so much in the limiting agreement when $h \to 0$ as in the fact that the mathematical operations on the two theories obey in many cases the same laws.
-%\end{quote}
+\end{document}
