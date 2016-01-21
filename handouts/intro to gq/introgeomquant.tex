@@ -2,7 +2,7 @@
 \documentclass{tufte-handout}
 
 %use tikz-cd for comm diagrams:
-\usepackage{tikz-cd}
+%\usepackage{tikz-cd}
 %use amsthm for thm-like environments:
 \usepackage{amsthm}
 %use thmtools to style new thm envns:
@@ -26,11 +26,11 @@
 %-----DOCUMENT BODY-----
 \begin{document}
 
-In this chapter, we will review some basic and relevant results on the mathematical background behind the geometric quantization process --- mainly, the theories of the categories $\mathbf{Symp}$ of symplectic manifolds and symplectomorphisms/canonical relations, and $\mathbf{Hilb}$ of Hilbert spaces and unitary maps\footnote{Actually, it's not entirely clear-cut that these are the ``best'' morphisms for these respective categories when it comes to the problem of quantization --- see the chapter on structural properties of the geometric quantization process, as well as \cite{weinstein}.}. We also outline the three main steps of the quantization process:
+In this document, we review some basic and relevant results on the mathematical background behind the geometric quantization process --- primarily the background on the categories $\mathbf{Symp}$ of symplectic manifolds with arrows given by symplectomorphisms and $\mathbf{Hilb}$ of Hilbert spaces with arrows given by unitary maps. In particular, we provide a basic introduction to symplectic geometry in the context of classical Hamiltonian mechanics and a basic introduction to Hilbert space theory in the context of quantum mechanics (viz. the Dirac-von Neumann axioms). We also outline the three main steps of the quantization process:
 \begin{itemize}
-\item \emph{Pre-quantization}, where we construct an associated \emph{prequantum Hilbert space} out of a given symplectic manifold (assuming a few nice (co-)homological conditions) by considering the space of sections of an associated complex line bundle; this process is a natural one, but unfortunately the resulting Hilbert space still contains some rather un-physical properties. This leads to the next step of the process, polarization.
-\item \emph{Polarization}, where we ``cut down'' the number of allowable states by half in order to enforce a physicality condition on the states of the quantum system; this is done by the choice of a \emph{polarization}, a kind of Lagrangian distribution on the tangent bundle of the phase space.
-\item Finally, we present a \emph{metaplectic correction}, where we modify the space of states by tensoring it with half-forms to ensure square-integrability on the states and to make sure that the quantized operators have spectra matching physical intuition.
+\item \emph{Pre-quantization}, in which we construct an associated \emph{prequantum Hilbert space} out of a given symplectic manifold\footnote{...Assuming a few nice (co-)homological conditions on the manifold.} by considering the space of sections of the associated complex line bundle (along with an appropriate vector bundle connection); this process is a canonical one, but unfortunately the resulting Hilbert space still contains some properties that fail to agree with physical theory. This leads to the next step of the process, in which we choose a polarization.
+\item \emph{Polarizations} are a kind of Lagrangian distribution on the tangent bundle of the phase space; by a choice of polarization, we are able to ``cut down'' the number of allowable states by half in order to enforce a physicality condition on the states of the associated quantum system.
+\item Finally, we present a \emph{metaplectic correction}, where we modify the space of states by tensoring it with half-forms to ensure square-integrability on the states and to make sure that the quantized operators have spectra matching physical intuition\footnote{Although this too is often insufficient; see the relevant chapter on the metaplectic correction for more information.}.
 \end{itemize}
 
 %----- ----- ----- ----- -----
@@ -205,24 +205,42 @@ We note that dynamics are not often considered in ``vanilla'' geometric quantiza
 %symmetries
 We also have the following definition of a \emph{symmetry} on a Hilbert space, due to E. Wigner:
 \begin{defn}
-Let $\mathcal{H}$ be a complex Hilbert space; then a bijective map $U: \mathcal{H} \to \mathcal{H}$ is called a (quantum) \emph{symmetry} iff the ``transition probabilities'' are preserved under $U$, i.e.
+Let $\mathcal{H}$ be a complex Hilbert space; then a linear bijective map $U: \mathcal{H} \to \mathcal{H}$ is called a (quantum) \emph{symmetry} iff the ``transition probabilities'' are preserved under $U$, i.e.
 $$
 \forall \psi,\phi \in \mathcal{H}, \frac{|\langle U(\psi),U(\phi)\rangle|^2}{|| U(\phi) ||^2 \cdot || U(\psi) ||^2} = \frac{|\langle \psi,\phi\rangle|^2}{|| \phi ||^2 \cdot || \psi ||^2}.
 $$
 \end{defn}
-Intuitively, symmetries may be thought of as unitary or anti-unitary operators:
+Intuitively, symmetries may be thought of as unitary or anti-unitary operators: recall that $U: \mathcal{H} \to \mathcal{H}$ is a \emph{unitary operator} if
+$$
+\forall \psi,\phi \in \mathcal{H}, \langle U(\psi), U(\phi) \rangle = \langle \psi, \phi \rangle,
+$$
+and $A: \mathcal{H} \to \mathcal{H}$ is an \emph{anti-unitary operator} if
+$$
+\forall \psi,\phi \in \mathcal{H}, \langle U(\psi), U(\phi) \rangle = \langle \phi, \psi \rangle.
+$$
+It is easy to see that all unitary and anti-unitary operators are symmetries. The converse is known as Wigner's theorem:
 
-%results on symmetry: proposition, all symmetries come from unitaries and anti-unitaries; show how this justifies the definition of the category of hilbert spaces
-\begin{thrm}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%proposition: all symmetries come from unitaries and anti-unitaries
+\begin{thrm}[Wigner's Theorem]
+Let $T: \mathcal{H} \to \mathcal{H}$ be a symmetry on a Hilbert space $\mathcal{H}$.
+% finish: https://en.wikipedia.org/wiki/Wigner's_theorem
 \end{thrm}
 
-Further, we have the following properties regarding the category of Hilbert spaces (as objects) and unitary operators (as arrows):
-\begin{thrm}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% category of hilbert spaces and unitaries; maybe not as obvious as one might think??? see following links:
-%http://math.ucr.edu/home/baez/quantum/node4.html
-%http://mathoverflow.net/questions/34058/does-the-category-of-hilbert-spaces-possess-a-product
-\end{thrm}
+\subsection{Category of Hilbert Spaces}
+What is the appropriate way to consider the collection of Hilbert spaces as a category? The following are some considerations:
+
+\begin{itemize}
+\item The category of \emph{finite-dimensional} Hilbert spaces, %%%% https://en.wikipedia.org/wiki/Category_of_finite-dimensional_Hilbert_spaces
+% and
+% http://planetmath.org/sites/default/files/texpdf/41070.pdf
+
+\item The theory of Hilbert spaces has resisted categorification in some ways, though %%% http://homepages.inf.ed.ac.uk/cheunen/publications/2010/polar/ltwo.pdf
+
+\item Hilbert spaces with bounded linear operators can be viewed as a dagger-category %%% https://qchu.wordpress.com/2012/06/25/hilbert-spaces-and-dagger-categories/
+% and
+% http://math.ucr.edu/home/baez/quantum/node3.html
+% and
+% http://math.ucr.edu/home/baez/quantum/node4.html
+\end{itemize}
 
 We will not mention much more about the theory of Hilbert spaces here; for further details, consult the appendix and the references.
 

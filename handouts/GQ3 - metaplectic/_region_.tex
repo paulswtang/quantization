@@ -1,0 +1,75 @@
+\message{ !name(metaplectic.tex)}%-----PREAMBLE-----
+\documentclass{tufte-handout}
+
+%use tikz-cd for comm diagrams:
+%\usepackage{tikz-cd}
+%use amsthm for thm-like environments:
+\usepackage{amsthm}
+%use thmtools to style new thm envns:
+\usepackage{thmtools}
+
+%define thrm environment
+\newtheorem{thrm}{Theorem} % \begin{fullwidth} stuff here \end{fullwidth}
+
+%define example environment
+\newtheorem{example}{Example} % \begin{fullwidth} stuff here \end{fullwidth}
+
+%define proof-sketch environment
+\renewcommand{\qedsymbol}{$\triangle$}
+
+%define definition environment
+\newtheorem{defn}{Definition} % \begin{fullwidth} stuff here \end{fullwidth}
+
+%define shorthand for exterior derivative:
+\def\d{\mathrm{d}}
+
+\title{Metaplectic Structures and Correction of Quantization}
+\date{}
+%-----DOCUMENT BODY-----
+\begin{document}
+
+\message{ !name(metaplectic.tex) !offset(240) }
+\section{Induced Hilbert Space from Metaplectic Structure}
+Recalling the obstruction from the first section of this chapter, we now give a presentation of the way in which the existence of a metaplectic structure enables the construction of the ``corrected'' Hilbert space of states.
+
+Let $(M,\omega)$ be a symplectic manifold, and suppose that the second Stiefel-Whitney class is equal to zero\footnote{...Or equivalently, that the first Chern class is even.}, i.e. $w_2(M) = 0$. Then we have no obstructions to the existence of a metaplectic structure for $M$; denote this metaplectic structure by
+$$
+\rho : MF \to M.
+$$
+
+Suppose we chose the polarization $P \subset T^{\mathbb{C}}M$ for $M$; recalling the definition of a polarization, this gives us a \emph{foliation} of $M$ by \emph{Lagrangian submanifolds}; denote arbitrary Lagrangian submanifolds as $Q \hookrightarrow M$. Then the metaplectic structure $MF$ induces a \emph{metalinear structure} on each $Q \hookrightarrow M$ (see previous section).
+
+These metalinear structures allow us to form a \emph{square root line bundle}
+$$
+\sqrt{\Lambda^n T^* M}
+$$
+on the \emph{canonical bundle} $\Lambda^n T^* M$ of the symplectic manifold $M$.
+
+Now let $L \to M$ be the \emph{prequantum line bundle} of $M$; the above square root line bundles allow us to obtain an inner product on sections of the tensor products
+$$
+L|_M \otimes \sqrt{\Lambda^n T^* M},
+$$
+since we have the canonical inner product
+$$
+\langle \psi, \phi \rangle := \langle \psi, \phi \rangle_{L|_M} \otimes \langle \psi, \phi \rangle_{\sqrt{\Lambda^n T^* M}}
+$$
+where
+$$
+\psi, \phi : M \to (L|_M \otimes \sqrt{\Lambda^n T^* M})
+$$
+are sections of $L|_M \otimes \sqrt{\Lambda^n T^* M}$ obtained by taking the inner product of each component in the tensor product separately\footnote{Note that the second component is an element of the canonical bundle $\Lambda^n T^* M$}.
+
+% present a handful of examples for metaplectic correction:
+\message{ !name(metaplectic.tex) !offset(267) }
+
+\end{document}
+
+%
+% http://tex.stackexchange.com/questions/103013/is-there-a-renewtheorem-equivalent-of-renewcommand-using-amsthm-and-not-ntheo
+% http://ctan.mirror.rafal.ca/macros/latex/contrib/tufte-latex/sample-handout.pdf
+% http://ncatlab.org/nlab/show/metaplectic+correction+%28in+geometric+quantization%29
+% http://ncatlab.org/nlab/show/metaplectic+structure
+% https://en.wikipedia.org/wiki/Spin_structure
+% http://ncatlab.org/nlab/show/metaplectic+group
+% https://en.wikipedia.org/wiki/Metaplectic_structure
+%

@@ -1,0 +1,105 @@
+\message{ !name(prequantization.tex)}%-----PREAMBLE-----
+\documentclass{tufte-handout}
+
+%use tikz-cd for comm diagrams:
+%\usepackage{tikz-cd}
+%use amsthm for thm-like environments:
+\usepackage{amsthm}
+%use thmtools to style new thm envns:
+\usepackage{thmtools}
+
+%define theorem environment
+\newtheorem{thrm}{Theorem}
+
+%define example environment
+\newtheorem{example}{Example}
+
+%define proof-sketch environment
+\renewcommand{\qedsymbol}{$\triangle$}
+
+%define definition environment
+\newtheorem{defn}{Definition}
+
+%define shorthand for exterior derivative:
+\def\d{\mathrm{d}}
+
+\title{Geometric Quantization --- Prequantization}
+
+
+%-----DOCUMENT BODY-----
+\begin{document}
+
+\message{ !name(prequantization.tex) !offset(85) }
+\section{Examples}
+%include example of why prequantization map is un-physical: particle in a box, for example
+We now give three examples: a basic example of prequantization, and two examples displaying the inherent un-physicality of the prequantized Hilbert space and the prequantized operators.
+
+\begin{itemize}
+\item \emph{(Cotangent Bundles.)} We first consider the prequantization of a cotangent bundle $T^*Q$ where $Q$ is a smooth manifold of dimension $n$. The cotangent bundle has a natural global symplectic 2-form given by
+$$
+\omega = \sum_{i=1}^n \d q_i \wedge \d p_i
+$$
+where $(q_i,p_i)$ are \emph{canonical coordinates}; note also that $\omega = -\d\theta$ for
+$$
+\theta = \sum_{i=1}^n p_i \d q_i,
+$$
+the canonical 1-form on $T^*Q$.
+
+We note that the cohomology class $[\omega] = 0 \in \mathbb{Z}$ since we have that $\omega$ is exact ($\d(-\theta) = \omega$).
+
+Hence the cotangent bundle is prequantizable; since $\omega$ is equivalently the curvature form, we have a flat connection\footnote{See theorems 9.1 and 9.2 of Kobayashi \& Nomizu}, for example, for a proof of the claim that a connection is flat iff the bundle is trivial.} $\nabla$ and it is thus sufficient to take $T^*Q \times \mathbf{C}$ as the prequantum line bundle.
+
+We obtain a prequantum Hilbert space of $\mathcal{H} = \mathcal{C}(T^*Q)$ with metric given by (...)%%%%%%%%%%%%
+
+The quantized operator corresponding to $f \in C^\infty(T^*Q)$ is then given by
+$$
+Q[f] |\psi\rangle = \nabla_{X_f}|\psi\rangle + f|\psi\rangle.
+$$
+
+\item \emph{($\mathbf{R}^3$.)} As a specific example of the above, we consider $Q = \mathbf{R}^3$. According to the above, we have the symplectic manifold $T^*\mathbf{R}^3 \equiv \mathbf{R}^6$, with the hermitian line bundle given by $\mathbf{R}^6 \times \mathbf{C}$; we note that this is unique as Euclidean space is simply connected (i.e. all loops in the fundamental group are contractible), and the associated connection $\nabla$ is given by (...)%%%%
+
+Choose the Hamiltonian function $H$ to be (...)%%%%
+
+
+
+\item \emph{(Harmonic Oscillator.)} In the case of the $n$-dimensional harmonic oscillator, we have the phase space/symplectic manifold $(M,\Omega)$ given by
+$$
+M = \{(q^j,p_j) \in \mathbf{R}^{2n}\}, \Omega = \sum_j dq^j \wedge dp_j,
+$$
+with the Hamiltonian $H$ given by
+$$
+H(q,p) = \frac{1}{2}\sum_j ((q^j)^2 + (p_j)^2).
+$$
+We see that Born-Sommerfeld condition is satisfied, since we have $[\Omega] = 0 \in \mathbf{Z}$, and the line bundle is trivial and unique since $M$ is simply connected, with $L = M \times \mathbf{C}$ and the associated connection $\nabla$ given by
+$$
+\nabla_X \psi = X \psi + (2\pi i)\omega(X)\psi = (\ldots)%%%%%%
+$$
+where $\omega$ is the pullback given by (...)%%%%%%
+
+Now let us try to apply the prequantization map to the energy, i.e. $H$; we have that
+$$
+O_H = -i\hbar\sum_j\biggl[p_j\frac{\partial}{\partial q^j} - q^j\frac{\partial}{\partial p_j} \biggr];
+$$
+further, we have that
+$$
+O_H(\psi) = i\hbar\{H,\psi\},
+$$
+where the section $\psi$ is interpreted as a function $M \to \mathbf{C}$.
+
+There's an issue here, however; the operator $O_H$ and the classical Hamiltonian $H$ have the same spectrum, and hence $O_H$ has a continuous spectrum. But we know from physical experience that quantum operators must have discretized spectra.
+%%%%% talk about coherent states here: https://en.wikipedia.org/wiki/Coherent_states
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\message{ !name(prequantization.tex) !offset(-105) }

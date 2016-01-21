@@ -1,0 +1,434 @@
+%-----PREAMBLE-----
+\documentclass{tufte-handout}
+
+%use tikz-cd for comm diagrams:
+%\usepackage{tikz-cd}
+%use amsthm for thm-like environments:
+\usepackage{amsthm}
+%use thmtools to style new thm envns:
+\usepackage{thmtools}
+% amsfonts for fraktur lettering:
+\usepackage{amsfont}
+
+%define thrm environment
+\newtheorem{thrm}{Theorem}
+
+%define example environment
+\newtheorem{example}{Example}
+
+%define proof-sketch environment
+\renewcommand{\qedsymbol}{$\triangle$} %use triangle instead of qed square
+
+%define definition environment
+\newtheorem{defn}{Definition}
+
+%define shorthand for exterior derivative:
+\def\d{\mathrm{d}}
+
+\title{A Primer on Symplectic Reduction}
+
+%-----DOCUMENT BODY-----
+\begin{document}
+
+The standard geometric quantization procedure works on symplectic manifolds, a significant subclass of which --- including all unconstrained physical phase spaces --- is comprised of cotangent bundles. But when do we obtain a symplectic manifold that is \emph{not} equivalent to a cotangent bundle?
+
+In practice, we obtain a symplectic manifold that is inequivalent to a cotangent bundle when we have a symmetry acting on phase space (viewed as a Lie group action) and proceed to obtain the ``reduction'' of the space via the action of the symmetry. In general, the process is known as \emph{symplectic reduction}; this section will be devoted to the explanation of this reduction procedure.
+
+Generally speaking, symplectic reduction assumes a symplectic manifold $M$ equipped with a Lie group action $G \circlearrowleft M$ on $M$, producing a symplectic manifold $M // G$ --- known as the \emph{reduced space} --- in the following manner:
+
+\begin{itemize}
+\item Let $\mathfrak{g}$ be the Lie algebra associated to the Lie group $G$, i.e. the exponential map takes $\mathfrak{g}$ to $G$. If the action $G \circlearrowleft M$ preserves the symplectic form on $M$, then we obtain the following homomorphisms of Lie algebras:
+$$
+(\cdot)^M : \mathfrak{g} \to \Gamma(M,TM), X \mapsto X^M
+$$
+constructed by composing the group action and the exponential map, and  %CLARIFY!!!!!! --insert commutative diagram here to show how the map works
+$$
+J_{(\cdot)}: \mathfrak{g} \to C^\infty(M), X \mapsto J_X \mbox{ s.t. } X^M \cong \xi_{J_X},
+$$
+where $\xi_Y$ is the Hamiltonian vector field of $Y$.
+
+\item The functions $J_X$ may be assembled into a \emph{moment map}\footnote{Also written as ``momentum mapping''.} $J: M \to \mathfrak{g}^*$ for the action:
+$$
+\langle J(p) , X \rangle = J_X(p).
+$$
+Here, $\mathfrak{g}^*$ refers to the vector space dual of the Lie algebra $\mathfrak{g}$.
+
+\item The reduced space $M^0$ is then defined via $M^0 = J^{-1}(0) / G$, the preimage of $0 \in \mathfrak{g}^0$ through $J$, modulo $G$ Hence $M^0$ is a subspace of $M / G$, the orbit space of the action $G \circlearrowleft M$. Generally, we cannot guarantee that $M^0$ is a smooth manifold unless certain topological assumptions are made on the Lie group and its action, which we review below; however, if those conditions hold and $M^0$ is a smooth manifold, it also inherits a natural symplectic form.
+\end{itemize}
+
+In this chapter, we define and discuss the notion of symplectic reduction, with a particular focus on the symplectic reduction process of Marsden and Weinstein developed in \cite{marsdenweinstein}. We also discuss the pre-requisites necessary to understand the Marsden-Weinstein reduction procedure; we begin with a quick review of Lie groups and Lie algebras (as well as the correspondence between the two categories) and duals of Lie algebras, before discussing Lie groups acting on symplectic manifolds via symplectic and Poisson actions; we present the full reduction procedure in the final part.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lie Groups and Lie Algebras}
+\subsection{Lie Groups}
+% cover: lie groups and lie algebras (associated to a lie group)
+Lie groups are mathematical objects that are at once both smooth manifolds and groups\footnote{In the group theory sense.}, with the group structure and the manifold structure interacting in a canonical way.
+
+More formally,
+\begin{fullwidth}
+\begin{defn}
+Let $(G,\cdot)$ be a group such that the set $G$ also has the structure of a smooth manifold. Then $G$ is said to be a \emph{Lie group} if the group multiplication
+$$
+(\cdot): G \times G \to G
+$$
+is a smooth map from the product manifold $G \times G$ to $G$ and the inversion map
+$$
+(-)^{-1}: G \to G
+$$
+is a smooth automorphism.
+
+Equivalently, $G$ is a Lie group if the inverse product
+$$
+(g_1,g_2) \to g_1^{-1}\cdot g_2
+$$
+is a smooth map.
+\end{defn}
+\end{fullwidth}
+
+Lie groups often appear as matrix groups and manifolds with a large amount of symmetry:
+\begin{itemize}
+\item $GL(n,\mathbb{R})$, the general linear group, is a Lie group under matrix multiplication.
+
+\item $Sp(2n,\mathbb{R})$, the symplectic group, is a Lie group under matrix multiplication.
+
+\item $\mathbb{T}^1$, the dimension 1 torus, is a Lie group when viewed as the complex numbers of norm 1 under multiplication.
+\end{itemize}
+
+\subsection{Lie Algebras and their Duals}
+A Lie algebra is a vector space with a special kind of product, called a \emph{Lie bracket}.
+\begin{fullwidth}
+\begin{defn}
+Let $\mathfrak{g}$ be a vector space over some field. Let
+$$
+[\cdot, \cdot]: \mathfrak{g} \times \mathfrak{g} \to \mathfrak{g}
+$$
+be an operation satisfying
+\begin{itemize}
+\item bilinearity: have linearity in both the first argument:
+$$
+[\alpha x + \beta y, z] = \alpha [x,z] + \beta [y,z]
+$$
+and in the second argument:
+$$
+[x,\gamma y + \delta z] = \gamma [x,y] + \delta [x,z].
+$$
+\item alternativity: for all elements $v \in \mathfrak{g}$, we have $[x,x] = 0$.
+\item anticommutativity: for all elements $v,w \in \mathfrak{g}$, we have $[v,w] = -[w,v]$.
+\item \emph{Jacobi's identity}: for all $x,y,z \in \mathfrak{g}$, we have that
+$$
+[x,[y,z]] + [z,[x,y]] + [y,[z,x]] = 0.
+$$
+\end{itemize}
+
+The the pair $(\mathfrak{g},[\cdot, \cdot])$ is called a \emph{Lie algebra}.
+\end{defn}
+\end{fullwidth}
+(\emph{N.B.} --- a good way of remembering the form of the Jacobi identity is to imagine the variables $x,y,z$ rotating in a cyclic list towards the right.)
+
+Lie algebras appear frequently:
+\begin{itemize}
+\item $\mathbb{R}^3$ with the bracket
+$$
+[\cdot,\cdot] = \cdot \times \cdot
+$$
+given by the cross product of two vectors is a Lie algebra.
+\item Consider the space of differentiable vector fields on $\mathbb{R}^n$, represented by differentiable functions of the form
+$$
+f: \mathbb{R}^n \to \mathbb{R}^n
+$$
+taking each point to a vector; then for two vector fields $f,g$, the bracket
+$$
+[f,g]: u \in mathbb{R}^n \to \nabla_{f(u)}\nabla_{g(u)} - \nabla_{g(u)}\nabla{f(u)}
+$$
+gives $\mathbb{R}^n$ the structure of a Lie algebra. % check this example
+\item More generally, on a smooth manifold $M^n$, consider the vector space of smooth vector fields $\mathcal{X}(M)$ with the commutator $[\cdot,\cdot]$ given by
+$$
+\forall f \in C^\infty(M) \, \mathcal{L}_{[X,Y]}f = L_XL_Yf - L_YL_Xf;
+$$
+the pair $(\mathcal{X}(M),[\cdot,\cdot])$ has the structure of a Lie algebra.
+\end{itemize}
+
+As with all vector spaces, there is the notion of a \emph{dual} vector space associated to a Lie algebra $\mathfrak{g}$:
+$$
+\mathfrak{g}' = \{\gamma : \mathfrak{g} \to \mathbb{R} | \gamma \mathrm{linear}\}.
+$$
+
+\subsection{Lie Algebra Associated to a Lie Group}
+Lie algebras and Lie groups share an important association, reflecting a ``global versus local'' dichotomy; there is a Lie algebra associated to each point on a Lie group, formalized in the following:
+\begin{fullwidth}
+\begin{thrm}
+Recall that a vector field $X$ on a Lie group $G$ is \emph{left-invariant} if it stays fixed when ``shifted'' by any element $g$:
+$$
+\forall g \in G, \; (g)^*X = X.
+$$
+
+Let $G$ be a Lie group and let $Lie(G)$ be the Lie algebra of smooth left-invariant vector fields on $G$. Consider the \emph{evaluation map}
+$$
+\epsilon: Lie(G) \to T_e G, \, \, X \mapsto X_e,
+$$
+where $e$ is the group identity of $G$.
+
+Then $\epsilon$ is an isomorphism of vector spaces, and thus
+$$
+dim(G) = dim(Lie(G)) < \infty.
+$$
+\end{thrm}
+\end{fullwidth}
+
+Additionally, there is an important map, known as the \emph{exponential} map, that goes in the other direction:
+\begin{fullwidth}
+\begin{thrm}
+Let $G$ be a Lie group with Lie algebra $\mathfrak{g} = Lie(G)$. Define the \emph{exponential map} $\exp: G \to mathfrak{g}$ by
+$$
+exp(X) = F_X(1),
+$$
+where $F_X$ is the one-parameter subgroup of $X$, i.e. the one-dimensional integral curve
+% pages 522 & 523 of Lee's smooth manifolds; defn of exp map and prop 20.8
+The exponential map has the following properties: %
+\end{thrm}
+\end{fullwidth}
+
+Finally, this Lie group-Lie algebra correspondence is further strengthened by the following:
+\begin{fullwidth}
+\begin{thrm}
+% thm 20.2 of Lee's smooth manifolds
+\end{thrm}
+\end{fullwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lie Group Actions on Symplectic and Poisson Manifolds}
+In general, actions of Lie groups on smooth manifolds allow us a secondary perspective towards understanding complicated manifold geometries. Lie group actions form ``layerings'' in the sense that we may study $g \cdot M$ for each $g in G$; at the same time, we can also look at the \emph{orbit-types} of $G$ %%%what does this mean???? http://en.wikipedia.org/wiki/Topologically_stratified_space
+
+More formally, suppose we had an action of a Lie group on a smooth manifold given by
+$$
+\sigma: G \times M \to M, (g,p) \mapsto g \cdot p;
+$$
+for a point $p \in M$, consider the orbit map $\sigma_p: G \to M$ given by $\sigma_p(g) = g \cdot p$. Then $\sigma_p$ is a differentiable map, and its differential at $e \in G$ is %%%%%finish notes in "lie groups acting on symplectic manifolds pt. I"
+
+\subsection{On Symplectic Manifolds}
+Fix a connected Lie group $G$ with an action $G \circlearrowleft M$ on a symplectic manifold $(M,\omega)$. Suppose that the action $G \circlearrowleft M$ leaves $\omega$ fixed, i.e. $G$ acts on $M$ through symplectomorphisms $M \to M$. Let $\mathfrak{g}$ be the Lie algebra associated to $G$, i.e. $\exp G = \mathfrak{g}$. Then for $X \in \mathfrak{g}$, we have that
+$$
+0 = X \cdot \omega = \d \iota(\xi_X)\omega + \iota(\xi_X)\d \omega = \d \iota(\xi_X)\omega \mbox{ (~ closed one-form),}
+$$
+where $\iota$ is the map that [...FIGURE THIS PHRASING OUT], $\d$ is the exterior derivative, and $\xi_X$ is the vector field on $M$ associated to $X$. The first equality follows from the definition of a symplectomorphism; the second from the definition of the Lie algebra action; and the third from the fact that $\omega$ is closed. %FIX THIS
+
+The above chain of equalities leads to two useful definitions. Call a vector field $\xi \in \Chi(M)$ a \emph{symplectic vector field} if
+$$
+\d \iota(\xi)\omega \mbox{ is closed,}
+$$
+and call it a \emph{Hamiltonian vector field} if
+$$
+\xi^\flat \mbox{ is exact,}
+$$
+i.e. if there exists a function $\phi_\xi \in C^\infty(M)$ such that $\xi^\flat + \d \phi_\xi = 0$\footnote{Observe that $\phi_\xi$ is in general \emph{not} unique.}.
+
+Define also the corresponding spaces $\mathfrak{sym}(M)$ and $\mathfrak{ham}(M)$ consisting of the above vector fields:
+\begin{itemize}
+\item Define $\mathfrak{sym}(M)$ to be the space of symplectic vector fields on $M$; we also note that
+$$
+\mathfrak{sym}(M) = \sharp(\Omega^1_{closed}(M))
+$$
+where $\sharp$ is the \emph{musical isomorphism} taking a differential 1-form to its corresponding vector field.
+
+\item Define $\mathfrak{ham}(M)$ to be the space of hamiltonian vector fields on $M$; we note that
+$$
+\mathfrak{ham}(M) = \sharp(\Omega^1_{exact}(M)).
+$$
+ \end{itemize}
+
+With the above definitions in hand, we can now define the notions of \emph{Hamiltonian} and \emph{Poisson} actions of Lie groups:
+\begin{defn}
+Let $G \circlearrowleft M$ be a Lie group action, and let $\mathfrak{g} = \Lie(G)$ be the Lie algebra associated to $G$. We say that $G \circlearrowleft M$ is \emph{Hamiltonian} if, for all $X \in \mathfrak{g}$, we can find a function $\phi_X \in C^\infty(M)$  such that
+$$
+\xi^\flat_X + \d \phi_X = 0,
+$$
+in which case we obtain an associated map $\mathfrak{g} \to C^\infty(M)$ given by %%%%
+
+Further, consider the Poisson algebra on $C^\infty(M)$ given by the Poisson bracket
+$$
+\{f,g\} := \omega(\xi_f, \xi_g),
+$$
+where $\xi_f$ (resp., $\xi_g$) is the hamiltonian vector field asociated to $f$ (resp., $g$), i.e. $\xi^\flat_f + \d f = 0$ ($\xi^\flat_g + \d g = 0$). This gives us a Lie algebra structure on $C^\infty(M)$, and a Hamiltonian action $G \circlearrowleft M$ is said to be \emph{Poisson} if there exists a homomorphism of Lie algebras $\mathfrak{g} \to C^\infty(M), X \mapsto \phi_X$ such that
+$$
+\xi^\flat_X + \d \phi_X = 0 \mbox{ and } \phi_{[X,Y]} = \{\phi_X, \phi_Y\},
+$$
+for all $X,Y \in \mathfrak{g}$.
+\end{defn}
+
+Intuitively, %%%%%PARSE DEFINITION & PROVIDE INTUITION/MOTIVATION HERE
+
+\subsection{On Poisson Manifolds}
+Fix a Poisson manifold $P$, i.e. a smooth manifold with a Lie bracket $\{\cdot,\cdot\}$ on its space of smooth functions $C^\infty(P)$ such that the \emph{Leibniz rule} holds:
+$$
+\forall f,g,h \in C^\infty(M), \{fg,h\} = f\{g,h\} + g\{f,h\}.
+$$
+Equivalently, we may say that Poisson manifolds are smooth manifolds such that $C^\infty(M)$ is equipped with a Lie algebra structure such that the %%%quote wiki:
+%http://en.wikipedia.org/wiki/Poisson_manifold
+
+\begin{example}
+As an example of a Poisson bracket, consider the \emph{Hamiltonian vector field} $\xi_f$ of a function $f$, i.e. the unique vector field satisfying
+$$
+% define hamiltonian vector fields here
+$$
+The Lie bracket of two vector fields is defined via $[X,Y] = XY - YX$, viewing the vector fields as derivations. It is not difficult to verify that the following map is a Poisson bracket on $C^\infty(M)$:
+$$
+\{\cdot, \cdot\}: C^\infty(M) \times C^\infty(M) \to C^\infty(M), \{f,g\} := [\xi_f,\xi_g].
+$$
+\end{example}
+
+For a Lie group $G$, a \emph{Lie group action} on a Poisson manifold $P$ 
+% action of a lie group on P via its lie algebra action
+
+\subsection{Closing Remarks on Symplectic and Poisson Manifolds}
+There are a few remarks to make here regarding the connection between symplectic and Poisson manifolds. The most obvious is that every symplectic manifold possesses a Poisson manifold if one takes the Poisson bracket to be given by
+$$
+\{f,g\} = \omega(\xi_f,\xi_g),
+$$
+where as above $\xi_f$ (resp., $\xi_g$) is the Hamiltonian vector field of $f$ (resp., $g$).
+
+Something more can be said here --- symplectic manifolds are those special Poisson manifolds in which the Hamiltonian vector fields \emph{exhaust} the tangent bundle:
+\begin{thrm}
+%prove the above here & make rigorous
+\end{thrm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Marsden-Weinstein Reduction and Co-Isotropic Reduction}
+% http://www.utm.utoronto.ca/~karshony/HUJI/monograph/top.pdf
+To define the Marsden-Weinstein reduction process, one must first introduce the \emph{moment map}\footnote{Moment maps are also called ``momentum mappings''. The reason for this is related to physical theory.} taking a manifold to the dual of the Lie algebra acting on it; then, one must define \emph{regular values} of this moment map; and finally, isotropy groups of regular values must be defined.
+
+\subsection{Momentum Mappings}
+Physically speaking, symplectic manifolds represent phase spaces of physical systems while symplectic group actions represent symmetries in the dynamics of the system. Momentum mappings of those group actions, then, represent ways of creating vector fields out of elements of the Lie algebras of these symplectic group actions\footnote{If you consider the Lie algebra as the ``localization'' of a Lie group, then choose an element of the Lie algebra; the \emph{infinitesimal} action of the Lie group on a manifold should then intuitively give you a vector at each point on the manifold. Think of it as putting the Lie algebra element on each point of the manifold and perturbing each vector by the infinitesimal group action.}.
+
+Recall that \emph{symplectic} group actions $\Psi : G \times M \to M$ are those that preserve the symplectic form of $M$, i.e.
+$$
+\Psi^*_g \omega = \omega, \; \forall g \in G.
+$$
+
+Recall also that the \emph{infinitesimal generator} of a group action $G \times M \to M$ is just an element of the Lie algebra $\mathfrak{g}$ where $\mathrm{Lie}(\mathfrak{g}) = G$.
+
+Then we have the following definition of a momentum mapping:
+\begin{fullwidth}
+\begin{defn}[Momentum Mappings]
+Let $(M,\omega)$ be a symplectic manifold and suppose that a Lie group $G$ acts on $M$ symplectically via the action $\Psi: G \times M \to M$. A \emph{momentum mapping} for $\Psi$ is a smooth function $\mathcal{J}: M \to \mathfrak{g}^*$ such that for each element $\phi \in \mathfrak{g}$, the associated maps
+$$
+\mathcal{J}_\phi : M \to \mathbb{R}, \; p \mapsto \mathcal{J}_\phi(x) = \mathcal{J}(x)(\phi) = \langle \mathcal{J}(x) | \phi \rangle
+$$
+satisfy
+$$
+\mathrm{d}(\mathcal{J}_\phi) = \iota_{\phi_M} \omega,
+$$
+where $\phi_M$ is the infinitesimal generator of the symplectic action corresponding to $\phi$.
+
+In other words, for each Lie group element $\phi$, we have an associated vector field $X_\phi$ given by the infinitesimal generator of the action on $\phi$. A momentum mapping is a mapping $\mathcal{J}$ such that the vector field $X_{J_\phi}$ of each function $\mathcal{J}_\phi$ satisfies
+$$
+X_{J_\phi} = X_\phi.
+$$
+\end{defn}
+\end{fullwidth}
+Intuitively speaking, a momentum mapping for a given symplectic group action is a canonical way to generate the vector fields associated to the action.
+
+We also restate three important definitions in the context of momentum mappings:
+\begin{itemize}
+\item (\emph{Adjoint actions.}) For a Lie group $G$ with Lie algebra $\mathfrak{g}$, the \emph{adjoint action} $Ad: G \times \mathfrak{g} \to G$ is given by %%% https://math.berkeley.edu/~alanw/pirlmasters.pdf
+
+\item (\emph{Regular values.}) An element $\zeta$ of the Lie algebra dual $\mathfrak{g}^*$ is said to be a \emph{regular value} of $\mathcal{J}$ if for all points $p \in \mathcal{J}^{-1}(\zeta)$, the differential
+$$
+(D\mathcal{J})_p : T_p M \to \mathfrak{g}^*
+$$
+at $p$ is a surjective (``onto'') linear map.
+
+\item (\emph{Isotropy Groups.}) Choose a regular value $\mu$ of $\mathcal{J}$. The \emph{isotropy group} $G_\mu$ is defined as %%% https://math.berkeley.edu/~alanw/pirlmasters.pdf
+\end{itemize}
+
+\subsection{Definition of Marsden-Weinstein Reduction}
+We can now define Marsden-Weinstein reduction of a symplectic group by its group of symmetries. As in many situations, the best way of defining the reduced manifold is by proving its existence as a theorem:
+\begin{fullwidth}
+\begin{thrm}
+Let $(M,\omega)$ be a symplectic manifold and let $\Psi: G \times M \to M$ be a symplectic Lie group action on $M$ with momentum mapping $\mathcal{J}: M \to \mathfrak{g}^*$. Suppose the following three conditions all hold:
+\begin{enumerate}
+\item $\mathcal{J}$ is $AD^*$-equivariant;
+\item $\mu$ is a regular value of $\mathcal{J}$; and
+\item the isotropy group $G_\mu$ acts freely and properly under the $Ad^*$ action on $\mathcal{J}^{-1}(\mu)$.
+\end{enumerate}
+Then
+$$
+M_\mu := \mathcal{J}^{-1}(\mu) / G_\mu
+$$
+possesses a \emph{unique} symplectic form $\omega_\mu$ satisfying the property
+$$
+\pi^*_\mu = \iota^*_\mu \omega,
+$$
+where
+$$
+\pi_\mu : \mathcal{J}^{-1}(\mu) \to M_\mu
+$$
+is the canonical projection and
+$$
+\iota_\mu : \mathcal{J}^{-1}(\mu) \to M
+$$
+is the inclusion map.
+\end{thrm}
+\end{fullwidth}
+It is customary to write $M // G$ for $M_\mu$ and say that $M // G$ is the \emph{Marsden-Weinstein (symplectic) reduction} of $M$ by $G$.
+
+\subsection{Properties}
+We now list some properties of the symplectic reduction of a symplectic manifold by its symplectic group action.
+
+\begin{itemize}
+\item (To be completed.) %1) __SLICE THM__: when is M^0 a manifold? ---> when we impose (i) 0 is a __regular value__ of J; \&\& (ii) the G-action is __proper__ and __free__ on J^{-1}(0).
+
+\item (To be completed.) % 2) When the above holds, M^0 is a manifold with a unique symplectic form \omega^0 satisfying:
+%$$
+%\iota^*\omega = \pi^*\omega^0,
+%$$
+%where the maps $\iota$ and $\pi$ are inclusion and projection maps, i.e.
+%$$
+%M \overset{\iota}\hookleftarrow J^{-1}(0) \overset{\pi}\to M^0.
+%$$
+\end{itemize}
+
+\subsection{Coisotropic Reduction}
+Aside from the notion of Marsden-Weinstein reduction, there is also \emph{coisotropic} reduction, in which a coisotropic submanifold $M' \hookrightarrow M$ of a symplectic manifold induces a foliation of $M$; the space of leaves of this foliation inherits a symplectic form canonically related to the symplectic form of the greater manifold.
+
+Coisotropic reduction is outside the scope of this document; one may consult [\textbf{BRST06}] for further details. % https://empg.maths.ed.ac.uk/Activities/BRST/Lect2.pdf
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{De Rham and Lie Algebra Cohomologies}
+We would like a way of measuring the difference between symplectic actions and Poisson actions of Lie groups, i.e. a way to quantify the obstructions that would prevent a symplectic action from becoming a Poisson action. This is possible through a combination of the \emph{de Rham} and \emph{Chevalley-Eilenberg}\footnote{Also known as \emph{Lie algebra} cohomology.} cohomology theories --- and more generally, via \emph{equivariant cohomology}.
+
+\subsection{De Rham Cohomology}
+\textbf{(Work in Progress.)}
+% de rham cohomology for symplectic/poisson actions
+
+\subsection{Chevalley-Eilenberg Cohomology}
+\textbf{(Work in Progress.)}
+% chevalley-eilenberg for actions
+
+\subsection{Equivariant Cohomology}
+\textbf{(Work in Progress.)}
+% equivariant cohomology
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Historical Notes and References}
+The notion of a Lie group action on a manifold has existed since Sophus Lie's investigations into %%%
+
+In general, the orbit space $M / G$ of a $G$-manifold, when $G$ is a general Lie group, fails to be a manifold unless we impose requirements on $G$. For a study of how to deal with orbifold orbit spaces, see \cite{FIGURE SOMETHING OUT LOOK IT UP}.
+% ^why? slice theorem: http://en.wikipedia.org/wiki/Slice_theorem_%28differential_geometry%29
+
+The genesis of Lie algebra cohomology is in the 1948 paper of Chevalley and Eilenberg, ``Cohomology Theory of Lie Groups and Lie Algebras'' \cite{chevalleyeilenberg}; a modern introduction may be found in the seventh chapter of Hilton \& Stammbach's ``A Course in Homological Algebra'' \cite{HiltonStammbach}.
+
+For a cursory introduction to equivariant cohomology, there is the short expository by L. Tu \cite{tuequivariant};
+%http://www.ams.org/notices/201103/rtx110300423p.pdf
+deeper discussions may be found in the first chapter of Guillemin and Sternberg's ``Supersymmetry and Equivariant de Rham Theory''
+% http://www.springer.com/gp/book/9783540647973
+and % look through http://ncatlab.org/nlab/show/equivariant+cohomology#references
+
+For a reference to the theory of Lie algebras, see
+http://www.tufts.edu/~fgonzale/lie.algebras.book.pdf
+\end{document}
+
+%https://empg.maths.ed.ac.uk/Activities/BRST/Lect2.pdf
+%https://math.berkeley.edu/~alanw/pirlmasters.pdf
+%https://en.wikipedia.org/wiki/Moment_map
+%https://en.wikipedia.org/wiki/Submersion_(mathematics)
+%http://www.utm.utoronto.ca/~karshony/HUJI/monograph/top.pdf

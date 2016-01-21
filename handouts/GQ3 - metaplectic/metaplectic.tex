@@ -1,45 +1,240 @@
+%-----PREAMBLE-----
+\documentclass{tufte-handout}
+
+%use tikz-cd for comm diagrams:
+%\usepackage{tikz-cd}
+%use amsthm for thm-like environments:
+\usepackage{amsthm}
+%use thmtools to style new thm envns:
+\usepackage{thmtools}
+
+%define thrm environment
+\newtheorem{thrm}{Theorem} % \begin{fullwidth} stuff here \end{fullwidth}
+
+%define example environment
+\newtheorem{example}{Example} % \begin{fullwidth} stuff here \end{fullwidth}
+
+%define proof-sketch environment
+\renewcommand{\qedsymbol}{$\triangle$}
+
+%define definition environment
+\newtheorem{defn}{Definition} % \begin{fullwidth} stuff here \end{fullwidth}
+
+%define shorthand for exterior derivative:
+\def\d{\mathrm{d}}
+
+\title{Metaplectic Structures and Correction of Quantization}
+\date{}
+%-----DOCUMENT BODY-----
+\begin{document}
+\maketitle
+
+% preface:
 After the choice of a polarization, we still do not yet have the structure of a Hilbert space on the space of states; this issue is resolved by placing a \emph{metaplectic structure} on the symplectic manifold, in a process known as \emph{metaplectic correction} (for historical reasons), so that sections are square-integrable. In this chapter, we present a discussion of the insufficiency of polarization to motivate the definition and purpose of metaplectic structures, before building on top of the metaplectic structure to conclude the traditional geometric quantization programme on a given symplectic manifold.
 
 %why does our state space fail to be Hilbert?
 \section{Integrability of States}
-Consider a prequantizable symplectic manifold $(M,\omega)$ equipped with $P$ a choice of polarization. In general, the space $\Gamma_P(L) = \Gamma_P(L \to M)$ of polarized sections does not form a Hilbert space\footnote{A notable exception is, of course, the case of a K\"{a}hler manifold.}, for the following reasons:
+Consider a prequantizable symplectic manifold $(M,\omega)$ equipped with $P$ a choice of polarization. In general, the space $\Gamma_P (L) = \Gamma_P(L \to M)$ of polarized sections does not form a Hilbert space\footnote{A notable exception is in the case of a K\"{a}hler manifold.}, for the following reasons:
 \begin{itemize}
-\item there may be sections $\phi \in \Gamma_P(L)$ that are not square-integrable; and even if this were the case,
+\item there may be sections $\phi \in \Gamma_P(L)$ that are not square-integrable; and even if this were not the case,
 
 \item the inner product may not be defined for all pairs $\phi,\psi \in \Gamma_P(L)$.
+\end{itemize}
+In the following sections we will sketch out the following amelioration\footnote{In a process known as ``\emph{metaplectic correction}''.} to the above problem: instead of considering sections, we consider ``square roots'' of those sections. To do this, we have to exploit the double covering of the symplectic group by the metaplectic group and define half-densities.
 
+In addition, we also provide the necessary background on frame bundles, double covers, equivariant lifts, and characteristic classes needed to understand aspects of the correction process.
+
+% frame bundle
+\section{Frame Bundles}
+Suppose we have a vector bundle $E \to B$; then for each point $b \in B$, the fiber $E_b$ is a vector space. For each such $E_b$, we can consider the ordered bases (or \emph{frame}) for $E_b$; the bundle over $B$ with fiber given by the collection of all bases over $E_b$ is then called the \emph{frame bundle} of $E \to B$. More formally,
+\begin{fullwidth}
+\begin{defn}
+Let $E \to B$ be a (real) smooth vector bundle of rank $k$; denote by $F_b$ the collection of all frames of $E_b$ at a point $b \in B$. The \emph{frame bundle} $F(E) \to B$ is defined as the disjoint union
+$$
+F(E) = \coprod_{b \in B} F_b.
+$$
+The points of the frame bundle are of the form $(b,\phi)$, for $b \in B$ and $\phi$ an ordered basis for $E_b$; the fiber of $F(E)$ at $b$ is $F_b$.
+\end{defn}
+\end{fullwidth}
+We have an obvious example of a frame bundle:
+\begin{fullwidth}
+\begin{example}
+\item Consider the tangent bundle $TM$ of a smooth manifold $M$; this is a vector bundle with the fiber equal to the tangent space at each point $M$. The associated frame bundle $F(TM) \to M$ is known as the \emph{tangent frame bundle} of $M$.
+\end{example}
+\end{fullwidth}
+
+An important point to note is the close relationship between the general linear group $GL(n,\mathbb{R})$ and the frame bundle $F(E)$ of a rank $n$ vector bundle $E \to B$: we have an action
+$$
+\cdot : GL(n,\mathbb{R}) \times F(E) \to F(E), \; g \cdot (b,\phi) \mapsto (b,g\phi),
+$$
+which is free\footnote{That is, if $g \in GL(n,\mathbb{R})$ has a fixed point, then $g = Id_n$ the identity matrix.} and has orbits $GL(n,\mathbb{R})_b = F_b$.
+
+Finally, frame bundles are indeed bundles, with bundle structures inherited from the underlying vector bundle:
+\begin{fullwidth}
+\begin{thrm}
+Let $E \to B$ be a rank $n$ real vector bundle, with local trivialization $(U_i, \psi_i)$; the frame bundle $F(E)$ % COPY https://en.wikipedia.org/wiki/Frame_bundle
+\end{thrm}
+\end{fullwidth}
+
+% double coverings of groups
+\section{Double Coverings of Groups}
+Consider the group of unit complex numbers
+$$
+\mathbb{T} = \{e^{i\theta} | \theta \in [0,2\pi) \}
+$$
+with the group operation given by multiplication. Consider also $(\mathbb{R},+)$, the additive group of real numbers, along with the exponential map $\exp : \mathbb{R} \to \mathbb{T}$ given by
+$$
+x \mapsto e^{ix}.
+$$
+The preimage of any element in $\mathbb{T}$ is identically $\mathbb{Z}$; one can also note that this map is a homeomorphism\footnote{When $\mathbb{R}$ and $\mathbb{T}$ are viewed as topological spaces.} as well as a group homomorphism, since
+$$
+(x + y) \mapsto e^{i(x+y)} = e^{ix}e^{iy}.
+$$
+Hence one can envision this mapping causing the real line ``wrapping around'' the circle group $\mathbb{T}$ an infinite number of times.
+
+There is a generalization of this phenomenon, known as a \emph{covering} group. The following definition comes from Munkres:
+\begin{fullwidth}
+\begin{defn}
+Let $p: E \to B$ be a continuous, surjective map of topological spaces; an open set $U \subset B$ is \emph{evenly covered} by $p$ if $p^{-1}(U)$ can be written as the union of disjoint open slices $V_\alpha \subset E$, such that $V_\alpha|_p \to U$ is a homeomorphism.
+
+If every point $b \in B$ has a neighborhood that is evenly covered by $p$, then $p$ is called a \emph{covering map} and $E$ is called a \emph{covering space} of $B$.
+
+A \emph{covering group} of a topological group $G$ is a covering space $H \to G$ such that $H$ is a topological group and $\pi: H \to G$ is a continuous group homomorphism.
+
+In other words, it is a covering space within the category of topological groups.
+\end{defn}
+\end{fullwidth}
+We have the following examples of covering groups:
+\begin{itemize}
+\item The circle group $\mathbb{T}$ can cover itself through the map $e^{i\theta} \mapsto e^{ni\theta}$ for some fixed natural number $n$.
+\item $SU(2)$, the special unitary group\footnote{The special unitary group consists of unitary matrices with determinant 1.} of $2 \times 2$ matrices, is the covering group of $SO(3)$, the special orthogonal group\footnote{The special orthogonal group consists of orthogonal matrices of determinant 1. Orthogonal matrices are those matrices $M$ that satisfy
+$$
+M^{T}M = Id,
+$$
+and represent Euclidean rotations.} of $3 \times 3$ matrices.
+\item (\emph{Double coverings.}) Let $H$ be covered by $G$, with $|G|/|H| = 2$.\footnote{I.e., the index of $H$ in $G$ is 2.} Further suppose that the preimage of each evenly-covered open set in $H$ can be written as the union of two disjoint open slices in $G$. Then $G$ is said to be a double-covering group of $H$.
 \end{itemize}
 
-The reason for the former is %%%%%%%%%
+The following theorem applies to covering spaces, and is known as the \emph{lifting lemma}:
+\begin{fullwidth}
+\begin{thrm}
+Suppose $p: E \to B$ is a covering map with $E$ locally path-connected and $B$ path-connected. Let $p(e_0) = b_0$.
 
+Let $f: Y \to B$ be a continuous map with $f(y_0) = b_0$. Suppose $Y$ is path-connected and locally path-connected.
 
-The reason for the latter is %%%%%%%%%
+Then $f$ can be lifted to a map $\widetilde{f}: Y \to E$ such that $\widetilde{f}(y_0) = e_0$ if and only if
+$$
+f_{*}(\pi_1(Y,y_0)) \subset p_{*}(\pi_1(E,e_0)),
+$$
+where $pi_1$ is the fundamental group at a given base point.
+% INSERT COMMUTATIVE DIAGRAM HERE
+\end{thrm}
+\end{fullwidth}
+Intuitively, the above result states that we can understand all the covering spaces of a given ``nice enough'' topological space by examining the subgroups of its fundamental group.
 
+% equivariant liftings of frame bundles (w/r/t a group)
+\section{Equivariant Liftings of Frame Bundles}
+In the following, recall that an \emph{equivariant} map (with respect to a group action) is a map that commutes with the group action. More precisely, suppose we have a map $f: X \to Y$ and a group $G$ acting on both $X$ and $Y$ under the same group action
+$$
+(\cdot): G \times X \to X, \; G \times Y \to Y.
+$$
+Then we say that $f$ is equivariant if for any point $x$ and any choice of group element $g$, we have that
+$$
+f(g\cdot x) = g\cdot f(x).
+$$
 
-In the following sections we will sketch out the following amelioration\footnote{Or \emph{correction}, if you will.} to the above problem: %%%%%%%%%
+In our context, we have a certain frame bundle\footnote{We will be concerned with the \emph{symplectic frame bundle}, which is a sub-bundle of the tangent frame bundle, corresponding to the symplectic group
+$$
+Sp(n,\mathbb{R}) \subset GL(n,\mathbb{R}).
+$$
+However, we specialize later so that we may present the more general idea here.} $SF(M) \to M$ with a group $G$ acting on $SF(M)$ with $M$ fixed.
+Additionally, we have a double-covering group
+$$
+\rho: \hat{G} \to G,
+$$
+such that $\hat{G}$ acts on another frame bundle $MF(M) \to M$.
 
+We are concerned with the possibility of lifting the double-covering map $\rho$ to a map $MF \to SF$ between the frame bundles. Additionally, we would want such a map between frame bundles to ``respect'' the group actions in some sense\footnote{(In other words, we want a map that is equivariant with respect to the $G$ and $\hat{G}$ actions.)}.
+
+The main result we are concerned with is the following, which states existence:
+\begin{fullwidth}
+\begin{thrm} % CONFIRM AND CHECK THIS: see https://en.wikipedia.org/wiki/Metaplectic_structure
+Let $\rho: \hat{G} \to G$ be a double cover of Lie groups, and let $G$ act on a frame bundle $F_G \to^{\alpha} M$. Then there exists a frame bundle $F_{\hat{G}} \to^{\beta} M$ and a frame bundle lifting
+$$
+\hat{\rho} : F_{\hat{G}} \to F_G
+$$
+such that the following properties are all true:
+\begin{itemize}
+\item $\hat{\rho}$ is an equivariant map;
+\item $\hat{G}$ acts on $F_{\hat{G}} \to M$; and
+\item $\hat{\rho} \circ \alpha \equiv \beta$.
+\end{itemize}
+\end{thrm}
+\end{fullwidth}
+
+We now get more specific and give two brief examples which we will elaborate upon below:
+\begin{itemize}
+\item (\textbf{Metaplectic Structures.}) Let $(M^{2n},\omega)$ be a symplectic group. We have the symplectic group $Sp(2n,\mathbb{R})$ acting on the symplectic frame bundle $\pi_{Sp}: SF \to M$; the symplectic group is double-covered by the metaplectic group\footnote{(Also defined as the unique double covering group of the symplectic group.)} $\rho: Mp(2n,\mathbb{R}) \to Sp(2n,\mathbb{R})$.
+
+% https://en.wikipedia.org/wiki/Metaplectic_structure
+A \emph{metaplectic structure} on $(M,\omega)$ is defined as an equivariant lifting of $SF$ with respect to $\rho$ to a principal $Mp(2n,\mathbb{R})$-bundle $\pi_{Mp}: MF \to M$.
+
+% https://en.wikipedia.org/wiki/Spin_structure#Obstruction
+\item (\textbf{Spin Structures.}) The $n$-dimensional spin group $Spin(n)$ is the unique double covering group of the special orthogonal group $SO(n)$; let this double cover be denoted by $\phi: Spin(n) \to SO(n)$. Let $(N,g)$ be a real Riemannian manifold of dimension $n$.
+
+The (oriented) orthonormal frames of $M$ form a frame bundle $SOF \to M$, a principal bundle under the action of $SO(n)$; a \emph{spin structure} on $M$ is then defined as an equivariant lift of $SOF$ to a frame bundle $SPF \to M$ such that $SPF$ is a principal bundle under the action of $Spin(n)$.
+\end{itemize}
+
+We will elaborate on metaplectic and spin structures in a later section. The existence of metaplectic and spin structures is equivalent to stating that the first Chern class $c_1(M)$ is even, or equivalently that the second Stiefel-Whitney class $w_2(M)$ vanishes. We present the definitions of these classes in the next section.
+
+% stiefel-whitney classes and chern classes
+\section{Stiefel-Whitney Classes and Chern Classes}
+The \emph{Stiefel-Whitney} classes
+$$
+w_0(E), w_1(E), \ldots, w_k(E)
+$$
+of a real vector bundle $E \to B$ of rank $k$ tell us about the obstructions to finding independent\emph{Here, the independence is used in the linear-algebraic sense; think of independent vectors for each $b \in B$.} sections
+$$
+\sigma: B \to E,
+$$
+and are defined cohomologically.
+
+On the other hand, the Chern classes
+$$
+c_1(K), c_2(K), \ldots, c_k(K)
+$$
+of a \emph{complex} vector bundle $K \to M$ of rank $k$ are defined homotopically and allow us to confirm that two vector bundles over the same base manifold are indeed different\footnote{However, two different vector bundles can have the same Chern class.}.
+\textbf{Work in progress. To be completed.}
 
 %definition of a metaplectic structure.
-\section{Metaplectic Structures}
+\section{Metaplectic and Spin Structures}
+In this section, we examine two very special double covering groups: the \emph{metaplectic group}, which is the double covering group of the symplectic group $Sp(2n)$; and the \emph{spin group}, which is the double covering group of the special orthogonal group $SO(n)$.
+%https://en.wikipedia.org/wiki/Metaplectic_structure
+%https://en.wikipedia.org/wiki/Spin_structure
 \subsection{Definition}
-A metaplectic structure on a symplectic manifold may be thought of as analogous to a spin structure placed on a Riemannian manifold\footnote{Or rather, an \emph{oriented} Riemannian manifold}, in that the definitions of each share the same pattern of being defined as \emph{equivariant lifts} of a certain frame bundle, with respect to a certain double-cover of structure groups. For the sake of illustration and comparison, we present both definitions.
+A metaplectic structure on a symplectic manifold may be thought of as analogous to a spin structure placed on a Riemannian manifold\footnote{Specifically, an \emph{oriented} Riemannian manifold.} in that the definition of each structure share the sames pattern of being defined as \emph{equivariant lifts} of a certain frame bundle, with respect to a certain double-covering of structure groups. For the sake of illustration and comparison, we present both definitions.
 
 First, the Riemannian case:
 %spin structure on an oriented riemannian manifold
+\begin{fullwidth}
 \begin{defn}
 Let $(M,g)$ be an orientable Riemannian manifold. Then there is a double-covering of Lie groups
 $$
 \rho : \mathrm{Spin}(n) \to SO(n)
-$$
+$$x
 from the spin group to the special orthogonal group. Consider the oriented orthonormal frame bundle %%%%FINISH DEFINITION
 \end{defn}
-%%%%%%%%INSERT COMMUTATIVE DIAGRAM #4: (a) FOR METAPLECTIC, (b) FOR SPIN
+\end{fullwidth}
+
 And now the symplectic case:
 %metaplectic structure on a symplectic manifold
+\begin{fullwidth}
 \begin{defn}
+Let $(M,\omega)$ be a symplectic manifold. Then there is a double-covering of Lie groups
 %%%%%FINISH DEFINITION
 %define the notion of "equivalence" of two metaplectic structures on a symplectic manifold M
 \end{defn}
+\end{fullwidth}
 
 %Remarks on the definition, cite references for metaplectic/spin groups   %BOX THIS IN? CHANGE HOW REMARKS ARE DONE?
 \textbf{Remark.} For a discussion of spin and metaplectic groups, see the appendix. We will remark here that the spin group $\mathrm{Spin}(n)$ is the unique double cover of $SO(n)$ such that the sequence
@@ -47,9 +242,12 @@ $$
 1 \to \mathbb{Z}/2\mathbb{Z} \to \mathrm{Spin}(n) \to SO(n) \to 1
 $$
 is exact, where $1$ here refers to the trivial group; and the metaplectic group $Mp(2n)$ is the unique double cover of $Sp(2n)$ the order $n$ symplectic group.
-
+%INSERT COMMUTATIVE DIAGRAM #4:
+%(a) FOR METAPLECTIC
+%(b) FOR SPIN
 \subsection{Properties}
 Metaplectic structures, much like spin structures, may be classified cohomologically:
+\begin{fullwidth}
 \begin{thrm}
 Let $(M,\omega)$ be a symplectic manifold. Then $(M,\omega)$ admits a metaplectic structure if and only if the second Stiefel-Whitney class vanishes; equivalently, if and only if the first Chern class is even.
 
@@ -57,69 +255,174 @@ Let $(M,\omega)$ be a symplectic manifold. Then $(M,\omega)$ admits a metaplecti
 
 When this is the case, the class of admissible metaplectic structures is classified by %%%%%%%%%%COHOMOLOGY?
 \end{thrm}
+\end{fullwidth}
 
 
+% definition of metalinear structures
+% https://ncatlab.org/nlab/show/metalinear+structure
+% https://ncatlab.org/nlab/show/metalinear+group
+\section{Metalinear Structures}
+Similar to metaplectic and spin structures on manifolds are metalinear structures, which have the metalinear group as the structure group.
 
+The metalinear group's relationship to the general linear group is analogous to the relationship between the metaplectic and symplectic groups:
+\begin{fullwidth}
+\begin{defn}
+Consider the injection $\sigma$ from the general linear groupp $GL(n,\mathbb{R})$ to the symplectic group $Sp(2n,\mathbb{R})$ given by
+$$ % FIX THIS MATRIX
+\sigma: GL(n,\mathbb{R}) \to Sp(2n,\mathbb{R} \;, M \mapsto [M 0 ; 0 -M];
+$$
+let $\rho: Mp(2n, \mathbb{R}) \to Sp(2n, \mathbb{R})$ be the double covering of the symplectic group by the metaplectic group.
 
+The \emph{metalinear group} $ML(n,\mathbb{R})$ is the unique $\mathbb{Z}/2\mathb{Z}$ extension
+$$
+\iota : ML(n,\mathbb{R}) \to GL(n,\mathbb{R})
+$$
+of the general linear group such that
+$$
+\sigma \circ \iota = \rho|_{GL(n,\mathbb{R})}.
+$$
 
+In other words, there is a short exact sequence
+$$
+1 \to \mathbb{Z}/2\mathbb{Z} \to ML(n,\mathbb{R}) \to GL(n,\mathbb{R}) \to 1
+$$
+such that the following diagram commutes:
+$$
+\mathrm{(N.B. --- Insert commutative diagram here.)}
+$$
+\end{defn}
+\end{fullwidth}
 
+The structure associated to the general linear group is the tangent bundle; lifting this via the double covering of structure groups given by the metalinear covering leads to the definition of metalinear structures:
+\begin{fullwidth}
+\begin{defn}
+A \emph{metalinear structure} on a smooth $n$-dimensional manifold $M$ is a lifting of the structure group of the tangent bundle $TM$ along the metalinear extension $\iota: ML(n,\mathbb{R}) \to GL(n,\mathbb{R})$.
+\end{defn}
+\end{fullwidth}
 
+Note that metalinear structures do not always exist; the obstruction is governed by characteristic classes.
+\begin{fullwidth}
+\begin{thrm}
+A smooth $n$-dimensional manifold $Q$ possesses an admissible metaplectic structure if and only if
+$$
+c_1(\Lambda^n T^* Q) = 2k \;,\; k \in \mathbb{Z},
+$$
+i.e. if the first Chern class of the space of $n$-forms on the cotangent bundle is even.
 
+Equivalently, $Q$ possesses an admissible metaplectic structure if
+$$
+w_2(\Lambda^n T^* Q) = 0,
+$$
+where $w_2$ is the second Stiefel-Whitney class.
+\end{thrm}
+\end{fullwidth}
 
+% definition of square root line bundles
+\section{Square Root Bundles}
+A \emph{square root line bundle} for a line bundle $L$ is something that squares to $L$ under the tensor product. More specifically,
+\begin{fullwidth}
+\begin{defn}
+Let $L \to M$ be a line bundle with $M$ having the structure of a complex manifold. A line bundle $S \to M$ is called a \emph{square root} line bundle of $L$ if
+$$
+S^{\otimes 2} = S \otimes S = L \; ;
+$$
+if $S$ exists and is unique, then it is customary to write $\sqrt{L}$ for the square root of $L$.
+\end{defn}
+\end{fullwidth}
+
+In general, square roots may not exist, or if they exist, they may not be unique. The best way to determine existence or uniqueness for a given line bundle $L \to M$ is to look at the \emph{Picard group}\footnote{Recall that the Picard group of a given manifold is the group of line bundles over a given manifold.} $Pic(M)$ of $M$:
+
+\begin{thrm}
+Let $L \to M$ be a line bundle over a complex manifold $M$. The following are true:
+\begin{itemize}
+\item If two square root line bundles $S_1, S_2$ exist, then they differ by a third line bundle $\eta$ satisfying $\eta \otimes \eta$ equal to the trivial bundle.
+
+\item If the Picard group $Pic(M)$ is \emph{torsion-free}, then there is either a unique $\sqrt{L}$ or none exists, i.e. the number of admissible square root line bundles for $L$ is $\leq 1$.
+
+\item If the degree of $L \to M$ is $0$, then there exists at least one square root bundle for $L$.
+
+\item Combining the two, a degree $0$ line bundle over a complex manifold $M$ with a torsion-free Picard group possesses a unique square root.
+\end{itemize}
+\end{thrm}
+
+% present the way to obtain the space of states from metaplectic structure
+%== see https://ncatlab.org/nlab/show/metaplectic+correction+%28in+geometric+quantization%29
 \section{Induced Hilbert Space from Metaplectic Structure}
-Recalling the obstruction from the first section of this chapter, we now give a presentation of the way in which the existence of a metaplectic structure enables the construction of the ``proper'' Hilbert space of states.
+Recalling the obstruction from the first section of this chapter, we now give a presentation of the way in which the existence of a metaplectic structure enables the construction of the ``corrected'' Hilbert space of states.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let $(M,\omega)$ be a symplectic manifold, and suppose that the second Stiefel-Whitney class is equal to zero\footnote{...Or equivalently, that the first Chern class is even.}, i.e. $w_2(M) = 0$. Then we have no obstructions to the existence of a metaplectic structure for $M$; denote this metaplectic structure by
+$$
+\rho : MF \to M.
+$$
 
+Suppose we chose the polarization $P \subset T^{\mathbb{C}}M$ for $M$; recalling the definition of a polarization, this gives us a \emph{foliation} of $M$ by \emph{Lagrangian submanifolds}; denote arbitrary Lagrangian submanifolds as $Q \hookrightarrow M$. Then the metaplectic structure $MF$ induces a \emph{metalinear structure} on each $Q \hookrightarrow M$ (see previous section).
 
+These metalinear structures allow us to form a \emph{square root line bundle}
+$$
+\sqrt{\Lambda^n T^* M}
+$$
+on the \emph{canonical bundle} $\Lambda^n T^* M$ of the symplectic manifold $M$.
 
+Now let $L \to M$ be the \emph{prequantum line bundle} of $M$; the above square root line bundles allow us to obtain an inner product on sections of the tensor products
+$$
+L|_M \otimes \sqrt{\Lambda^n T^* M},
+$$
+since we have the canonical inner product
+$$
+\langle \psi, \phi \rangle := \langle \psi, \phi \rangle_{L|_M} \otimes \langle \psi, \phi \rangle_{\sqrt{\Lambda^n T^* M}}
+$$
+where
+$$
+\psi, \phi : M \to (L|_M \otimes \sqrt{\Lambda^n T^* M})
+$$
+are sections of $L|_M \otimes \sqrt{\Lambda^n T^* M}$ obtained by taking the inner product of each component in the tensor product separately\footnote{Note that the second component is an element of the canonical bundle $\Lambda^n T^* M$}.
 
-
-
-
-
-
+% present a handful of examples for metaplectic correction:
 \section{Examples}
-We present some examples of metaplectic structures.
+We present some examples\footnote{\textbf{(N.B. --- this section is a work in progress.)}} of metaplectic structures.
 
-\subsection{Phase Spaces}
+% example 1:
+\subsection{Phase Spaces} % fix this section
 Let $Q$ be some $n$-dimensional orientable manifold. Then the cotangent bundle $T^*Q$ is a symplectic manifold; further, it has a natural metaplectic structure.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 To introduce the topic, note that we have the following short exact sequence:
 $$
-0 \to \mathbf{Z} \to \mathbf{C} \times 
+0 \to \mathbb{Z} \to \mathbb{C} \times 
 $$
 which in turn gives us the exact sequence
 $$
 %derived sequence
 $$
-this latter group is the metaplectic group and is a \textit{double cover} of the symplectic group.
+this latter group is the metaplectic group and is a \emph{double cover} of the symplectic group.
 %introduce double cover of GL(n,C) by ML(n,C) the metalinear group
 
-http://en.wikipedia.org/wiki/Metaplectic_structure
+% example 2:
+\subsection{Further Examples}
+\textbf{Work in progress.}
 
-http://ncatlab.org/nlab/show/metaplectic+group
+\section{History and References}
+\begin{itemize}
+\item \textbf{Frame bundles.} Kobayashi \& Nomizu, Foundations of Differential Geometry vol 1.
+\item \textbf{Covering groups.} Munkres, Topology.
+\item \textbf{Stiefel-Whitney and Chern classes.} ???
+\item \textbf{}
+\end{itemize}
+\end{document}
 
-http://en.wikipedia.org/wiki/Spin_structure
+%
+% http://tex.stackexchange.com/questions/103013/is-there-a-renewtheorem-equivalent-of-renewcommand-using-amsthm-and-not-ntheo
+% http://ctan.mirror.rafal.ca/macros/latex/contrib/tufte-latex/sample-handout.pdf
+% http://ncatlab.org/nlab/show/metaplectic+correction+%28in+geometric+quantization%29
+% http://ncatlab.org/nlab/show/metaplectic+structure
+% https://en.wikipedia.org/wiki/Spin_structure
+% http://ncatlab.org/nlab/show/metaplectic+group
+% https://en.wikipedia.org/wiki/Metaplectic_structure
+%
 
-http://ncatlab.org/nlab/show/metaplectic+structure
-
-http://ncatlab.org/nlab/show/metaplectic+correction+%28in+geometric+quantization%29
+% https://en.wikipedia.org/wiki/Group_extension
+% https://en.wikipedia.org/wiki/Picard_group
+% https://ncatlab.org/nlab/show/metalinear+structure
+% https://ncatlab.org/nlab/show/metaplectic+correction+%28in+geometric+quantization%29
+% http://mathoverflow.net/questions/44692/what-is-a-square-root-of-a-line-bundle/44700
+% https://en.wikipedia.org/wiki/Canonical_bundle
+% https://en.wikipedia.org/wiki/Line_bundle

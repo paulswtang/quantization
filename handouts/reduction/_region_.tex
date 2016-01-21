@@ -1,0 +1,66 @@
+\message{ !name(sympreduction.tex)}%-----PREAMBLE-----
+\documentclass{tufte-handout}
+
+%use tikz-cd for comm diagrams:
+%\usepackage{tikz-cd}
+%use amsthm for thm-like environments:
+\usepackage{amsthm}
+%use thmtools to style new thm envns:
+\usepackage{thmtools}
+% amsfonts for fraktur lettering:
+\usepackage{amsfont}
+
+%define thrm environment
+\newtheorem{thrm}{Theorem}
+
+%define example environment
+\newtheorem{example}{Example}
+
+%define proof-sketch environment
+\renewcommand{\qedsymbol}{$\triangle$} %use triangle instead of qed square
+
+%define definition environment
+\newtheorem{defn}{Definition}
+
+%define shorthand for exterior derivative:
+\def\d{\mathrm{d}}
+
+\title{A Primer on Symplectic Reduction}
+
+%-----DOCUMENT BODY-----
+\begin{document}
+
+\message{ !name(sympreduction.tex) !offset(277) }
+\subsection{Momentum Mappings}
+Physically speaking, symplectic manifolds represent phase spaces of physical systems while symplectic group actions represent symmetries in the dynamics of the system. Momentum mappings of those group actions, then, represent ways of creating vector fields out of elements of the Lie algebras of these symplectic group actions\footnote{If you consider the Lie algebra as the ``localization'' of a Lie group, then choose an element of the Lie algebra; the \emph{infinitesimal} action of the Lie group on a manifold should then intuitively give you a vector at each point on the manifold. Think of it as putting the Lie algebra element on each point of the manifold and perturbing each vector by the infinitesimal group action.}.
+
+Recall that \emph{symplectic} group actions $\Psi : G \times M \to M$ are those that preserve the symplectic form of $M$, i.e.
+$$
+\Psi^*_g \omega = \omega, \; \forall g \in G.
+$$
+
+Recall also that the \emph{infinitesimal generator} of a group action $G \times M \to M$ is %%%
+
+Then we have the following definition of a momentum mapping:
+\begin{fullwidth}
+\begin{defn}[Momentum Mappings]
+Let $(M,\omega)$ be a symplectic manifold and suppose that a Lie group $G$ acts on $M$ symplectically via the action $\Psi: G \times M \to M$. A \emph{momentum mapping} for $\Psi$ is a smooth function $\mathcal{J}: M \to \mathfrak{g}^*$ such that for each element $\phi \in \mathfrak{g}$, the associated maps
+$$
+\mathcal{J}_\phi : M \to \mathbb{R}, \; p \mapsto \mathcal{J}_\phi(x) = \mathcal{J}(x)(\phi) = \langle \mathcal{J}(x) | \phi \rangle
+$$
+satisfy
+$$
+\mathrm{d}(\mathcal{J}_\phi) = \iota_{\phi_M} \omega,
+$$
+where $\phi_M$ is the infinitesimal generator of the symplectic action corresponding to $\phi$.
+
+In other words, for each Lie group element $\phi$, we have an associated vector field $X_\phi$ given by the infinitesimal generator of the action on $\phi$. A momentum mapping is a mapping $\mathcal{J}$ such that the vector field $X_{J_\phi}$ of each function $\mathcal{J}_\phi$ satisfies
+$$
+X_{J_\phi} = X_\phi.
+$$
+\end{defn}
+\end{fullwidth}
+
+\message{ !name(sympreduction.tex) !offset(337) }
+
+\end{document}

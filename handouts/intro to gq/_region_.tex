@@ -1,0 +1,59 @@
+\message{ !name(introgeomquant.tex)}%-----PREAMBLE-----
+\documentclass{tufte-handout}
+
+%use tikz-cd for comm diagrams:
+%\usepackage{tikz-cd}
+%use amsthm for thm-like environments:
+\usepackage{amsthm}
+%use thmtools to style new thm envns:
+\usepackage{thmtools}
+
+%define example environment
+\newtheorem{example}{Example}
+
+%define proof-sketch environment
+\renewcommand{\qedsymbol}{$\triangle$}
+
+%define definition environment
+\newtheorem{defn}{Definition}
+
+%define shorthand for exterior derivative:
+\def{\d}{\mathrm{d}}
+
+\title{An Overview to the Geometric Theory of Quantization}
+
+
+%-----DOCUMENT BODY-----
+\begin{document}
+
+\message{ !name(introgeomquant.tex) !offset(174) }
+\subsection{Symmetries on a Hilbert Space}
+%symmetries
+We also have the following definition of a \emph{symmetry} on a Hilbert space, due to E. Wigner:
+\begin{defn}
+Let $\mathcal{H}$ be a complex Hilbert space; then a bijective map $U: \mathcal{H} \to \mathcal{H}$ is called a (quantum) \emph{symmetry} iff the ``transition probabilities'' are preserved under $U$, i.e.
+$$
+\forall \psi,\phi \in \mathcal{H}, \frac{|\langle U(\psi),U(\phi)\rangle|^2}{|| U(\phi) ||^2 \cdot || U(\psi) ||^2} = \frac{|\langle \psi,\phi\rangle|^2}{|| \phi ||^2 \cdot || \psi ||^2}.
+$$
+\end{defn}
+Intuitively, symmetries may be thought of as unitary or anti-unitary operators:
+
+%results on symmetry: proposition, all symmetries come from unitaries and anti-unitaries; show how this justifies the definition of the category of hilbert spaces
+\begin{thrm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%proposition: all symmetries come from unitaries and anti-unitaries
+\end{thrm}
+
+Further, we have the following properties regarding the category of Hilbert spaces (as objects) and unitary operators (as arrows):
+\begin{thrm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% category of hilbert spaces and unitaries; maybe not as obvious as one might think??? see following links:
+%http://math.ucr.edu/home/baez/quantum/node4.html
+%http://mathoverflow.net/questions/34058/does-the-category-of-hilbert-spaces-possess-a-product
+\end{thrm}
+
+We will not mention much more about the theory of Hilbert spaces here; for further details, consult the appendix and the references.
+
+%----- ----- ----- ----- -----
+
+\message{ !name(introgeomquant.tex) !offset(236) }
+
+\end{document}
