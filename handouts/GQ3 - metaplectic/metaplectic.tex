@@ -2,7 +2,7 @@
 \documentclass{tufte-handout}
 
 %use tikz-cd for comm diagrams:
-%\usepackage{tikz-cd}
+\usepackage{tikz-cd}
 %use amsthm for thm-like environments:
 \usepackage{amsthm}
 %use thmtools to style new thm envns:
@@ -127,7 +127,12 @@ $$
 f_{*}(\pi_1(Y,y_0)) \subset p_{*}(\pi_1(E,e_0)),
 $$
 where $pi_1$ is the fundamental group at a given base point.
-% INSERT COMMUTATIVE DIAGRAM HERE
+
+\begin{tikzcd} % FIX COMMUTATIVE DIAGRAM HERE
+  	& M_1 \arrow{dl}{q_1} \arrow{dd}{\phi} \arrow{dr}{p_1} & \\
+Q 	&									   				   & P \\
+    & M_2 \arrow{ul}{q_2} \arrow{ur}{p_2}
+\end{tikzcd}
 \end{thrm}
 \end{fullwidth}
 Intuitively, the above result states that we can understand all the covering spaces of a given ``nice enough'' topological space by examining the subgroups of its fundamental group.
@@ -244,7 +249,17 @@ $$
 is exact, where $1$ here refers to the trivial group; and the metaplectic group $Mp(2n)$ is the unique double cover of $Sp(2n)$ the order $n$ symplectic group.
 %INSERT COMMUTATIVE DIAGRAM #4:
 %(a) FOR METAPLECTIC
+\begin{tikzcd}
+MF \arrow[r] \arrow[dr]
+  & Mp($2n$,$\mathbb{R}$) \arrow[d]\\
+  & Sp($2n$,$\mathbb{R}$)
+\end{tikzcd}
 %(b) FOR SPIN
+\begin{tikzcd}
+SpinF \arrow[r] \arrow[dr]
+  & Spin(n) \arrow[d]\\
+  & SO(n)
+\end{tikzcd}
 \subsection{Properties}
 Metaplectic structures, much like spin structures, may be classified cohomologically:
 \begin{fullwidth}
@@ -287,9 +302,12 @@ $$
 1 \to \mathbb{Z}/2\mathbb{Z} \to ML(n,\mathbb{R}) \to GL(n,\mathbb{R}) \to 1
 $$
 such that the following diagram commutes:
-$$
-\mathrm{(N.B. --- Insert commutative diagram here.)}
-$$
+\begin{tikzcd}
+ML(M) \arrow[r] \arrow[dr]
+  & TM \arrow[d]\\
+  & M
+\end{tikzcd}
+
 \end{defn}
 \end{fullwidth}
 

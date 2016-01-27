@@ -53,25 +53,25 @@ $$
 \pi \circ \sigma = \iota_M.
 $$
 
-We will see later that the curvature condition induces a morphism of Lie algebras between the classical and quantum observables. For now, one can think of the curvature 2-form as a way to measure how much the horizontal distribution fails to be integrable\footnote{(Needs clarification!)}; the condition then links this to the symplectic form. % clarify at some point: https://en.wikipedia.org/wiki/Vertical_bundle
+We will see later that the curvature condition induces a morphism of Lie algebras between the classical and quantum observables. For now, one can think of the curvature 2-form as a way to measure how much the horizontal distribution fails to be integrable; the condition then links this to the symplectic form.
 
 We note that a symplectic manifold is prequantizable if and only if the symplectic form satisfies a cohomological property:
 \begin{thrm}
 A symplectic manifold $(M,\omega)$ is prequantizable if and only if
 $$
-\biggl[\omega\biggr] \in H_{dR}^2(M,\mathbf{Z}),
+\biggl[\omega\biggr] \in H_{dR}^2(M,\mathbb{Z}),
 $$
 i.e. the second de Rham cohomology class of the symplectic form is integral.
 
 Equivalently, $(M,\omega)$ is prequantizable iff the period of $\omega$ is integral for each integer 2-cocycle, i.e.
 $$
-\int_S \omega \in \mathbf{Z}
+\int_S \omega \in \mathbb{Z}
 $$
 for each closed\footnote{``Closed'' here means that $\partial S = 0$.} $2$-cochain $S$ with integer coefficients.
 \end{thrm}
 For historical reasons that we will not get into, this cohomological condition is called the \emph{Bohr-Sommerfeld condition}, and the above theorem is due to A. Weil.
 
-From the existence of a prequantum line bundle, we can define a Hilbert space on the space of sections and define the prequantized observables corresponding to each $f \in C^\infty(M,\mathbf{R})$:
+From the existence of a prequantum line bundle, we can define a Hilbert space on the space of sections and define the prequantized observables corresponding to each $f \in C^\infty(M,\mathbb{R})$:
 \begin{defn}
 Let $(M,\omega)$ be a prequantizable symplectic manifold with prequantum line bundle given by
 $$
@@ -118,7 +118,7 @@ the canonical 1-form on $T^*Q$.
 
 We note that the cohomology class $[\omega] = 0 \in \mathbb{Z}$ since we have that $\omega$ is exact ($\d(-\theta) = \omega$).
 
-Hence the cotangent bundle is prequantizable; since $\omega$ is equivalently the curvature form, we have a flat connection\footnote{See theorems 9.1 and 9.2 of Kobayashi \& Nomizu}, for example, for a proof of the claim that a connection is flat iff the bundle is trivial.} $\nabla$ and it is thus sufficient to take $T^*Q \times \mathbf{C}$ as the prequantum line bundle.
+Hence the cotangent bundle is prequantizable; since $\omega$ is equivalently the curvature form, we have a flat connection\footnote{See theorems 9.1 and 9.2 of Kobayashi \& Nomizu}, for example, for a proof of the claim that a connection is flat iff the bundle is trivial.} $\nabla$ and it is thus sufficient to take $T^*Q \times \mathbb{C}$ as the prequantum line bundle.
 
 We obtain a prequantum Hilbert space of $\mathcal{H} = \mathcal{C}(T^*Q)$ with metric given by integration over $T^*Q$. % make sure this is correct
 
@@ -127,25 +127,43 @@ $$
 Q[f] |\psi\rangle = \nabla_{X_f}|\psi\rangle + f|\psi\rangle.
 $$
 
-\item \emph{($\mathbf{R}^3$.)} As a specific example of the above, we consider $Q = \mathbf{R}^3$. According to the above, we have the symplectic manifold $T^*\mathbf{R}^3 \equiv \mathbf{R}^6$, with the hermitian line bundle given by $\mathbf{R}^6 \times \mathbf{C}$; we note that this is unique as Euclidean space is simply connected (i.e. all loops in the fundamental group are contractible), and the associated connection $\nabla$ is given by (...)%%%%
+\item \emph{($\mathbb{R}^3$.)} As a specific example of the above, we consider $Q = \mathbb{R}^3$. According to the above, we have the symplectic manifold $T^*\mathbb{R}^3 \equiv \mathbb{R}^6$, with the hermitian line bundle given by $\mathbb{R}^6 \times \mathbb{C}$; we note that this is unique as Euclidean space is simply connected (i.e. all loops in the fundamental group are contractible), and the associated connection $\nabla$ is given by the standard partial derivatives\footnote{Notice that if we choose $\nabla$ to be the Levi-Civita connection on Euclidean space, the Christoffel symbols all disappear, leaving us with the familiar gradient from calculus.}: % check this! see http://math.stackexchange.com/questions/73771/intuition-behind-levi-civita-connection
+$$
+\nabla = (\frac{\partial}{\partial x_1},\ldots,\frac{\partial}{\partial x_6}).
+$$
 
-Choose the Hamiltonian function $H$ to be (...)%%%%
+The prequantum Hilbert space is then defined as
+$$
+\mathcal{H} = \{\psi : \mathbb{R}^6 \to \mathbb{C} | \psi \mbox{ smooth }\};
+$$
+note that we do not impose the $L^2$ condition at this stage of the quantization procedure yet.
 
-
+Suppose we choose the classical Hamiltonian function $H$ to be the kinetic energy
+$$
+H : \mathbb{R}^6 \to \mathbb{R}, \; H(x) = \frac{1}{2}(x_1 + x_2 + x_3)^2.
+$$
+The quantized Hamiltonian operator is then given by 
+$$
+\mathcal{O}_H : \mathcal{H} \to \mathcal{H}, \; \mathcal{O}_H(\psi) = i \hbar \nabla_{X_H}(\psi) + (H)\cdot(\psi).
+$$
+% FURTHER REDUCE THE ABOVE; SOLVE FOR NABLA
 
 \item \emph{(Harmonic Oscillator.)} In the case of the $n$-dimensional harmonic oscillator, we have the phase space/symplectic manifold $(M,\Omega)$ given by
 $$
-M = \{(q^j,p_j) \in \mathbf{R}^{2n}\}, \Omega = \sum_j dq^j \wedge dp_j,
+M = \{(q^j,p_j) \in \mathbb{R}^{2n}\}, \Omega = \sum_j dq^j \wedge dp_j,
 $$
 with the Hamiltonian $H$ given by
 $$
 H(q,p) = \frac{1}{2}\sum_j ((q^j)^2 + (p_j)^2).
 $$
-We see that Born-Sommerfeld condition is satisfied, since we have $[\Omega] = 0 \in \mathbf{Z}$, and the line bundle is trivial and unique since $M$ is simply connected, with $L = M \times \mathbf{C}$ and the associated connection $\nabla$ given by
+We see that Born-Sommerfeld condition is satisfied, since we have $[\Omega] = 0 \in \mathbb{Z}$, and the line bundle is trivial and unique since $M$ is simply connected, with $L = M \times \mathbb{C}$ and the associated connection $\nabla$ given by
 $$
-\nabla_X \psi = X \psi + (2\pi i)\omega(X)\psi = (\ldots)%%%%%%
+\nabla_X \psi = X \psi + (2\pi i)\omega(X)\psi = X(\psi), % CHECK THIS
 $$
-where $\omega$ is the pullback given by (...)%%%%%%
+where $\omega$ is the pullback so that
+$$
+\omega(X)\psi = \omega(X,X_\psi). % CHECK THIS TOO
+$$
 
 Now let us try to apply the prequantization map to the energy, i.e. $H$; we have that
 $$
@@ -155,7 +173,7 @@ further, we have that
 $$
 O_H(\psi) = i\hbar\{H,\psi\},
 $$
-where the section $\psi$ is interpreted as a function $M \to \mathbf{C}$.
+where the section $\psi$ is interpreted as a function $M \to \mathbb{C}$.
 
 There's an issue here, however; the operator $O_H$ and the classical Hamiltonian $H$ have the same spectrum, and hence $O_H$ has a continuous spectrum. But we know from physical experience that quantum operators must have discretized spectra. We will discuss this issue further in the context of polarizations.
 % talk about coherent states (https://en.wikipedia.org/wiki/Coherent_states) here?
@@ -163,24 +181,24 @@ There's an issue here, however; the operator $O_H$ and the classical Hamiltonian
 % ============================================================
 \section{Structural Properties}
 
-As we mentioned before, the prequantization map satisfies ``fairly decent'' uniqueness properties, in the sense that the first de Rham cohomology group $H^1(M,\mathbf{T})$ parametrizes the possible prequantum line bundles one may have when given a symplectic manifold.
+As we mentioned before, the prequantization map satisfies ``fairly decent'' uniqueness properties, in the sense that the first de Rham cohomology group $H^1(M,\mathbb{T})$ parametrizes the possible prequantum line bundles one may have when given a symplectic manifold.
 %prequantization has nice structure, though: show that it is functorial? --> probably not given the cohomological condition...
 
 In particular, we have that the following:
 \begin{thrm}
-Let $(M,\omega)$ be a prequantizable symplectic manifold. Then the prequantum line bundle $(L\to M, \nabla)$ is unique if and only if the first de Rham cohomology group $H^1(M,\mathbf{T})$ is trivial, where $\mathbf{T} \subset \mathbf{C}$ is the group of complex numbers with unit modulus.
+Let $(M,\omega)$ be a prequantizable symplectic manifold. Then the prequantum line bundle $(L\to M, \nabla)$ is unique if and only if the first de Rham cohomology group $H^1(M,\mathbb{T})$ is trivial, where $\mathbb{T} \subset \mathbb{C}$ is the group of complex numbers with unit modulus.
 \end{thrm}
-In other words, the prequantum line bundle is unique when $M$ is simply connected.%%%HOW TO SHOW THIS? SNYATYCKI PP53-56, WOODHOUSE P160.
+In other words, the prequantum line bundle is unique when $M$ is simply connected\footnote{Proofs may be found in \textbf{[Sniatycki]}, pp. 53-56, and \textbf{[Woodhouse]}, p. 160.}. % reprint the proofs here
 
-In the first section of this chapter, we lied by omission --- the prequantum Hilbert space is defined not only by a complex bundle $L \to M$ and a connection $\nabla$, but also by a choice of hermitian metric $\langle \cdot,\cdot \rangle_h$ (or just $h: M \times M \to \mathbf{C}$). Towards this, we have the following:
-\begin{thrm}
-\emph{To be completed.}%%%%CLASSIFCATION OF HERMITIAN METRICS ON SYMPL. MANIFOLDS
-\end{thrm}
+%In the first section of this chapter, we lied by omission --- the prequantum Hilbert space is defined not only by a complex bundle $L \to M$ and a connection $\nabla$, but also by a choice of hermitian metric $\langle \cdot,\cdot \rangle_h$ (or just $h: M \times M \to \mathbb{C}$). Towards this, we have the following:
+%\begin{thrm}
+%\emph{To be completed.} % classification of hermitian metrics on complex line bundles
+%\end{thrm}
 
-Further, as implied earlier, we have a morphism of Lie algebras between the classical and quantum observables:
-\begin{thrm}
-\emph{To be completed.}%%%%%%MORPHISM OF LIE ALGEBRAS INDUCED BY CURVATURE CONDITION
-\end{thrm}
+%Further, as implied earlier, we have a morphism of Lie algebras between the classical and quantum observables:
+%\begin{thrm}
+%\emph{To be completed.} % morphism of lie algebras between C^\infty(M) and Op(\mathcal{H}^{preq})?
+%\end{thrm}
 % ============================================================
 \section{History and References}
 \begin{enumerate}

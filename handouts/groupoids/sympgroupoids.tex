@@ -2,7 +2,7 @@
 \documentclass{tufte-handout}
 
 %use tikz-cd for comm diagrams:
-%\usepackage{tikz-cd}
+\usepackage{tikz-cd}
 %use amsthm for thm-like environments:
 \usepackage{amsthm}
 %use thmtools to style new thm envns:
@@ -73,7 +73,11 @@ Equivalently, a Lie groupoid is a groupoid internal to the category of smooth ma
 
 We have the following commutative diagram:
 
-%INSERT COMM DIAGRAM #1.
+\begin{tikzcd}% comm diag # 1
+\Gamma \arrow[r, bend left=50, ""{name=s, below}]
+	   \arrow[r, bend right=50, ""{name=t}]
+	   & \Gamma_0
+\end{tikzcd}
 \end{defn}
 
 We also have the notion of Lie algebroid:
@@ -99,9 +103,11 @@ The functorial association of a Lie algebra to Lie groups extends to a functoria
 % from http://empg.maths.ed.ac.uk/Activities/GCY/Racaniere.pdf
 Let $G \rightrightarrows M$ be a Lie groupoid (with overall manifold $G$, base manifold $M$, and source/target maps $s,t: G \to M$). Then there exists a unique Lie algebroid $A \to M$ given by the following:
 \begin{itemize}
-\item The bundle $A$ is given by the pullback of $T_s : T_sG \to TM$ across the embedding $\iota: M \to G$; in other words, the restriction of the vector bundle over $G$ induced by the target map $t$ to $M$. Hence, we have the commutative diagram
-
+\item The bundle $A$ is given by the pullback of $T_s : T_s G \to TM$ across the embedding $\iota: M \to G$; in other words, the restriction of the vector bundle over $G$ induced by the target map $t$ to $M$.
+%Hence, we have the commutative diagram
 %INSERT COMM DIAGRAM #5.
+%\begin{tikzcd}
+%\end{tikzcd}
 
 To rephrase this, the kernel of the target map $t$ is a vector bundle $T^t G \to G$; $A$ is then defined as the restriction of $T^t G$ to $M$. Equivalently,
 $$
@@ -120,9 +126,10 @@ $$
 \item The anchor map is given by the differential $ds$ of the source map $s$.
 \end{itemize}
 
-The association is functorial and the following diagram is commutative:
-
-%INSERT COMM DIAGRAM #2.
+The association is functorial:
+$$ % comm diag # 2
+\mathrm{Lie} : \mathrm{LieGrpd} \to \mathrm{LieAlgd}
+$$
 
 \end{thrm}
 
@@ -145,7 +152,11 @@ $$
 $$
 is defined as the unique map making the following diagram commute:
 
-% INSERT COMM DIAGRAM OF LIE FUNCTOR HERE.
+\begin{tikzcd}
+LieGrp \arrow[r, bend left=50, ""{name=Exp, below, draw=red}]
+	   \arrow[l, bend right=50, ""{name=Lie, draw=red}]
+	   & LieAlg
+\end{tikzcd}
 
 Further, we have a \emph{differentiation} functor
 $$
@@ -194,7 +205,13 @@ Further, we have a functorial correspondence between symplectic groupoids and Po
 \begin{thrm}
 Consider the categories $\mathrm{SympGrpd}$ and $\mathrm{PoisMfd}$ of symplectic groupoids and Poisson manifolds, respectively. Then there is a functor
 
+\begin{tikzcd}
 %FUNCTORIAL CORRESP. BTWN SYMP. GRPDS. & POISSON MFDS., EXTENDS LIE GRPS. & LIE ALGS. FUNCTOR; INSERT DIAGRAM 3
+LieAlg \arrow[r, "\phi"] \arrow[d]
+& LieGrp \arrow[d, "\psi"] \\
+SympGrpd \arrow[r, "\eta"]
+& Pois
+\end{tikzcd}
 
 \end{thrm}
 The proof of this statement is outside the scope of this writeup; a presentation may be found in \textbf{[weinstein87]}.

@@ -2,7 +2,7 @@
 \documentclass{tufte-handout}
 
 %use tikz-cd for comm diagrams:
-%\usepackage{tikz-cd}
+\usepackage{tikz-cd}
 %use amsthm for thm-like environments:
 \usepackage{amsthm}
 %use thmtools to style new thm envns:
@@ -41,19 +41,27 @@ Generally speaking, symplectic reduction assumes a symplectic manifold $M$ equip
 $$
 (\cdot)^M : \mathfrak{g} \to \Gamma(M,TM), X \mapsto X^M
 $$
-constructed by composing the group action and the exponential map, and  %CLARIFY!!!!!! --insert commutative diagram here to show how the map works
+constructed by composing the group action and the exponential map, so that the following diagram commutes:
+
+\begin{tikzcd} %CLARIFY!!!!!! --insert commutative diagram here to show how the map works
+  	& M_1 \arrow{dl}{q_1} \arrow{dd}{\phi} \arrow{dr}{p_1} & \\
+Q 	&									   				   & P \\
+    & M_2 \arrow{ul}{q_2} \arrow{ur}{p_2}
+\end{tikzcd}
+
+\item We define mappings for each vector field
 $$
-J_{(\cdot)}: \mathfrak{g} \to C^\infty(M), X \mapsto J_X \mbox{ s.t. } X^M \cong \xi_{J_X},
+\mathcal{J}_{(\cdot)}: \mathfrak{g} \to C^\infty(M), X \mapsto \mathcal{J}_X \mbox{ s.t. } X^M \cong \xi_{\mathcal{J}_X},
 $$
 where $\xi_Y$ is the Hamiltonian vector field of $Y$.
 
-\item The functions $J_X$ may be assembled into a \emph{moment map}\footnote{Also written as ``momentum mapping''.} $J: M \to \mathfrak{g}^*$ for the action:
+\item The functions $\mathcal{J}_X$ may be assembled into a \emph{moment map}\footnote{Also written as ``momentum mapping''.} $\mathcal{J}: M \to \mathfrak{g}^*$ for the action:
 $$
-\langle J(p) , X \rangle = J_X(p).
+\langle \mathcal{J}(p) , X \rangle = \mathcal{J}_X(p).
 $$
 Here, $\mathfrak{g}^*$ refers to the vector space dual of the Lie algebra $\mathfrak{g}$.
 
-\item The reduced space $M^0$ is then defined via $M^0 = J^{-1}(0) / G$, the preimage of $0 \in \mathfrak{g}^0$ through $J$, modulo $G$ Hence $M^0$ is a subspace of $M / G$, the orbit space of the action $G \circlearrowleft M$. Generally, we cannot guarantee that $M^0$ is a smooth manifold unless certain topological assumptions are made on the Lie group and its action, which we review below; however, if those conditions hold and $M^0$ is a smooth manifold, it also inherits a natural symplectic form.
+\item The reduced space $M^0$ is then defined via $M^0 = \mathcal{J}^{-1}(0) / G$, the preimage of $0 \in \mathfrak{g}^0$ through $\mathcal{J}$, modulo $G$ Hence $M^0$ is a subspace of $M / G$, the orbit space of the action $G \circlearrowleft M$. Generally, we cannot guarantee that $M^0$ is a smooth manifold unless certain topological assumptions are made on the Lie group and its action, which we review below; however, if those conditions hold and $M^0$ is a smooth manifold, it also inherits a natural symplectic form.
 \end{itemize}
 
 In this chapter, we define and discuss the notion of symplectic reduction, with a particular focus on the symplectic reduction process of Marsden and Weinstein developed in \cite{marsdenweinstein}. We also discuss the pre-requisites necessary to understand the Marsden-Weinstein reduction procedure; we begin with a quick review of Lie groups and Lie algebras (as well as the correspondence between the two categories) and duals of Lie algebras, before discussing Lie groups acting on symplectic manifolds via symplectic and Poisson actions; we present the full reduction procedure in the final part.
