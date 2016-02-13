@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.2)  28 JAN 2016 16:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.2)  28 JAN 2016 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**sympreduction.tex
-(./sympreduction.tex
+**sympgroupoids.tex
+(./sympgroupoids.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (/home/pault/texmf/tex/latex/tufte-latex/tufte-handout.cls
@@ -341,7 +341,7 @@ LaTeX Info: Redefining \cite on input line 694.
 (/home/pault/texmf/tex/latex/natbib/bibentry.sty
 Package: bibentry 2007/10/30 1.5 (PWD)
 )
-No file sympreduction.bbl.
+No file sympgroupoids.bbl.
 \c@@tufte@num@bibkeys=\count110
 (/usr/share/texlive/texmf-dist/tex/latex/sauerj/optparams.sty
 Package: optparams 2004/08/14 v0.9 multiple optional parameters in macros
@@ -496,8 +496,8 @@ Package: thm-amsthm 2014/04/21 v66
 \c@thrm=\count121
 \c@example=\count122
 \c@defn=\count123
- (./sympreduction.aux)
-\openout1 = `sympreduction.aux'.
+ (./sympgroupoids.aux)
+\openout1 = `sympgroupoids.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
 LaTeX Font Info:    ... okay on input line 32.
@@ -542,9 +542,9 @@ LaTeX Info: Redefining \ref on input line 32.
 LaTeX Info: Redefining \pageref on input line 32.
 LaTeX Info: Redefining \nameref on input line 32.
 
-(./sympreduction.out) (./sympreduction.out)
+(./sympgroupoids.out) (./sympgroupoids.out)
 \@outlinefile=\write3
-\openout3 = `sympreduction.out'.
+\openout3 = `sympgroupoids.out'.
 
 
 ABD: EverySelectfont initializing macros
@@ -600,191 +600,139 @@ LaTeX Info: Redefining \selectfont on input line 32.
 )
 \big@size=\dimen134
 \langwohyphens=\language79
-LaTeX Font Info:    Try loading font information for OT1+pplx on input line 38.
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 36.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 38.
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 36.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 38.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 36.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 38.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 36.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 38.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 36.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 38.
+(Font)              scaled to size 10.42007pt on input line 36.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 38.
+(Font)              scaled to size 7.91925pt on input line 36.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 38.
+(Font)              scaled to size 6.25204pt on input line 36.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 38.
+(Font)              scaled to size 10.42007pt on input line 36.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 38.
+(Font)              scaled to size 7.91925pt on input line 36.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 38.
-LaTeX Font Info:    Try loading font information for TS1+pplj on input line 41.
+(Font)              scaled to size 6.25204pt on input line 36.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 36.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 36.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 36.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 36.
 
+
+LaTeX Warning: Marginpar on page 1 moved.
+
+LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 43.
+Package hyperref Info: bookmark level for unknown defn defaults to 0 on input l
+ine 43.
+LaTeX Font Info:    Try loading font information for TS1+pplj on input line 59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pplj.fd
 File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
-)
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 59.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 59.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 59.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 59.
-
-
-LaTeX Warning: Marginpar on page 1 moved.
-
-
-Package natbib Warning: Citation `marsdenweinstein' undefined on input line 68.
-
-
-
-LaTeX Warning: Marginpar on page 1 moved.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-
-LaTeX Warning: Marginpar on page 2 moved.
-
-LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 79.
-Package hyperref Info: bookmark level for unknown defn defaults to 0 on input l
-ine 79.
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 99.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
-File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [2] [3]
-Package hyperref Info: bookmark level for unknown thrm defaults to 0 on input l
-ine 169.
- [4]
-
-LaTeX Warning: Marginpar on page 5 moved.
-
-[5]
 Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
-t line 278.
- [6]
-
-LaTeX Warning: Marginpar on page 7 moved.
-
-
-LaTeX Warning: Marginpar on page 7 moved.
-
-[7] [8]
-
-LaTeX Warning: Marginpar on page 9 moved.
-
-
-Package natbib Warning: Citation `FIGURE SOMETHING OUT LOOK IT UP' undefined on
- input line 424.
+t line 95.
+ [2]
+Package hyperref Info: bookmark level for unknown thrm defaults to 0 on input l
+ine 105.
+ [3]
+Overfull \hbox (14.33548pt too wide) in paragraph at lines 172--173
+[]\T1/pplj/m/it/10 The sec-ond Lie the-o-rem states that for $\OML/zplm/m/it/10
+ G\OT1/pplx/m/n/10 , \OML/zplm/m/it/10 H$ \T1/pplj/m/it/10 Lie groups with $\U/
+euf/m/n/10 g \OT1/zplm/m/n/10 = \OML/zplm/m/it/10 Lie\OT1/zplm/m/n/10 (\OML/zpl
+m/m/it/10 G\OT1/zplm/m/n/10 )\OT1/pplx/m/n/10 , \U/euf/m/n/10 h \OT1/zplm/m/n/1
+0 = 
+ []
 
 
-LaTeX Warning: Marginpar on page 9 moved.
+LaTeX Warning: Marginpar on page 4 moved.
 
 
-Package natbib Warning: Citation `chevalleyeilenberg' undefined on input line 4
-27.
+Overfull \hbox (18.53972pt too wide) in paragraph at lines 179--180
+\T1/pplj/m/n/10 ting hints at the fact that the struc-ture the-ory of Lie group
+oids/algebroids 
+ []
 
-
-Package natbib Warning: Citation `HiltonStammbach' undefined on input line 427.
-
-
-[9]
-
-LaTeX Warning: Marginpar on page 10 moved.
-
-
-LaTeX Warning: Marginpar on page 10 moved.
-
-
-Package natbib Warning: Citation `tuequivariant' undefined on input line 429.
-
-
-LaTeX Warning: Marginpar on page 10 moved.
-
-
-Package natbib Warning: There were undefined citations.
-
+[4]
 
 Package bibentry Warning: You have used \nobibliography* 
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 437.
-
-Overfull \hbox (48.68973pt too wide) in paragraph at lines 435--437
-[]\T1/pplj/m/n/10 For a ref-er-ence to the the-ory of Lie al-ge-bras, see http:
-//www.tufts.edu/ fgon- 
- []
-
-[10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 437.
- (./sympreduction.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 437.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 437.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 235.
+[5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 235.
+ (./sympgroupoids.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 235.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 235.
 
 
-Package rerunfilecheck Warning: File `sympreduction.out' has changed.
+Package rerunfilecheck Warning: File `sympgroupoids.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
-Package rerunfilecheck Info: Checksums for `sympreduction.out':
+Package rerunfilecheck Info: Checksums for `sympgroupoids.out':
 (rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  3F20536A3329800129D67883D82D3CC8;1296.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 437.
+(rerunfilecheck)             After:  4B84ED43E163FC3CE217426292E0F467;660.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 235.
  ) 
 Here is how much of TeX's memory you used:
- 12766 strings out of 493304
- 180745 string characters out of 6139872
- 272096 words of memory out of 5000000
- 15902 multiletter control sequences out of 15000+600000
- 63449 words of font info for 116 fonts, out of 8000000 for 9000
+ 12703 strings out of 493304
+ 179763 string characters out of 6139872
+ 270003 words of memory out of 5000000
+ 15877 multiletter control sequences out of 15000+600000
+ 56363 words of font info for 102 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 46i,12n,45p,768b,502s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,12n,45p,627b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/fpl/fplbj8a.pfb></home/pault/texmf/fonts/type1/public/mathpazo/fplmbb
-.pfb></home/pault/texmf/fonts/type1/public/mathpazo/fplmr.pfb></home/pault/texm
-f/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/f
-pl/fplrij8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on sympreduction.pdf (10 pages, 148807 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/fpl/fplbj8a.pfb></home/pault/texmf/fonts/type1/public/mathpazo/
+fplmr.pfb></home/pault/texmf/fonts/type1/public/mathpazo/fplmri.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pa
+latino/uplri8a.pfb>
+Output written on sympgroupoids.pdf (5 pages, 113784 bytes).
 PDF statistics:
- 167 PDF objects out of 1000 (max. 8388607)
- 139 compressed objects within 2 object streams
- 57 named destinations out of 1000 (max. 500000)
+ 103 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
+ 30 named destinations out of 1000 (max. 500000)
  1025 words of extra memory for PDF output out of 10000 (max. 10000000)
 

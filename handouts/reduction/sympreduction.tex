@@ -2,13 +2,14 @@
 \documentclass{tufte-handout}
 
 %use tikz-cd for comm diagrams:
-\usepackage{tikz-cd}
+%\usepackage{tikz-cd}
 %use amsthm for thm-like environments:
 \usepackage{amsthm}
+\usepackage{amssymb}
 %use thmtools to style new thm envns:
 \usepackage{thmtools}
 % amsfonts for fraktur lettering:
-\usepackage{amsfont}
+%\usepackage{amsfont}
 
 %define thrm environment
 \newtheorem{thrm}{Theorem}
@@ -34,20 +35,20 @@ The standard geometric quantization procedure works on symplectic manifolds, a s
 
 In practice, we obtain a symplectic manifold that is inequivalent to a cotangent bundle when we have a symmetry acting on phase space (viewed as a Lie group action) and proceed to obtain the ``reduction'' of the space via the action of the symmetry. In general, the process is known as \emph{symplectic reduction}; this section will be devoted to the explanation of this reduction procedure.
 
-Generally speaking, symplectic reduction assumes a symplectic manifold $M$ equipped with a Lie group action $G \circlearrowleft M$ on $M$, producing a symplectic manifold $M // G$ --- known as the \emph{reduced space} --- in the following manner:
+Generally speaking, symplectic reduction assumes a symplectic manifold $M$ equipped with a Lie group action $G \circlearrowright M$ on $M$, producing a symplectic manifold $M // G$ --- known as the \emph{reduced space} --- in the following manner:
 
 \begin{itemize}
-\item Let $\mathfrak{g}$ be the Lie algebra associated to the Lie group $G$, i.e. the exponential map takes $\mathfrak{g}$ to $G$. If the action $G \circlearrowleft M$ preserves the symplectic form on $M$, then we obtain the following homomorphisms of Lie algebras:
+\item Let $\mathfrak{g}$ be the Lie algebra associated to the Lie group $G$, i.e. the exponential map takes $\mathfrak{g}$ to $G$. If the action $G \circlearrowright M$ preserves the symplectic form on $M$, then we obtain the following homomorphisms of Lie algebras:
 $$
 (\cdot)^M : \mathfrak{g} \to \Gamma(M,TM), X \mapsto X^M
 $$
 constructed by composing the group action and the exponential map, so that the following diagram commutes:
 
-\begin{tikzcd} %CLARIFY!!!!!! --insert commutative diagram here to show how the map works
-  	& M_1 \arrow{dl}{q_1} \arrow{dd}{\phi} \arrow{dr}{p_1} & \\
-Q 	&									   				   & P \\
-    & M_2 \arrow{ul}{q_2} \arrow{ur}{p_2}
-\end{tikzcd}
+%\begin{tikzcd} %CLARIFY!!!!!! --insert commutative diagram here to show how the map works
+%  	& M_1 \arrow{dl}{q_1} \arrow{dd}{\phi} \arrow{dr}{p_1} & \\
+%Q 	&									   				   & P \\
+%    & M_2 \arrow{ul}{q_2} \arrow{ur}{p_2}
+%\end{tikzcd}
 
 \item We define mappings for each vector field
 $$
@@ -61,7 +62,7 @@ $$
 $$
 Here, $\mathfrak{g}^*$ refers to the vector space dual of the Lie algebra $\mathfrak{g}$.
 
-\item The reduced space $M^0$ is then defined via $M^0 = \mathcal{J}^{-1}(0) / G$, the preimage of $0 \in \mathfrak{g}^0$ through $\mathcal{J}$, modulo $G$ Hence $M^0$ is a subspace of $M / G$, the orbit space of the action $G \circlearrowleft M$. Generally, we cannot guarantee that $M^0$ is a smooth manifold unless certain topological assumptions are made on the Lie group and its action, which we review below; however, if those conditions hold and $M^0$ is a smooth manifold, it also inherits a natural symplectic form.
+\item The reduced space $M^0$ is then defined via $M^0 = \mathcal{J}^{-1}(0) / G$, the preimage of $0 \in \mathfrak{g}^0$ through $\mathcal{J}$, modulo $G$ Hence $M^0$ is a subspace of $M / G$, the orbit space of the action $G \circlearrowright M$. Generally, we cannot guarantee that $M^0$ is a smooth manifold unless certain topological assumptions are made on the Lie group and its action, which we review below; however, if those conditions hold and $M^0$ is a smooth manifold, it also inherits a natural symplectic form.
 \end{itemize}
 
 In this chapter, we define and discuss the notion of symplectic reduction, with a particular focus on the symplectic reduction process of Marsden and Weinstein developed in \cite{marsdenweinstein}. We also discuss the pre-requisites necessary to understand the Marsden-Weinstein reduction procedure; we begin with a quick review of Lie groups and Lie algebras (as well as the correspondence between the two categories) and duals of Lie algebras, before discussing Lie groups acting on symplectic manifolds via symplectic and Poisson actions; we present the full reduction procedure in the final part.
@@ -214,13 +215,13 @@ $$
 for a point $p \in M$, consider the orbit map $\sigma_p: G \to M$ given by $\sigma_p(g) = g \cdot p$. Then $\sigma_p$ is a differentiable map, and its differential at $e \in G$ is %%%%%finish notes in "lie groups acting on symplectic manifolds pt. I"
 
 \subsection{On Symplectic Manifolds}
-Fix a connected Lie group $G$ with an action $G \circlearrowleft M$ on a symplectic manifold $(M,\omega)$. Suppose that the action $G \circlearrowleft M$ leaves $\omega$ fixed, i.e. $G$ acts on $M$ through symplectomorphisms $M \to M$. Let $\mathfrak{g}$ be the Lie algebra associated to $G$, i.e. $\exp G = \mathfrak{g}$. Then for $X \in \mathfrak{g}$, we have that
+Fix a connected Lie group $G$ with an action $G \circlearrowright M$ on a symplectic manifold $(M,\omega)$. Suppose that the action $G \circlearrowright M$ leaves $\omega$ fixed, i.e. $G$ acts on $M$ through symplectomorphisms $M \to M$. Let $\mathfrak{g}$ be the Lie algebra associated to $G$, i.e. $\exp G = \mathfrak{g}$. Then for $X \in \mathfrak{g}$, we have that
 $$
 0 = X \cdot \omega = \d \iota(\xi_X)\omega + \iota(\xi_X)\d \omega = \d \iota(\xi_X)\omega \mbox{ (~ closed one-form),}
 $$
 where $\iota$ is the map that [...FIGURE THIS PHRASING OUT], $\d$ is the exterior derivative, and $\xi_X$ is the vector field on $M$ associated to $X$. The first equality follows from the definition of a symplectomorphism; the second from the definition of the Lie algebra action; and the third from the fact that $\omega$ is closed. %FIX THIS
 
-The above chain of equalities leads to two useful definitions. Call a vector field $\xi \in \Chi(M)$ a \emph{symplectic vector field} if
+The above chain of equalities leads to two useful definitions. Call a vector field $\xi \in \chi(M)$ a \emph{symplectic vector field} if
 $$
 \d \iota(\xi)\omega \mbox{ is closed,}
 $$
@@ -246,7 +247,7 @@ $$
 
 With the above definitions in hand, we can now define the notions of \emph{Hamiltonian} and \emph{Poisson} actions of Lie groups:
 \begin{defn}
-Let $G \circlearrowleft M$ be a Lie group action, and let $\mathfrak{g} = \Lie(G)$ be the Lie algebra associated to $G$. We say that $G \circlearrowleft M$ is \emph{Hamiltonian} if, for all $X \in \mathfrak{g}$, we can find a function $\phi_X \in C^\infty(M)$  such that
+Let $G \circlearrowright M$ be a Lie group action, and let $\mathfrak{g} = \mathrm{Lie}(G)$ be the Lie algebra associated to $G$. We say that $G \circlearrowright M$ is \emph{Hamiltonian} if, for all $X \in \mathfrak{g}$, we can find a function $\phi_X \in C^\infty(M)$  such that
 $$
 \xi^\flat_X + \d \phi_X = 0,
 $$
@@ -256,7 +257,7 @@ Further, consider the Poisson algebra on $C^\infty(M)$ given by the Poisson brac
 $$
 \{f,g\} := \omega(\xi_f, \xi_g),
 $$
-where $\xi_f$ (resp., $\xi_g$) is the hamiltonian vector field asociated to $f$ (resp., $g$), i.e. $\xi^\flat_f + \d f = 0$ ($\xi^\flat_g + \d g = 0$). This gives us a Lie algebra structure on $C^\infty(M)$, and a Hamiltonian action $G \circlearrowleft M$ is said to be \emph{Poisson} if there exists a homomorphism of Lie algebras $\mathfrak{g} \to C^\infty(M), X \mapsto \phi_X$ such that
+where $\xi_f$ (resp., $\xi_g$) is the hamiltonian vector field asociated to $f$ (resp., $g$), i.e. $\xi^\flat_f + \d f = 0$ ($\xi^\flat_g + \d g = 0$). This gives us a Lie algebra structure on $C^\infty(M)$, and a Hamiltonian action $G \circlearrowright M$ is said to be \emph{Poisson} if there exists a homomorphism of Lie algebras $\mathfrak{g} \to C^\infty(M), X \mapsto \phi_X$ such that
 $$
 \xi^\flat_X + \d \phi_X = 0 \mbox{ and } \phi_{[X,Y]} = \{\phi_X, \phi_Y\},
 $$

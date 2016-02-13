@@ -8,6 +8,9 @@
 %use thmtools to style new thm envns:
 \usepackage{thmtools}
 
+%define thrm environment
+\newtheorem{thrm}{Theorem}
+
 %define example environment
 \newtheorem{example}{Example}
 
@@ -18,7 +21,7 @@
 \newtheorem{defn}{Definition}
 
 %define shorthand for exterior derivative:
-\def{\d}{\mathrm{d}}
+\def\d{\mathrm{d}}
 
 \title{An Overview to the Geometric Theory of Quantization}
 
@@ -42,7 +45,7 @@ In this section we define symplectic manifolds and maps between them (symplectom
 %symplectic vector space (V,\Omega) definition
 We first consider the flat case, i.e. a symplectic vector space\footnote{A symplectic vector space is analogous to an inner product space, albeit with an important caveat --- instead of a symmetric bilinear form, we have an \emph{alternating} form, and the intuition is not that the symplectic form measures volume in some sense but rather that it measures ``symplectic'' volume. To fully explain this is outside the scope of the current conversation, though an important theorem to keep in mind for the general manifold case is the celebrated \emph{non-squeezing theorem} of Gromov; essentially, there is no symplectomorphism from a sphere to a cylinder with radius smaller than that of the sphere.}, in which we have the following definition:
 \begin{defn}
-A vector space $V$ over a field $F$ along with a bilinear map $\Omega: V \times V \to F$ is said to be \emph{symplectic} if the map $\Omega$ is \emph{alternating}, i.e. $\forall v \in V, \Omega(v,v) = 0$ as well as \emph{non-degenerate}, i.e. $\Omega(v,w) = 0 \forall w \in V \imples v = 0$.
+A vector space $V$ over a field $F$ along with a bilinear map $\Omega: V \times V \to F$ is said to be \emph{symplectic} if the map $\Omega$ is \emph{alternating}, i.e. $\forall v \in V, \Omega(v,v) = 0$ as well as \emph{non-degenerate}, i.e. $\Omega(v,w) = 0 \forall w \in V \rightarrow v = 0$.
 
 In this scenario, the bilinear map $\Omega$ is called the \emph{symplectic form} on $V$.
 \end{defn}
@@ -50,11 +53,13 @@ In this scenario, the bilinear map $\Omega$ is called the \emph{symplectic form}
 For the purpose of illustration, we have the following examples of symplectic vector spaces:
 \begin{itemize}
 \item Let 
-$$
-\Omega = \[ \left[ \begin{array}{cc}
+
+$\Omega =$ \[ \left(
+\begin{array}{cc}
 0    & I_n \\
--I_n & 0   \\ \end{array} \right]\]
-$$
+-I_n & 0   \\
+\end{array} \right)\]
+
 where $I_n$ is the $n \times n$ identity matrix; then $\Omega$ is called the \emph{standard symplectic form} on $\mathbb{R}^{2n}$.
 
 \item Let $V$ be any finite-dimensional vector space over $\mathbb{R}$, with dual space $V^*$. Then the direct sum $V \oplus V^*$ is a symplectic vector space with the symplectic form given by:
@@ -168,7 +173,7 @@ Every symmetry gives rise to a symplectomorphism $\phi_g : M \to M$, i.e. $\phi^
 
 \subsection{Concluding Remarks}
 %structure of the symplectic category; which universal properties does it have? closed category? cartesian? a topos? etc.
-Finally, we conclude by remarking that there is no general agreement on which maps should be used as the morphisms in a category where the objects are symplectic manifolds. Certainly, symplectomorphisms (i.e. those maps where $f^*(\omega_1) = \omega_2$) are closed under composition, but another proposal (by Weinstein, see \cite{weinsteinCanonicalReln}) argued that \emph{canonical relations} were the maps to consider with a symplectic category, but canonical relations are not necessarily closed under composition.
+Finally, we conclude by remarking that there is no general agreement on which maps should be used as the morphisms in a category where the objects are symplectic manifolds. Certainly, symplectomorphisms (i.e. those maps where $f^*(\omega_1) = \omega_2$) are closed under composition, but another proposal (by Weinstein, see \textbf{[weinsteinCanonicalReln]}) argued that \emph{canonical relations} were the maps to consider with a symplectic category, but canonical relations are not necessarily closed under composition.
 
 The question becomes even more hairy in the context of the theory of quantization; one proposal is a category where objects are pairs of Poisson manifolds with a symplectic manifold as intermediary --- see chapter 10. Alternatively, perhaps it makes more sense to categorify ``horizontally'', i.e. what is known as ``oid-ification'' --- see chapter 9 for a discussion of symplectic groupoids.
 

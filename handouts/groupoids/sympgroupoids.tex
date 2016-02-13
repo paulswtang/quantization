@@ -2,13 +2,14 @@
 \documentclass{tufte-handout}
 
 %use tikz-cd for comm diagrams:
-\usepackage{tikz-cd}
+%\usepackage{tikz-cd}
 %use amsthm for thm-like environments:
 \usepackage{amsthm}
+\usepackage{amssymb}
 %use thmtools to style new thm envns:
 \usepackage{thmtools}
 % amsfonts for fraktur lettering:
-\usepackage{amsfont}
+%\usepackage{amsfont}
 
 %define thrm environment
 \newtheorem{thrm}{Theorem}
@@ -73,11 +74,11 @@ Equivalently, a Lie groupoid is a groupoid internal to the category of smooth ma
 
 We have the following commutative diagram:
 
-\begin{tikzcd}% comm diag # 1
-\Gamma \arrow[r, bend left=50, ""{name=s, below}]
-	   \arrow[r, bend right=50, ""{name=t}]
-	   & \Gamma_0
-\end{tikzcd}
+%\begin{tikzcd}% comm diag # 1
+%\Gamma \arrow[r, bend left=50, ""{name=s, below}]
+%	   \arrow[r, bend right=50, ""{name=t}]
+%	   & \Gamma_0
+%\end{tikzcd}
 \end{defn}
 
 We also have the notion of Lie algebroid:
@@ -152,11 +153,11 @@ $$
 $$
 is defined as the unique map making the following diagram commute:
 
-\begin{tikzcd}
-LieGrp \arrow[r, bend left=50, ""{name=Exp, below, draw=red}]
-	   \arrow[l, bend right=50, ""{name=Lie, draw=red}]
-	   & LieAlg
-\end{tikzcd}
+%\begin{tikzcd}
+%LieGrp \arrow[r, bend left=50, ""{name=Exp, below, draw=red}]
+%	   \arrow[l, bend right=50, ""{name=Lie, draw=red}]
+%	   & LieAlg
+%\end{tikzcd}
 
 Further, we have a \emph{differentiation} functor
 $$
@@ -175,9 +176,9 @@ given by the construction in the previous section.
 \end{itemize}
 \end{thrm}
 
-The spectacular failure of Lie's third theorem in the algebroid setting hints at the fact that the structure theory of Lie groupoids/algebroids need some fine tuning; one idea is to ``stackify'' the structures by considering ``stacky'' groupoids, as proposed by Tseng-Zhu in ``Integrating Lie Algebroids via Stacks'' \cite{tsengzhu}.
+The spectacular failure of Lie's third theorem in the algebroid setting hints at the fact that the structure theory of Lie groupoids/algebroids need some fine tuning; one idea is to ``stackify'' the structures by considering ``stacky'' groupoids, as proposed by Tseng-Zhu in ``Integrating Lie Algebroids via Stacks'' \textbf{[tsengzhu]}.
 
-We will not proceed further with the discussion of the theory of Lie groupoids. A detailed introduction to Lie groupoids and algebroids may be found in Mackenzie, ``General Theory of Lie Groupoids and Lie Algebroids'' \cite{mackenzie}.
+We will not proceed further with the discussion of the theory of Lie groupoids. A detailed introduction to Lie groupoids and algebroids may be found in Mackenzie, ``General Theory of Lie Groupoids and Lie Algebroids'' \textbf{[mackenzie]}.
 
 %=============================================================
 \section{Symplectic Groupoids}
@@ -197,7 +198,7 @@ In other words, a Lie groupoid is \emph{symplectic} if the space of morphisms $\
 %results about symplectic groupoids:
 The notion of a symplectic groupoid is useful for a few reasons. Recalling that symplectic manifolds may be viewed as Poisson manifolds (by noting that the bracket given by the symplectic form defines a natural Poisson structure), we note that the base manifold of symplectic groupoids automatically get a Poisson structure as well:
 \begin{thrm}
-Let $\Gamma \rightrightarrow M$ be a symplectic manifold. Then $M$ has a unique Poisson structure such that the source map is a Poisson map and the target map is an anti-Poisson map.
+Let $\Gamma \rightrightarrows M$ be a symplectic manifold. Then $M$ has a unique Poisson structure such that the source map is a Poisson map and the target map is an anti-Poisson map.
 % see weinstein-87 or thm 6.3 in racaniere for a reference
 \end{thrm}
 
@@ -205,26 +206,26 @@ Further, we have a functorial correspondence between symplectic groupoids and Po
 \begin{thrm}
 Consider the categories $\mathrm{SympGrpd}$ and $\mathrm{PoisMfd}$ of symplectic groupoids and Poisson manifolds, respectively. Then there is a functor
 
-\begin{tikzcd}
+%\begin{tikzcd}
 %FUNCTORIAL CORRESP. BTWN SYMP. GRPDS. & POISSON MFDS., EXTENDS LIE GRPS. & LIE ALGS. FUNCTOR; INSERT DIAGRAM 3
-LieAlg \arrow[r, "\phi"] \arrow[d]
-& LieGrp \arrow[d, "\psi"] \\
-SympGrpd \arrow[r, "\eta"]
-& Pois
-\end{tikzcd}
+%LieAlg \arrow[r, "\phi"] \arrow[d]
+%& LieGrp \arrow[d, "\psi"] \\
+%SympGrpd \arrow[r, "\eta"]
+%& Pois
+%\end{tikzcd}
 
 \end{thrm}
 The proof of this statement is outside the scope of this writeup; a presentation may be found in \textbf{[weinstein87]}.
 
 %=============================================================
 \section{Historical Notes and References}
-The first definition of a symplectic groupoid comes from Weinstein, ``Symplectic Groupoids and Poisson Manifolds'' \cite{weinstein87} as well as Karasev \cite{} and Zakrzewski \cite{}; all were motivated by the problem of understanding quantization. The notion of groupoids as categories generalizing groups came earlier \cite{SOMETHING HERE}. A good reference for this topic is \cite{}. %see http://ncatlab.org/nlab/show/symplectic+groupoid#references
+The first definition of a symplectic groupoid comes from Weinstein, ``Symplectic Groupoids and Poisson Manifolds'' \textbf{[weinstein87]} as well as Karasev \textbf{} and Zakrzewski \textbf{}; all were motivated by the problem of understanding quantization. The notion of groupoids as categories generalizing groups came earlier \textbf{[SOMETHING HERE]}. A good reference for this topic is \textbf{}. %see http://ncatlab.org/nlab/show/symplectic+groupoid#references
 
-Symplectic groupoids were introduced in \cite{weinstein87}; %history of development
+Symplectic groupoids were introduced in \textbf{[weinstein87]}; %history of development
 
-A survey on groupoids, including several examples, may be found in \cite{weinstein1996} %"groupoids: unifying external and internal"
+A survey on groupoids, including several examples, may be found in \textbf{[weinstein1996]} %"groupoids: unifying external and internal"
 
-A useful reference on Lie groupoids and Lie algebroids in a geometric context may be found in \cite{mackenzie1987}
+A useful reference on Lie groupoids and Lie algebroids in a geometric context may be found in \textbf{[mackenzie1987]}
 %kirill mackenzie: lie groupoids and lie algebroids in differential geometry
 
 % tangent lie algebroid: http://iopscience.iop.org/article/10.1088/0305-4470/27/13/026/pdf;jsessionid=BC34ABF19D2678BE3DF781F316CFE10F.c3.iopscience.cld.iop.org
